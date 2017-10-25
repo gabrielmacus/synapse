@@ -1,0 +1,51 @@
+{
+    "youtube": {
+        "cmd": "C:\\youtube-dl"
+    },
+    "curl": {
+
+        "timeout": 20
+    },
+    "website": {
+        "root": "",
+        "url": "http://salondelreino.info.tm",
+        "languages": ["es"],
+        "defaultLanguage": "es"
+    },
+    "server": {
+        "os": "windows"
+    },
+    "auth": {
+        "secret": "sada3wqqwe",
+        "sessionTime": 5184000,
+        "developerPermissionGroup":10
+    },
+    "db": {
+        "user": "usr",
+        "password": "JnTaaDZ*2Z*LU4wK",
+        "port": 3306,
+        "host": "localhost",
+        "name": "synapse"
+    },
+    "policies": {
+        "home": ["isLogged","checkPermissions"],
+        "user":["isLogged","checkPermissions"],
+        "user.save":["isLogged","checkPermissions"],
+        "user.login": ["isntLogged"],
+        "streaming.save": ["isLogged", "checkPermissions"],
+        "streaming.start": ["isLogged", "checkPermissions"],
+        "streaming.stop": ["isLogged", "checkPermissions"],
+        "streaming.view": ["isLogged", "checkPermissions"],
+        "streaming.watch": ["isLogged","checkPermissions"],
+        "streaming": ["isLogged", "checkPermissions"],
+        "repository": ["isLogged","checkPermissions"],
+        "repository.save": ["isLogged","checkPermissions"],
+        "permission": ["isLogged", "checkPermissions"],
+        "permission.save": ["isLogged","checkPermissions"]
+    },
+    "hls": {
+        "timeout": 10,
+        "outFileName": "out",
+        "outFilePath": "/static/hls"
+    }
+}

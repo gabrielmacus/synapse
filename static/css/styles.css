@@ -1,0 +1,509 @@
+    /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+    @font-face {
+        font-family: 'Material Icons';
+        font-style: normal;
+        font-weight: 400;
+        src: url(icons/MaterialIcons-Regular.eot); /* For IE6-8 */
+        src: local('Material Icons'),
+        local('MaterialIcons-Regular'),
+        url(icons/MaterialIcons-Regular.woff2) format('woff2'),
+        url(icons/MaterialIcons-Regular.woff) format('woff'),
+        url(icons/MaterialIcons-Regular.ttf) format('truetype');
+    }
+    .material-icons {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;  /* Preferred icon size */
+        display: inline-block;
+        line-height: 1;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+
+        /* Support for IE. */
+        font-feature-settings: 'liga';
+    }
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+        display: block;
+    }
+    body {
+        line-height: 1;
+    }
+    ol, ul {
+        list-style: none;
+    }
+    blockquote, q {
+        quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+        content: '';
+        content: none;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    html,body
+    {
+        font-family: 'Roboto', sans-serif;
+        overflow-x: hidden;
+        width: 100%;
+        min-height: 100%;
+
+    }
+
+    .main-container
+    {
+        width: 70%;
+        height: 100%;
+        margin: auto;
+        position: relative;
+        left:0;
+
+    }
+    .main-header
+    {
+        width: 100%;
+    }
+    .flex
+    {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+
+    form
+    {
+        width:100%;
+    }
+    .form-block
+    {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+    .form-block label
+    {
+        margin-top: 15px;
+        font-size: 20px;
+        width: 100%;
+    }
+    .form-block input,.form-block textarea,.form-block select
+    {  margin-top: 15px;
+        outline: none;
+        width: 100%;
+        border: 0;
+        padding: 10px;
+        background-color: #E0E0E0;
+        font-size: 18px;
+
+    }
+    .form-block button
+    {
+
+        float: right;
+        padding: 10px;
+        font-size: 15px;
+        margin-top: 15px;
+        margin-right: 10px;
+        border: 0;
+        background-color: #3F51B5;
+        outline: 0;
+        color: white;
+    }
+    .form-block button:active
+    {
+        background-color: #5C6BC0;
+    }
+
+
+    .form-block button:first-child
+    {
+        margin-right: 0;
+    }
+
+    .messages
+    {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+    }
+
+    .messages .messages-list li
+    {
+        padding: 10px;
+        color: white;
+        text-align: center;
+    }
+
+    .modal-box .error p
+    {
+        color: #F44336!important;
+    }
+
+    .modal-box .warning p
+    {
+        color: #FFC107 !important;
+    }
+    .modal-box .success p
+    {
+        color: #4CAF50!important;
+    }
+    .base-header
+    {
+        width: 100%;
+        font-size: 30px;
+        padding-left: 0px!important;
+    }
+    .base-list
+    {
+        width: 100%;
+    }
+    .padding{
+        padding: 20px;
+    }
+    .base-list li
+    {
+        width: 100%;
+        font-size: 20px;
+        margin-bottom: 5px;
+
+        background-color: #E0E0E0;
+    }
+    .base-list li:last-child
+    {
+        margin-bottom: 0;
+    }
+    .base-list li .controls
+    {
+        float: right;
+    }
+    [data-ng-click]{
+        cursor: pointer;
+    }
+    body > header
+    {
+        background-color: #3949AB;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    nav a
+    {
+        color: white!important;
+    }
+    .base-list li.active
+    {
+        background: #7986CB;
+        color: white;
+    }
+    .base-list li:hover
+    {
+        border-left: 6px solid #212121;
+    }
+    .empty
+    {
+        width:100%;
+        background-color: #E0E0E0;
+    }
+
+    .streaming-list .base-list li.active .play
+    {
+        display: none;
+    }
+    .streaming-list .base-list li:not(.active) .stop
+     {
+         display: none;
+     }
+    .watch-video
+    {  height: 70vh;
+        width: 100%;
+        position: relative;
+    }
+    .watch-video video
+    {
+        height: 100%;
+        width:100%;
+        background-color: black;
+    }
+    .watch-video .fullscreen
+    {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        font-size: 0px;
+    }
+    .watch-video .fullscreen i
+    {
+        color: white;
+        font-size: 50px;
+    }
+    .center{
+        align-items: center;
+    }
+    .streaming-not-ready
+    {
+        position: absolute;
+        color: white;
+        margin: auto;
+        width: 100%;
+        text-align: center;
+        font-size: 40px;
+        animation:0.8s linear scaleInOut infinite alternate;
+    }
+    .streaming-not-ready i
+    {
+        color: #9E9E9E;
+        font-size: 150px;
+    }
+    @keyframes scaleInOut {
+        0%{transform: scale(1)}
+        100%{transform: scale(1.1)}
+
+    }
+    a{
+        color:inherit;
+        text-decoration:none;
+    }
+    a:visited
+    {color:inherit;
+    }
+	
+	@media screen and (max-width: 425px)
+	{
+		.main-container
+    {
+		width:90%;
+	}
+	}
+	
+	.welcome
+	{
+	margin-top: 20px;  
+	width: 100%;
+    font-size: 25px;
+    background: #E0E0E0;
+	}
+	.form-block.submit
+    {
+        display: block;
+    }
+	a.btn
+	{    text-decoration: underline;
+	}
+
+.base-footer
+{
+
+    margin-top: 20px;
+    width: 100%;
+    background: #212121;
+    color: white;
+}
+    .base-footer a{
+        float: right;
+    }
+
+    .error
+    {
+        margin-top: 5px;
+        color: #E53935;
+        font-size: 15px;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+
+    .error p
+    {
+        margin-bottom: 5px;
+    }
+    .error p:last-child
+    {
+        margin-bottom: 0px;
+    }
+
+    .animated{
+        -webkit-transition: all 350ms;
+        -moz-transition: all 350ms;
+        -ms-transition: all 350ms;
+        -o-transition: all 350ms;
+        transition: all  350ms;
+    }
+
+    .modal-container
+    {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100000;
+        background-color: rgba(0,0,0,0.6);
+    }
+    .modal-container .modal-box
+    {
+        position: relative;
+        width: 20%;
+
+        padding: 30px;
+        background: white;
+        margin: auto;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.4);
+    }
+
+    .modal-container .modal-box .close
+    {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+    .modal-container .modal-box .modal-message
+    {
+        width: 100%;
+        /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+        text-align: center;
+    }
+    .modal-container .modal-box p
+    {
+        line-height: 25px;
+        letter-spacing: 1px;
+        color: #3949AB;
+        /* box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); */
+        /* font-weight: 600; */
+        font-size: 20px;
+    }
+    button{
+        transition: all 200ms;
+    }
+    button:hover
+    {
+      box-shadow:   0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.4)
+    }
+    .modal-container .controls
+    {
+        width: 100%;
+    }
+    .modal-container .controls .no
+    {
+        background: #E53935;
+
+    } .modal-container .controls .yes
+      {
+          background: #4CAF50;
+
+      }
+
+      .mobile-header
+      {
+          display: none;
+      }
+      @media screen and (max-width: 768px ) {
+          body > header
+          {
+              position: fixed;
+              height: 100%;
+              width: 65%!important;
+              left: -65%;
+          }
+          body > header nav
+          {
+              display: block;
+              display: block!important;
+              background-color: #3949AB;
+              width: 65%;
+              position: absolute;
+              /* margin-top: 70px; */
+              height: 100%;
+
+          }
+          body > header.active
+          {
+              left: 0;
+          }
+          body > header.active + .main-container
+          {
+              left: 65%;
+          }
+          body > header nav a
+          {
+              width: 100%;
+              display: flex;
+              flex-wrap: wrap;
+              align-items: center;
+          }
+          .mobile-header
+          {
+              display: block;
+              height: 60px;
+              background-color: #3949AB;;
+              width: 100%;
+
+          }
+          .hamburguer
+          {
+              color: white;
+              /* font-size: 30px; */
+              float: right;
+              /* font-size: 50px; */
+              top: 4px;
+              right: 10px;
+              position: relative;
+          }
+          .hamburguer i
+          {
+              font-size: 50px;
+          }
+      }
+	  
+	  @media screen and (max-height: 450px)
+	  {
+		  .watch-video
+		  {
+			  height:60vh;
+		  }
+	  }
+	   @media screen and (max-height: 320px)
+	  {
+		   .watch-video
+		  {
+			  height:55vh;
+		  }
+	  }
+

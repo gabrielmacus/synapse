@@ -1,0 +1,104 @@
+{
+  "login.user":"Usuario",
+  "login.pass":"Contraseña",
+  "login.title":"Ingreso al sistema",
+  "login.accept":"Ingresar",
+
+  "db.error.invalidDatabase":"La base de datos seleccionada es inválida",
+  "db.error.reading":"Error al leer la base de datos",
+  "db.error.connecting":"Error al conectar la base de datos",
+
+  "auth.error.invalidData":"Datos de autenticación inválidos",
+  "auth.error.noData":"No se recibieron datos de autenticación",
+  "sse.error.noData":"No se recibieron datos para enviar",
+
+  "youtube.error.idNotSpecified":"No se especificó un id de video",
+  "youtube.error.linkNotFetched":"No se pudo recuperar el enlace al video",
+  "youtube.error.queryDataNotSpecified":"No se especificó un parámetro de búsqueda",
+  "youtube.error.query":"Error al buscar el video",
+  "youtube.search":"Buscá un tema",
+
+  "video.error.idNotSpecified":"No se especificó un id de video",
+  "video.error.linkNotFetched":"No se pudo recuperar el enlace al video",
+
+  "file.error.open":"Error al abrir el archivo",
+  "file.error.write":"Error al escribir el archivo",
+  "file.error.notDir":"La ruta especificada no corresponde a un directorio",
+
+
+  "error":"Error desconocido",
+
+  "home.welcome":"Bienvenido, {username}",
+
+  "login.usuario":"Usuario",
+  "login.contrasena":"Contraseña",
+  "login.aceptar":"Aceptar",
+
+  "menu.home":"Inicio",
+  "menu.salir":"Salir",
+  "menu.permission":"Permisos",
+  "menu.streaming":"Transmisiones",
+  "menu.repository":"Repositorios",
+  "menu.user":"Usuarios",
+
+  "streaming.list":"Listado de transmisiones",
+  "streaming.empty":"No hay transmisiones disponibles",
+  "streaming.nueva":"Nueva transmisión",
+  "streaming.name":"Nombre",
+  "streaming.cmd":"Comandos",
+  "streaming.submit":"Guardar",
+  "streaming.cancel":"Cancelar",
+  "streaming.error.idNotSpecified":"No se especificó una transmisión",
+  "streaming.error.streamingNotExists":"La transmisión especificada no existe",
+  "streaming.error.streamingNotPlaying":"La transmisión no se está ejecutando",
+  "streaming.error.streamingAlreadyPlaying":"La transmisión ya se está ejecutando",
+  "streaming.error.streamingFolder":"Error al crear la carpeta donde se guardaría la transmisión",
+  "streeaming.error.browserNotSupported":"Navegador no soportado. Para un funcionamiento optimo, le recomendamos Google Chrome o Mozilla Firefox",
+  "streaming.notStarted":"La transmisión no ha comenzado",
+  "streaming.prompt.delete":"¿Desea eliminar la transmisión ´{i}´?",
+
+  "user.error.permissionsNotFound":"Permisos inválidos, contacte un administrador",
+  "user.error.permissions":"Permisos insuficientes",
+
+  "validation.error.maxLength":"La longitud máxima es de {c} caracteres",
+  "validation.error.minLength":"La longitud mínima es de {c} caracteres",
+  "validation.error.lengthBetween":"Debe contener de {a} a {b} caracteres",
+  "validation.error.invalidFormat":"Formato inválido",
+  "validation.error.shouldBeNumeric":"Debe ser un número",
+  "validation.error.cantBeEmpty":"No debe estar vacio",
+  "validation.error.invalidEmail":"Email no válido",
+
+  "modal.aceptar":"Aceptar",
+  "modal.cancelar":"Cancelar",
+
+  "repository.list":"Listado de repositorios",
+  "repository.empty":"No hay repositorios disponibles",
+  "repository.prompt.delete":"¿Desea eliminar el repositorio ´{i}´?",
+  "repository.nuevo":"Nuevo repositorio",
+  "repository.name":"Nombre",
+  "repository.submit":"Guardar",
+  "repository.cancel":"Cancelar",
+
+  "permission.list":"Listado de grupos de permisos",
+  "permission.empty":"No hay grupos permisos disponibles",
+  "permission.nuevo":"Nuevo grupo de permisos",
+  "permission.prompt.delete":"¿Desea eliminar el grupo de permisos ´{i}´?",
+  "permission.submit":"Guardar",
+  "permission.cancel":"Cancelar",
+  "permission.name":"Nombre o identificador del grupo de permisos",
+  "permission.loginRedirect":"Redirección de login",
+
+  "user.list":"Listado de usuarios",
+  "user.empty":"No hay usuarios disponibles",
+  "user.nuevo":"Nuevo usuario",
+  "user.prompt.delete":"¿Desea eliminar el usuario ´{i}´?",
+  "user.submit":"Guardar",
+  "user.cancel":"Cancelar",
+  "user.name":"Nombre",
+  "user.surname":"Apellido",
+  "user.email":"Email",
+  "user.password":"Contraseña",
+  "user.permissions":"Grupo de permisos",
+  "user.username":"Nombre de usuario"
+
+}
