@@ -1,118 +1,36 @@
 
-[readfile(C:\server\www/static/hls/1/out0.ts): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[unlink(C:\server\www/static/hls/1/out4.ts): Permission denied,30,C:\server\www\app\services\file.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out0.ts): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out0.ts): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[unlink(C:\server\www/static/hls/1/out4.ts): Permission denied,30,C:\server\www\app\services\file.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.user.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.noData,54,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-[readfile(C:\server\www/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-auth.error.noData,54,C:\server\www\app\controllers\user.login.php
-[include(C:\server\www/app/controllers/panel.streaming.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.streaming.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.streaming.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.streaming.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.streaming.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/3/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/3/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/3/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/3/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/3/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/3/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/3/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/3/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/hls/1/out.m3u8): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.streaming.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.streaming.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.user.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.user.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.user.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.user.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.user.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[readfile(C:\server\www/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-[include(C:\server\www/app/controllers/panel.user.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-auth.error.invalidData,31,C:\server\www\app\controllers\user.login.php
-[include(C:\server\www/app/controllers/panel.user.php): failed to open stream: No such file or directory,97,C:\server\www\route.php],20,C:\server\www\app\autoload.php
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'synapse.permission' doesn't exist,720,C:\xampp\htdocs\synapse\app\db\rb.php
+SQLSTATE[42S02]: Base table or view not found: 1146 Table 'synapse.permission' doesn't exist,720,C:\xampp\htdocs\synapse\app\db\rb.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/hls/2/out.m3u8): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+auth.error.noData,54,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+auth.error.invalidData,31,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+auth.error.invalidData,31,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+auth.error.invalidData,31,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+auth.error.noData,54,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,39,C:\xampp\htdocs\synapse\route.php],20,C:\xampp\htdocs\synapse\app\autoload.php

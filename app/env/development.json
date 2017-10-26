@@ -7,8 +7,8 @@
         "timeout": 20
     },
     "website": {
-        "root": "",
-        "url": "http://salondelreino.info.tm",
+        "root": "/synapse",
+        "url": "http://192.168.69.107/synapse",
         "languages": ["es"],
         "defaultLanguage": "es"
     },
@@ -21,8 +21,8 @@
         "developerPermissionGroup":10
     },
     "db": {
-        "user": "usr",
-        "password": "JnTaaDZ*2Z*LU4wK",
+        "user": "root",
+        "password": "",
         "port": 3306,
         "host": "localhost",
         "name": "synapse"
