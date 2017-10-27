@@ -434,7 +434,22 @@
       {
           display: none;
       }
+    @media screen and (max-width: 1024px ) {
+
+
+        .modal-container .modal-box
+        {
+            width: 60%;
+        }
+    }
       @media screen and (max-width: 768px ) {
+
+
+          .modal-container .modal-box
+          {
+              width: 75%;
+          }
+
           body > header
           {
               position: fixed;
@@ -494,7 +509,12 @@
 	  
 	  @media screen and (max-height: 450px)
 	  {
-		  .watch-video
+          .modal-container .modal-box
+          {
+              width: 90%;
+          }
+
+          .watch-video
 		  {
 			  height:60vh;
 		  }
@@ -506,4 +526,3 @@
 			  height:55vh;
 		  }
 	  }
-
