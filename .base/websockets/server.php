@@ -7,7 +7,7 @@
  */
 
 
-require dirname(dirname(__DIR__)) . '/app/autoload.php';
+require dirname(dirname(__DIR__)) . '/.base/autoload.php';
 
 use Ratchet\Server\IoServer;
 use Ratchet\Http\HttpServer;

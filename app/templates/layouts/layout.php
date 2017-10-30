@@ -89,6 +89,8 @@
                     .then(function (e) {
                         console.log(e.data);
 
+                        location.reload();
+
                     },$rootScope.error);
 
 
@@ -120,7 +122,7 @@
                 $rootScope.modal  = {};
                 $rootScope.modal[type] = true;
 
-                $rootScope.modal["message"]=msg;
+                $rootScope.modal["text"]=msg;
 
                 if(mode)
                 {

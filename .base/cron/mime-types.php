@@ -21,4 +21,4 @@ foreach ($matches as $match){
 $data ='<?php $mime_types='.var_export($return,true).'; ?>';
 
 
-FileService::write($data,BASE_PATH."/app/cache/mimes.php",'w');
+FileService::write($data,BASE_PATH."/.base/cache/mimes.php",'w');

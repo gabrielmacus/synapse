@@ -24,7 +24,8 @@ else
 
         $_POST["password"] = hash('sha256',$_POST["password"]);
 
-        $user = R::findOne('user','  (username = ? OR email = ?) AND password = ? ',[$_POST["user"],$_POST["user"],$_POST["password"]]);
+
+        $user = R::findOne('user','  (username = ? OR email = ?) AND password = ?',[$_POST["user"],$_POST["user"],$_POST["password"]]);
 
         if(empty($user))
         {
@@ -32,6 +33,17 @@ else
         }
         else
         {
+
+            switch ($user->status)
+            {
+                case USER_INACTIVE:
+                    throw new Exception("user.error.inactive",400);
+                    break;
+                case USER_SUSPENDED:
+                    throw new Exception("user.error.suspended",400);
+                    break;
+            }
+
             unset($user["password"]);
 
             setcookie("tk",JWT::encode($user,$_ENV["auth"]["secret"]),time()+$_ENV["auth"]["sessionTime"],'/');

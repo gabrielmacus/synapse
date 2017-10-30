@@ -9,8 +9,7 @@
 define('BASE_PATH',dirname(dirname(__FILE__)));
 define('CONTROLLER_PATH',BASE_PATH."/app/controllers");
 define('TEMPLATE_PATH',BASE_PATH."/app/templates");
-define('WIDGET_PATH',BASE_PATH."/app/widgets");
-define('LOG_PATH',BASE_PATH."/app/log");
+define('LOG_PATH',BASE_PATH."/.base/log");
 define('POLICIES_PATH',BASE_PATH.'/app/policies');
 
 
@@ -27,12 +26,12 @@ include (BASE_PATH."/vendor/autoload.php");
 
 if(empty($env) || $env = "DEV")
 {
-    $env = file_get_contents(BASE_PATH."/app/env/development.json");
+    $env = file_get_contents(BASE_PATH."/.base/env/development.json");
     
 }
 else if ($env = "PROD")
 {
-    $env = file_get_contents(BASE_PATH."/app/env/production.json");
+    $env = file_get_contents(BASE_PATH."/.base/env/production.json");
 
 }
 

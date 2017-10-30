@@ -5,7 +5,7 @@
  * Date: 16/10/2017
  * Time: 23:13
  */
-include BASE_PATH."/app/auth/check-user-data.php";
+include BASE_PATH."/.base/auth/check-user-data.php";
 
 
 if(!empty($userData))

@@ -8,6 +8,6 @@
 
 
 
-$_LANG= json_decode(file_get_contents(BASE_PATH."/app/lang/{$language}.json"),true);
+$_LANG= json_decode(file_get_contents(BASE_PATH."/.base/lang/{$language}.json"),true);
 
 

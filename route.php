@@ -2,7 +2,7 @@
 
 try
 {
-    include ("app/autoload.php");
+    include (".base/autoload.php");
 
 
     if($uri["module"]=="static")
@@ -23,9 +23,9 @@ try
                 break;
 
             default:
-                if(file_exists(BASE_PATH."/app/cache/mimes.php"))
+                if(file_exists(BASE_PATH."/.base/cache/mimes.php"))
                 {
-                    include (BASE_PATH."/app/cache/mimes.php");
+                    include (BASE_PATH."/.base/cache/mimes.php");
 
                     if(!empty($mime_types[$ext]))
                     {

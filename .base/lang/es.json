@@ -57,8 +57,11 @@
   "streaming.notStarted":"La transmisión no ha comenzado",
   "streaming.prompt.delete":"¿Desea eliminar la transmisión ´{i}´?",
 
+
   "user.error.permissionsNotFound":"Permisos inválidos, contacte un administrador",
   "user.error.permissions":"Permisos insuficientes",
+  "user.error.inactive":"Usuario no activado",
+  "user.error.suspended":"Usuario suspendido. Contacte un administrador si cree que no hay motivo para la suspensión",
 
   "validation.error.maxLength":"La longitud máxima es de {c} caracteres",
   "validation.error.minLength":"La longitud mínima es de {c} caracteres",
