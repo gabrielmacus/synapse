@@ -81,6 +81,7 @@
   "repository.name":"Nombre",
   "repository.submit":"Guardar",
   "repository.cancel":"Cancelar",
+  "repository.error.notExists":"El repositorio seleccionado no existe",
 
   "permission.list":"Listado de grupos de permisos",
   "permission.empty":"No hay grupos permisos disponibles",
@@ -90,6 +91,7 @@
   "permission.cancel":"Cancelar",
   "permission.name":"Nombre o identificador del grupo de permisos",
   "permission.loginRedirect":"Redirección de login",
+  "permission.error.notExists":"El grupo de permisos seleccionado no existe",
 
   "user.list":"Listado de usuarios",
   "user.empty":"No hay usuarios disponibles",
@@ -102,6 +104,7 @@
   "user.email":"Email",
   "user.password":"Contraseña",
   "user.permissions":"Grupo de permisos",
-  "user.username":"Nombre de usuario"
+  "user.username":"Nombre de usuario",
+  "user.error.notExists":"El usuario seleccionado no existe"
 
 }

@@ -8,4 +8,4 @@
 
 setcookie("tk", '', time()-3600, "/");
 
-header("Location: {$_ENV["website"]["root"]}/user/login");
+header("Location: {$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/user/login");

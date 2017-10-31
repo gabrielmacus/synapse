@@ -63,15 +63,17 @@
 
             }
             
-            $rootScope.load=function(url,item)
+            $rootScope.load=function(type,id)
             {
+                var url="<?php echo "{$_ENV["website"]["url"]}/{$language}/{$_ENV["website"]["panelAccess"]}/";?>"+type+"?act=true&id="+id;
+                console.log(url);
                 $http.get(url)
                     .then(function (e) {
-                        console.log(e.data);
+                        //console.log(e.data);
 
                         for (var k in e.data)
                         {
-                            $rootScope[item] =e.data[k] ;
+                            $rootScope[type] =e.data[k] ;
                             return true;
                         }
 
@@ -82,8 +84,9 @@
 
             }
 
-            $rootScope.delete  = function (url) {
+            $rootScope.delete  = function (type,id) {
 
+                var url = "<?php echo "{$_ENV["website"]["url"]}/{$language}/{$_ENV["website"]["panelAccess"]}/"; ?>"+type+"/delete?id="+id+"&act=true";
 
                 $http.get(url)
                     .then(function (e) {
@@ -95,7 +98,10 @@
 
 
             }
-            $rootScope.save=function (url,data) {
+            $rootScope.save=function (type,data) {
+
+                var url = "<?php echo "{$_ENV["website"]["url"]}/{$language}/{$_ENV["website"]["panelAccess"]}/"; ?>"+type+"/save?act=true";
+
 
                 $rootScope.errors={};
                 var config = {

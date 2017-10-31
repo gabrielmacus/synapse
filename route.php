@@ -5,6 +5,7 @@ try
     include (".base/autoload.php");
 
 
+
     if($uri["module"]=="static")
     {
         $inc = BASE_PATH.str_replace($_ENV['website']['root'],"",parse_url($_SERVER["REQUEST_URI"], PHP_URL_PATH));
@@ -54,63 +55,8 @@ try
 
             default:
 
-                $uri['action'] =(!empty($uri['action']))?".{$uri['action']}":$uri['action'];
 
-
-                if(empty($uri["module"]))
-                {
-                    $uri["module"]="home";
-                    $uri["action"]="";
-                }
-
-                $itemType= $uri["module"];
-
-
-                //Policies
-
-                if(!empty($_ENV["policies"]["{$uri['module']}{$uri['action']}"]) && is_array($_ENV["policies"]["{$uri['module']}{$uri['action']}"]))
-                {
-
-                    foreach ($_ENV["policies"]["{$uri['module']}{$uri['action']}"] as $policy)
-                    {
-
-                        $policiesInc=POLICIES_PATH."/{$policy}.php";
-
-                        if(file_exists($policiesInc))
-                        {
-                            include ($policiesInc);
-                        }
-                    }
-
-
-                }
-
-                //Validation
-                $validationInc = BASE_PATH."/app/validations/{$uri['module']}{$uri['action']}.php";
-                if( !empty($_GET["act"]) && file_exists($validationInc))
-                {
-                    include ($validationInc);
-                }
-
-
-
-
-                include (CONTROLLER_PATH."/{$uri['module']}{$uri['action']}.php");
-
-                if(!empty($incBody))
-                {
-                    if(empty($incLayout))
-                    {
-                        $incLayout = TEMPLATE_PATH."/layouts/layout.php";
-                    }
-
-                    if(empty($incNavbar))
-                    {
-                        $incNavbar = TEMPLATE_PATH."/navbars/navbar.php";
-                    }
-                    include $incLayout;
-
-                }
+                   include (BASE_PATH."/.base/url/load.php");
 
                 break;
 

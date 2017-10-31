@@ -28,8 +28,6 @@ include TEMPLATE_PATH."/base/empty.php";
 
 $text = $_LANG["{$itemType}.nueva"];
 
-$href="{$_ENV["website"]["root"]}/{$itemType}/save";
-
 include TEMPLATE_PATH."/base/footer.php";
 
 
@@ -46,10 +44,10 @@ include TEMPLATE_PATH."/base/footer.php";
             var isPlaying =!isNaN(parseInt(item.active));
 
 
-            var url ='<?php echo $_ENV["website"]["root"]?>/streaming/start?act=true&id='+item.id;
+            var url ='<?php echo "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}";?>/streaming/start?act=true&id='+item.id;
             if(isPlaying)
             {
-                url ='<?php echo $_ENV["website"]["root"]?>/streaming/stop?act=true&id='+item.id;
+                url ='<?php echo "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}";?>/streaming/stop?act=true&id='+item.id;
             }
 
 

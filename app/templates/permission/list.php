@@ -15,8 +15,6 @@ include TEMPLATE_PATH."/base/empty.php";
 
 $text = $_LANG["{$itemType}.nuevo"];
 
-$href="{$_ENV["website"]["root"]}/{$itemType}/save";
-
 include TEMPLATE_PATH."/base/footer.php";
 
 

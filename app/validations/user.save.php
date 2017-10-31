@@ -20,13 +20,25 @@ if(empty($_POST[$prop]) || !ValidationService::validate($_POST[$prop],$regex))
 }
 
 
-$regex ="/^(?=.{4,20}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/";
+$regex ="/^(?=.{{$min},{$max}}$)(?![_.])(?!.*[_.]{2})[a-zA-Z0-9._]+(?<![_.])$/";
 $prop="username";
 $msg = $_LANG["validation.error.invalidFormat"];
 if(!empty($_POST[$prop]) && !ValidationService::validate($_POST[$prop],$regex))
 {
     $validationErrors["{$itemType}.{$prop}"][]=$msg;
 }
+
+
+$min=4;$max=100;
+$regex ="/^.{{$min},{$max}}$/";
+$msg  = str_replace("{a}",$min,$_LANG["validation.error.lengthBetween"]);
+$msg  = str_replace("{b}",$max,$msg);
+$prop="password";
+if(empty($_POST[$prop]) || !ValidationService::validate($_POST[$prop],$regex))
+{
+    $validationErrors["{$itemType}.{$prop}"][]=$msg;
+}
+
 
 
 

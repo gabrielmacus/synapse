@@ -7,10 +7,20 @@
  */
 
 define('BASE_PATH',dirname(dirname(__FILE__)));
+define('LOG_PATH',BASE_PATH."/.base/log");
+
 define('CONTROLLER_PATH',BASE_PATH."/app/controllers");
 define('TEMPLATE_PATH',BASE_PATH."/app/templates");
-define('LOG_PATH',BASE_PATH."/.base/log");
 define('POLICIES_PATH',BASE_PATH.'/app/policies');
+define('VALIDATION_PATH',BASE_PATH.'/app/validations');
+
+
+define("SITE_CONTROLLER_PATH",BASE_PATH."/site/controllers");
+define("SITE_TEMPLATE_PATH",BASE_PATH."/site/templates");
+define('SITE_POLICIES_PATH',BASE_PATH.'/site/policies');
+define('SITE_VALIDATION_PATH',BASE_PATH.'/site/validations');
+
+
 
 
 set_error_handler(function($errno, $errstr, $errfile, $errline){

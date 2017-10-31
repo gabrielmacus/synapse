@@ -10,7 +10,8 @@
         "root": "/synapse",
         "url": "http://192.168.69.107/synapse",
         "languages": ["es"],
-        "defaultLanguage": "es"
+        "defaultLanguage": "es",
+        "panelAccess":"panel"
     },
     "server": {
         "os": "windows"
@@ -48,4 +49,5 @@
         "outFileName": "out",
         "outFilePath": "/static/hls"
     }
+
 }

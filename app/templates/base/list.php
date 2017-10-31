@@ -1,8 +1,6 @@
 <?php
 
-$editUrl="{$_ENV["website"]["root"]}/{$itemType}/save";
-
-$deleteUrl = "{$_ENV["website"]["root"]}/{$itemType}/delete";
+$editUrl="{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$itemType}/save";
 
 $deletePrompt=$_LANG["{$itemType}.prompt.delete"];
 
@@ -35,7 +33,7 @@ if(count($items)>0)
 
                     <a class="edit" href="<?php echo $editUrl."?id={$v["id"]}"; ?>"><i class="material-icons">&#xE254;</i></a>
 				
-                    <a data-ng-click="openModal('<?php echo str_replace("{i}",$v["data1"],$deletePrompt)?>','yesNo',false,'delete(\'<?php echo $deleteUrl."?act=true&id={$k}" ?>\')')" class="delete" oncli><i class="material-icons">&#xE872;</i></a>
+                    <a data-ng-click="openModal('<?php echo str_replace("{i}",$v["data1"],$deletePrompt)?>','yesNo',false,'delete(\'<?php echo $itemType ?>\',<?php echo $k; ?>)')" class="delete" oncli><i class="material-icons">&#xE872;</i></a>
 					
                 </span>
             </li>

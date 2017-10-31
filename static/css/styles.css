@@ -203,10 +203,12 @@
     }
     .base-list li
     {
+        box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         width: 100%;
         font-size: 20px;
         margin-bottom: 5px;
-
+        align-items: center;
+        display: flex;
         background-color: #E0E0E0;
     }
     .base-list li:last-child
@@ -217,6 +219,17 @@
     {
         float: right;
     }
+    .base-list li a
+    {
+        width: 70%;
+        line-height: 25px;
+    }
+    .base-list li .controls
+    {
+        width: 30%;
+        float: right;
+        text-align: right;
+    }
     [data-ng-click]{
         cursor: pointer;
     }
@@ -224,6 +237,33 @@
     {
         background-color: #3949AB;
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    }
+    nav
+    {
+        width: 100%;
+    }
+    nav .avatar
+    {    margin-left: auto;
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+    }
+    nav .avatar figure
+    {
+        height: 36px;
+        background: white;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+    nav .avatar .username
+    {
+        margin-right: 20px;
+        /* font-weight: 600; */
+        letter-spacing: 1px;
+    }
+    nav .avatar figure img
+    {
+        height: 100%;
     }
     nav a
     {
@@ -326,7 +366,9 @@
         display: block;
     }
 	a.btn
-	{    text-decoration: underline;
+	{
+        border-bottom: 1px solid white;
+        padding-bottom: 1px;
 	}
 
 .base-footer

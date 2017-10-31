@@ -1,5 +1,5 @@
 
-<form  class="save flex padding" <?php if(!empty($_GET["id"])){ echo "data-ng-init='load(\"{$_ENV['website']['root']}/{$itemType}?act=true&id={$_GET["id"]}\",\"{$itemType}\")'"; } ?> data-ng-submit="save('<?php echo $_ENV['website']['root']?>/<?php echo $itemType; ?>/save?act=true',<?php echo $itemType;?>)">
+<form  class="save flex padding" <?php if(!empty($_GET["id"])){ echo "data-ng-init='load(\"{$itemType}\",{$_GET["id"]})'"; } ?> data-ng-submit="save('<?php echo $itemType; ?>',<?php echo $itemType;?>)">
 
     <?php
     $type="text";

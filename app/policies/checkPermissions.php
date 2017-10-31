@@ -18,7 +18,8 @@ if($userData->permissions_group != $_ENV["auth"]["developerPermissionGroup"]) {
         throw new Exception("user.error.permissionsNotFound",500);
     }
 
-    $userPermissionsRedirect = $userPermissions->loginRedirect;
+    $r=ltrim($userPermissions->loginRedirect,"/");
+    $userPermissionsRedirect = "{$_ENV["website"]["url"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$r}";
     $userPermissions = json_decode($userPermissions->actions,true);
 
 

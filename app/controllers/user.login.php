@@ -48,7 +48,9 @@ else
 
             setcookie("tk",JWT::encode($user,$_ENV["auth"]["secret"]),time()+$_ENV["auth"]["sessionTime"],'/');
 
-            $redirect =($_ENV["website"]["root"] !="")?$_ENV["website"]["root"]:'/';
+            $redirect =($_ENV["website"]["root"] !="")?$_ENV["website"]["root"]."/{$language}/{$_ENV["website"]["panelAccess"]}/":"/{$language}/{$_ENV["website"]["panelAccess"]}/";
+
+
 
             if(!empty($_COOKIE["redirect"]))
             {
