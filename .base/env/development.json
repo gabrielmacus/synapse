@@ -8,7 +8,7 @@
     },
     "website": {
         "root": "/synapse",
-        "url": "http://192.168.69.107/synapse",
+        "url": "http://macus.info.tm/synapse",
         "languages": ["es"],
         "defaultLanguage": "es",
         "panelAccess":"panel"

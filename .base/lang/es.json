@@ -53,7 +53,7 @@
   "streaming.error.streamingNotPlaying":"La transmisión no se está ejecutando",
   "streaming.error.streamingAlreadyPlaying":"La transmisión ya se está ejecutando",
   "streaming.error.streamingFolder":"Error al crear la carpeta donde se guardaría la transmisión",
-  "streeaming.error.browserNotSupported":"Navegador no soportado. Para un funcionamiento optimo, le recomendamos Google Chrome o Mozilla Firefox",
+  "streaming.error.browserNotSupported":"Navegador no soportado. Para un funcionamiento optimo, le recomendamos Google Chrome o Mozilla Firefox",
   "streaming.notStarted":"La transmisión no ha comenzado",
   "streaming.prompt.delete":"¿Desea eliminar la transmisión ´{i}´?",
 

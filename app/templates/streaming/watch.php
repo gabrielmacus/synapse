@@ -58,7 +58,7 @@ include TEMPLATE_PATH."/base/header.php";
                }
                else
                {
-                   $rootScope.openModal("<?php echo $_LANG['streeaming.error.browserNotSupported']; ?>",'message','warning');
+                   $rootScope.openModal("<?php echo $_LANG['streaming.error.browserNotSupported']; ?>",'message','warning');
 
                }
 

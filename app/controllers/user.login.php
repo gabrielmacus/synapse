@@ -57,6 +57,8 @@ else
                 $redirect = $_COOKIE["redirect"];
             }
 
+
+
             header("Location: {$redirect}");
 
         }

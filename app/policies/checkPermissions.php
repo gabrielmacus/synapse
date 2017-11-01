@@ -19,6 +19,7 @@ if($userData->permissions_group != $_ENV["auth"]["developerPermissionGroup"]) {
     }
 
     $r=ltrim($userPermissions->loginRedirect,"/");
+
     $userPermissionsRedirect = "{$_ENV["website"]["url"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$r}";
     $userPermissions = json_decode($userPermissions->actions,true);
 
