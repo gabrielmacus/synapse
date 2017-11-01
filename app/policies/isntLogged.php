@@ -10,7 +10,7 @@ include BASE_PATH."/.base/auth/check-user-data.php";
 
 if(!empty($userData))
 {
-    $redirect= $_ENV["website"]["root"];
+    //$redirect= $_ENV["website"]["root"];
 
     if(!empty($_COOKIE["redirect"]))
     {
@@ -20,10 +20,8 @@ if(!empty($userData))
 
     if(empty($redirect))
     {
-        $redirect ="/";
+        $redirect ="{$_ENV["website"]["url"]}/{$language}/{$_ENV["website"]["panelAccess"]}/";
     }
-
-    //TODO redireccionar correctamente aca, a la redireccion del usuario en cuestion
 
     header("Location: {$redirect}");
 

@@ -10,6 +10,10 @@
 
   "auth.error.invalidData":"Datos de autenticación inválidos",
   "auth.error.noData":"No se recibieron datos de autenticación",
+
+  "gp.auth.error.inactive":"La autenticación con Google Plus se encuentra deshabilitada",
+  "gp.auth.error.alreadyTakenEmail":"La cuenta de google seleccionada tiene un email que ya esta siendo utilizado",
+
   "sse.error.noData":"No se recibieron datos para enviar",
 
   "youtube.error.idNotSpecified":"No se especificó un id de video",

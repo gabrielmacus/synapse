@@ -11,3 +11,16 @@
 <link href="<?php echo  $_ENV["website"]["url"]."/static/css/ng-animation.css"?>" rel="stylesheet">
 
 <link rel="stylesheet" href="<?php echo  $_ENV["website"]["url"]."/static/css/styles.css"?>">
+
+<?php
+if(!empty($_ENV["auth"]["gp"]) && !empty($_ENV["auth"]["gp"]["active"]))
+{
+    ?>
+    <meta name="google-signin-scope" content="<?php echo $_ENV["auth"]["gp"]["scope"]?>">
+    <meta name="google-signin-client_id" content="<?php echo $_ENV["auth"]["gp"]["clientId"]; ?>">
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+    <?php
+}
+?>

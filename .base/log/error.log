@@ -1,16 +1,75 @@
 
-[Trying to get property of non-object,4,C:\xampp\htdocs\synapse\app\templates\streaming\watch.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
-
-[Trying to get property of non-object,5,C:\xampp\htdocs\synapse\app\templates\streaming\watch.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+user.error.permissionsNotFound,61,C:\xampp\htdocs\synapse\app\controllers\user.save.php
+[include(C:\xampp\htdocs\synapse/app/controllers/user.p.php): failed to open stream: No such file or directory,54,C:\xampp\htdocs\synapse\.base\url\load.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+auth.error.noData,58,C:\xampp\htdocs\synapse\app\controllers\user.login.php
 [readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
 [readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
 [readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
 [readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
 [readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
 [readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
-[include(C:\xampp\htdocs\synapse/site/controllers/user.login.php): failed to open stream: No such file or directory,54,C:\xampp\htdocs\synapse\.base\url\load.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
-[include(C:\xampp\htdocs\synapse/site/controllers/login.php): failed to open stream: No such file or directory,54,C:\xampp\htdocs\synapse\.base\url\load.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
 [readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
 [readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,40,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+[include(C:\xampp\htdocs\synapse/app/controllers/en.user.php): failed to open stream: No such file or directory,54,C:\xampp\htdocs\synapse\.base\url\load.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php
+gp.auth.error.alreadyTakenEmail,96,C:\xampp\htdocs\synapse\app\controllers\user.login.php

@@ -28,13 +28,17 @@ else
 
     $itemToSave = R::dispense($itemType);
 
-    $user = R::findOne('user',' id = ? ',[$userData->id]);
-
-    if(!empty($user))
+    if(empty($_POST["type"]) || $_POST["type"] == "account")
     {
+        $user = R::findOne('user',' id = ? ',[$userData->id]);
 
-        $itemToSave->user = $user;
+        if(!empty($user))
+        {
+
+            $itemToSave->user = $user;
+        }
     }
+
 
     if(empty($_POST["id"]))
     {

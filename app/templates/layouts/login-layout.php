@@ -7,7 +7,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	
 <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <?php
+    if(!empty($_ENV["auth"]["gp"]) && !empty($_ENV["auth"]["gp"]["active"]))
+    {
+        ?>
+        <meta name="google-signin-scope" content="<?php echo $_ENV["auth"]["gp"]["scope"]?>">
+        <meta name="google-signin-client_id" content="<?php echo $_ENV["auth"]["gp"]["clientId"]; ?>">
+        <script src="https://apis.google.com/js/platform.js?onload=gpLoaded" async defer></script>
 
+
+        <?php
+    }
+    ?>
  <style>
    body,html,.main-container
    {
@@ -15,6 +26,10 @@
 		  font-family:'Roboto',sans-serif;
    
   }
+   .login-redes
+   {
+       margin-top: 10px;
+   }
   .main-container
   {
 	   display: flex;

@@ -8,7 +8,7 @@
     },
     "website": {
         "root": "/synapse",
-        "url": "http://macus.info.tm/synapse",
+        "url": "http://localhost/synapse",
         "languages": ["es"],
         "defaultLanguage": "es",
         "panelAccess":"panel"
@@ -19,7 +19,13 @@
     "auth": {
         "secret": "sada3wqqwe",
         "sessionTime": 5184000,
-        "developerPermissionGroup":10
+        "developerPermissionGroup":10,
+        "gp":
+        {
+            "active":true,
+            "clientId":"83534570315-e6p78h0vo7hdop0i35bg75u2gtlg7s50.apps.googleusercontent.com",
+            "scope":"profile email"
+        }
     },
     "db": {
         "user": "root",
