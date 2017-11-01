@@ -23,6 +23,8 @@ if(!empty($userData))
         $redirect ="/";
     }
 
+    //TODO redireccionar correctamente aca, a la redireccion del usuario en cuestion
+
     header("Location: {$redirect}");
 
     exit();
