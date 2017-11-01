@@ -1,0 +1,2 @@
+- Si estoy en el panel, poner las politicas correspondientes, por defecto
+- Para las acciones de un formulario , usar {$itemType}
