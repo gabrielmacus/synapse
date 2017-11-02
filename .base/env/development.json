@@ -8,7 +8,7 @@
     },
     "website": {
         "root": "/synapse",
-        "url": "http://macus.info.tm/synapse",
+        "url": "http://localhost/synapse",
         "languages": ["es"],
         "defaultLanguage": "es",
         "panelAccess":"panel"
@@ -25,6 +25,14 @@
             "active":true,
             "clientId":"83534570315-e6p78h0vo7hdop0i35bg75u2gtlg7s50.apps.googleusercontent.com",
             "scope":"profile email"
+        },
+        "fb":
+        {
+            "active":true,
+            "appId":"1701971556493561",
+            "version":"v2.10",
+            "scopes":"public_profile,email"
+
         }
     },
     "db": {

@@ -3,6 +3,8 @@
   "login.pass":"Contraseña",
   "login.title":"Ingreso al sistema",
   "login.accept":"Ingresar",
+  "login.gp":"Ingresar con Google",
+  "login.fb":"Ingresar con Facebook",
 
   "db.error.invalidDatabase":"La base de datos seleccionada es inválida",
   "db.error.reading":"Error al leer la base de datos",
@@ -13,6 +15,9 @@
 
   "gp.auth.error.inactive":"La autenticación con Google Plus se encuentra deshabilitada",
   "gp.auth.error.alreadyTakenEmail":"La cuenta de google seleccionada tiene un email que ya esta siendo utilizado",
+
+  "fb.auth.error.inactive":"La autenticación con Facebook se encuentra deshabilitada",
+  "fb.auth.error.alreadyTakenEmail":"La cuenta de facebook seleccionada tiene un email que ya esta siendo utilizado",
 
   "sse.error.noData":"No se recibieron datos para enviar",
 

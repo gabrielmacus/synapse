@@ -60,41 +60,57 @@ else
             break;
 
         case "gp":
+        case "fb":
 
-            if(empty($_ENV["auth"]["gp"]) || empty($_ENV["auth"]["gp"]["active"]))
+            if(empty($_ENV["auth"][$_GET["act"]]) || empty($_ENV["auth"][$_GET["act"]]["active"]))
             {
-                throw new Exception("gp.auth.error.inactive",400);
+                throw new Exception("{$_GET["act"]}.auth.error.inactive",400);
             }
 
-            $gpPermission=R::findOne('permission',' name = ? ',['gp']);
+            $gpPermission=R::findOne('permission',' name = ? ',[$_GET["act"]]);
 
             if(empty($gpPermission))
             {
-                throw new Exception("gp.auth.error.inactive",400);
+                throw new Exception("{$_GET["act"]}.auth.error.inactive",400);
             }
 
             $idtoken=$_POST["idtoken"];
             unset($_POST["idtoken"]);
             $_POST["password"] = $idtoken;
-            $_POST["type"]="gp";
-            $_POST["username"]=rtrim($_POST["email"],"@gmail.com");
+            $_POST["type"]=$_GET["act"];
+
+            list($username, $domain) = explode('@', $_POST["email"] . "@"); // ."@" is a trick: look note below
+            //."@": This is made to avoid in short critical errors with the list command and ensure that explode will produce at least two variables as needed.
+
+
+            $_POST["username"]=$username;
             $_POST["permissions_group"]=$gpPermission->id;
             $_POST["status"]=1;
 
+            //Si hay otro usuario con el mismo nombre de usuario que genere a partir del email, genero otro igual pero con el numero de cantidad
+            $usernameCount=R::count('user',' username = ? ',[$_POST["username"]]);
+
+            $_POST["username"] = ($usernameCount==0)?$_POST["username"]:$_POST["username"].$usernameCount;
 
 
-            $gpUser = R::findOne('user',' email = ? ',[$_POST["email"]]);
+            $snUser = R::findOne('user',' email = ? ',[$_POST["email"]]);
 
-            if(empty($gpUser))
+            if(empty($snUser))
             {
                 include (CONTROLLER_PATH."/user.save.php");
             }
             else
             {
-                if($gpUser->type == "account")
+                if($snUser->type != $_GET["act"])
                 {
-                    throw new Exception("gp.auth.error.alreadyTakenEmail",400);
+                    throw new Exception("{$_GET["act"]}.auth.error.alreadyTakenEmail",400);
                 }
+                else
+                {
+                    $_POST["id"]=$snUser->id;
+                    include (CONTROLLER_PATH."/user.save.php");
+                }
+
             }
 
             $user =$_POST;
@@ -103,10 +119,7 @@ else
 
 
 
-            break;
 
-        case "fb":
-            //Facebook
 
             break;
     }
