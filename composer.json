@@ -8,8 +8,5 @@
       "name": "author's name",
       "email": "email@example.com"
     }
-  ],
-  "require": {
-    "google/apiclient": "v2.2.0"
-  }
+  ]
 }

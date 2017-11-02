@@ -32,7 +32,9 @@ set_error_handler(function($errno, $errstr, $errfile, $errline){
 
 },E_ALL);
 
-include (BASE_PATH."/vendor/autoload.php");
+
+//Composer
+//include (BASE_PATH."/vendor/autoload.php");
 
 if(empty($env) || $env = "DEV")
 {
