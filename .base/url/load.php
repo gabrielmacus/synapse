@@ -25,7 +25,7 @@ $templatePath = (!empty($_ENV["panel"]))?TEMPLATE_PATH:SITE_TEMPLATE_PATH;
 
 //Policies
 
-if(!empty($_ENV["policies"]["{$uri['module']}{$uri['action']}"]) && is_array($_ENV["policies"]["{$uri['module']}{$uri['action']}"]))
+if(isset($_ENV["policies"]["{$uri['module']}{$uri['action']}"]) && is_array($_ENV["policies"]["{$uri['module']}{$uri['action']}"]))
 {
 
     foreach ($_ENV["policies"]["{$uri['module']}{$uri['action']}"] as $policy)
@@ -38,6 +38,27 @@ if(!empty($_ENV["policies"]["{$uri['module']}{$uri['action']}"]) && is_array($_E
             include ($policiesInc);
         }
     }
+
+}
+elseif(!empty($_ENV[$_ENV["website"]["panelAccess"]]))
+{
+    //En el panel, x defecto chequeo autenticacion y permisos, si no hay policies especificadas para el controlador
+
+    //Politica "si esta logueado"
+    $isLogged =$policiesPath."/isLogged.php";
+    if(file_exists($isLogged))
+    {
+        include ($isLogged);
+    }
+    //Politica "chequeo los permisos"
+    $cpermissions =$policiesPath."/checkPermissions.php";
+    if(file_exists($cpermissions))
+    {
+        include ($cpermissions);
+    }
+
+
+
 
 
 }

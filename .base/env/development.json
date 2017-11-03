@@ -43,20 +43,8 @@
         "name": "synapse"
     },
     "policies": {
-        "home": ["isLogged","checkPermissions"],
-        "user":["isLogged","checkPermissions"],
-        "user.save":["isLogged","checkPermissions"],
-        "user.login": ["isntLogged"],
-        "streaming.save": ["isLogged", "checkPermissions"],
-        "streaming.start": ["isLogged", "checkPermissions"],
-        "streaming.stop": ["isLogged", "checkPermissions"],
-        "streaming.view": ["isLogged", "checkPermissions"],
-        "streaming.watch": ["isLogged","checkPermissions"],
-        "streaming": ["isLogged", "checkPermissions"],
-        "repository": ["isLogged","checkPermissions"],
-        "repository.save": ["isLogged","checkPermissions"],
-        "permission": ["isLogged", "checkPermissions"],
-        "permission.save": ["isLogged","checkPermissions"]
+        "user.salir":[],
+        "user.login": ["isntLogged"]
     },
     "hls": {
         "timeout": 10,
