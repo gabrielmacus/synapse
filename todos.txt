@@ -1,2 +1,3 @@
 - Si estoy en el panel, poner las politicas correspondientes, por defecto  ✔
-- Para las acciones de un formulario , usar {$itemType}
+- Para las acciones de un formulario , usar {$itemType} ✔
+- Al producirse un error, distinguir si debe usar pagina de error o no, y mostrarla si es el caso

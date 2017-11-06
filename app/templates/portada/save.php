@@ -9,12 +9,10 @@
     ?>
 
     <?php
-    $type="text";
-    $label=$_LANG["{$itemType}.cmd"];
-    $model="{$itemType}.cmd";
-    include (TEMPLATE_PATH."/base/form/textarea.php");
+    $associatedType="repository";
+    include (TEMPLATE_PATH."/base/form/associated.php");
     ?>
-    
+
     <?php
     $text1 =$_LANG["{$itemType}.submit"];
     $text2 =$_LANG["{$itemType}.cancel"];

@@ -1,3 +1,7 @@
+
+<?php
+    header("Content-type: text/css; charset: UTF-8");
+?>
     /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -92,9 +96,21 @@
 
     .main-container
     {
+
         width: 70%;
-        height: 100%;
         margin: auto;
+        <?php
+         if(!empty($_GET["embed"]))
+             {
+                 ?>
+        margin-top: 1.5vw;
+        width: 95%;
+        <?php
+             }
+         ?>
+
+        height: 100%;
+
         position: relative;
         left:0;
 
@@ -267,6 +283,7 @@
     }
     nav a
     {
+        position: relative;
         color: white!important;
     }
     .base-list li.active
@@ -578,6 +595,7 @@
         right: 20px;
     }
     nav .menu a{
+
         font-weight: 600;
         color: black!important;
     }
@@ -592,3 +610,41 @@
         top: -8px;
         right: 10px;
     }
+    nav a.active::after
+    {
+        content: "";
+       width: 100%;
+        position: absolute;
+        bottom: 0;
+        right:0;
+        background-color: white;
+        height:4px;
+    }
+.checkbox
+{
+    margin-right: 10px;
+    position: relative;
+}
+.checked,.unchecked
+{
+    display: none;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+}
+.checkbox [type='checkbox']
+{
+    display: none;
+}
+.checkbox [type='checkbox']:checked + label .unchecked
+{
+    display: block;
+}
+.checkbox [type='checkbox']:not(:checked) + label .checked
+{
+    display: block;
+}

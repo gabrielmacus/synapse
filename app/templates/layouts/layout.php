@@ -9,25 +9,33 @@
 </head>
 <body data-ng-controller="mainController" data-ng-app="app" class="flex <?php if(!empty($bodyClass)){ echo implode(" ",$bodyClass); }?>">
 
-<div class="mobile-header">
-    <a  data-ng-click="toggleMenu()" class=" hamburguer">
-        <i class="material-icons">&#xE5D2;</i>
-    </a>
-
-</div>
-<header class="main-header flex animated" data-ng-class="menuIsOpened">
-    <?php
-    if(isset($incNavbar))
-    {
-        include ($incNavbar);
-    }
+<?php
+if(empty($_GET["embed"]))
+{
     ?>
-</header>
+    <div class="mobile-header">
+        <a  data-ng-click="toggleMenu()" class=" hamburguer">
+            <i class="material-icons">&#xE5D2;</i>
+        </a>
+
+    </div>
+    <header class="main-header flex animated" data-ng-class="menuIsOpened">
+        <?php
+        if(isset($incNavbar))
+        {
+            include ($incNavbar);
+        }
+        ?>
+    </header>
+    <?php
+}
+?>
+
 
 <section    class="main-container flex animated">
     <script>
       
-        var app = angular.module('app', ['ngAnimate']);
+        var app = angular.module('app', ['ngAnimate','angular-sortable-view']);
 
         app.controller('mainController', function($scope,$rootScope,$http) {
 
@@ -63,8 +71,12 @@
 
             }
             
-            $rootScope.load=function(type,id)
+            $rootScope.load=function(id,type)
             {
+                if(!type && <?php echo !empty($itemType); ?>)
+                {
+                    type="<?php echo $itemType ?>";
+                }
                 var url="<?php echo "{$_ENV["website"]["url"]}/{$language}/{$_ENV["website"]["panelAccess"]}/";?>"+type+"?act=true&id="+id;
                 console.log(url);
                 $http.get(url)
@@ -84,8 +96,12 @@
 
             }
 
-            $rootScope.delete  = function (type,id) {
+            $rootScope.delete  = function (id,type) {
 
+                if(!type && <?php echo !empty($itemType); ?>)
+                {
+                    type="<?php echo $itemType ?>";
+                }
                 var url = "<?php echo "{$_ENV["website"]["url"]}/{$language}/{$_ENV["website"]["panelAccess"]}/"; ?>"+type+"/delete?id="+id+"&act=true";
 
                 $http.get(url)
@@ -98,8 +114,11 @@
 
 
             }
-            $rootScope.save=function (type,data) {
-
+            $rootScope.save=function (data,type) {
+                if(!type && <?php echo !empty($itemType); ?>)
+                {
+                    type="<?php echo $itemType ?>";
+                }
                 var url = "<?php echo "{$_ENV["website"]["url"]}/{$language}/{$_ENV["website"]["panelAccess"]}/"; ?>"+type+"/save?act=true";
 
 
@@ -154,5 +173,8 @@
 </section>
 <?php include (TEMPLATE_PATH."/modal/message.php"); ?>
 <?php include (TEMPLATE_PATH."/modal/yesNo.php"); ?>
+<?php include (TEMPLATE_PATH."/modal/iframe.php"); ?>
+
+
 </body>
 </html>

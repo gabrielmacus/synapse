@@ -23,6 +23,8 @@ try
 
                 break;
 
+
+
             default:
                 if(file_exists(BASE_PATH."/.base/cache/mimes.php"))
                 {
@@ -36,8 +38,17 @@ try
                 break;
         }
 
-        header("Content-Type: {$contentType}");
-        readfile($inc);
+        if($ext!="php")
+        {
+            header("Content-Type: {$contentType}");
+            readfile($inc);
+        }
+        else
+        {
+
+            include ($inc);
+        }
+
 
 
     }

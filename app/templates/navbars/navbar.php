@@ -12,7 +12,7 @@
         if(!strpos($v,"."))
         {
             ?>
-            <a class="padding" href="<?php echo "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$v}"?>">
+            <a class="padding <?php echo ($itemType==$v)?"active":""; ?>" href="<?php echo "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$v}"?>">
                 <?php echo $_LANG["menu.{$v}"] ?>
             </a>
             <?php
