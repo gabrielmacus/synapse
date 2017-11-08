@@ -52,6 +52,8 @@
   "menu.portada":"Portadas",
 
   "form.associate":"Asociar {i}",
+  "form.associate.empty":"Sin {i} asociadas",
+  "form.associate.streamings":"Transmisiones",
 
   "streaming.list":"Listado de transmisiones",
   "streaming.empty":"No hay transmisiones disponibles",

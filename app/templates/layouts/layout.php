@@ -147,7 +147,18 @@ if(empty($_GET["embed"]))
                 $rootScope.modal  = {};
                 $rootScope.modal[type] = true;
 
-                $rootScope.modal["text"]=msg;
+                switch(type)
+                {
+                    default:
+                        $rootScope.modal["text"]=msg;
+                        break;
+
+                    case "iframe":
+                        $rootScope.modal[type] = msg;
+                        break;
+
+
+                }
 
                 if(mode)
                 {

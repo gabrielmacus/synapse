@@ -11,4 +11,7 @@
 <link href="<?php echo  $_ENV["website"]["url"]."/static/css/ng-animation.css"?>" rel="stylesheet">
 
 <link rel="stylesheet" href="<?php echo  $_ENV["website"]["url"]?>/static/css/styles.css.php?<?php echo http_build_query($_GET)?>">
+
+<link rel="stylesheet" href="<?php echo  $_ENV["website"]["url"]?>/static/css/grid.css.php?<?php echo http_build_query($_GET)?>">
+
 <script src="<?php echo $_ENV["website"]["url"] ?>/static/js/angular-sortable-view.min.js"></script>

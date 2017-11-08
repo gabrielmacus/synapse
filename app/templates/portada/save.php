@@ -1,5 +1,5 @@
 
-<form  class="save flex padding" <?php if(!empty($_GET["id"])){ echo "data-ng-init='load({$_GET["id"]})'"; } ?> data-ng-submit="save(<?php echo $itemType;?>)">
+<form   class="save flex padding" <?php if(!empty($_GET["id"])){ echo "data-ng-init='load({$_GET["id"]})'"; } ?> data-ng-submit="save(<?php echo $itemType;?>)">
 
     <?php
     $type="text";
@@ -9,7 +9,8 @@
     ?>
 
     <?php
-    $associatedType="repository";
+    $associatedType="streaming";
+    $groupName="streamings";
     include (TEMPLATE_PATH."/base/form/associated.php");
     ?>
 

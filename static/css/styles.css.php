@@ -1,7 +1,8 @@
-
 <?php
-    header("Content-type: text/css; charset: UTF-8");
+ header("Content-type: text/css; charset: UTF-8");
+
 ?>
+
     /* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
@@ -118,11 +119,6 @@
     .main-header
     {
         width: 100%;
-    }
-    .flex
-    {
-        display: flex;
-        flex-wrap: wrap;
     }
 
 
@@ -647,4 +643,69 @@
 .checkbox [type='checkbox']:not(:checked) + label .checked
 {
     display: block;
+}
+.associated a
+{
+    margin-left: auto;
+    text-decoration: underline;
+    padding-top: 10px;
+}
+
+.iframe iframe
+{
+    width: 100%;
+    height: 100%;
+}
+.iframe .modal-box
+{
+    padding:0px;
+    width: 40%;
+    height: 40vh;
+}
+
+.associated .empty
+{    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+
+}
+.associated ul
+{
+    width: 100%;
+    margin-top: 10px;
+}
+.associated ul li:not(.empty)
+{
+
+    display: flex;
+    align-items: center;
+    position: relative;
+    flex-wrap: wrap;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.associated ul li figure
+{
+    width: 30%;
+    height: 10vh;
+}
+.associated ul li .info
+{
+    width: 70%;
+    text-align: center;
+}
+.associated ul li figure img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.associated ul li .info h3
+{
+    width: 90%;
+    margin: auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
