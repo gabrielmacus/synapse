@@ -2,7 +2,7 @@
 <?php
 $controllerName="{$itemType}".ucfirst($groupName)."Controller";
 
-$arrayName = "{$itemType}.associated.{$groupName}";
+$arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
 ?>
 <script>
 
@@ -13,9 +13,15 @@ $arrayName = "{$itemType}.associated.{$groupName}";
         {
             $rootScope.<?php echo $itemType ?>={};
         }
+
         if(!$rootScope.<?php echo $itemType ?>.associated)
         {
             $rootScope.<?php echo $itemType ?>.associated={};
+        }
+
+        if(!$rootScope.<?php echo $itemType ?>.associated.<?php echo $associatedType?>)
+        {
+            $rootScope.<?php echo $itemType ?>.associated.<?php echo $associatedType?>={};
         }
 
 
@@ -50,47 +56,24 @@ $arrayName = "{$itemType}.associated.{$groupName}";
     <label>
         <?php echo $_LANG["form.associate.{$groupName}"];?>
     </label>
-    <ul class="flex gutter">
-        <!--
+    <ul class="flex gutter" sv-root sv-part="<?php echo $arrayName; ?>" >
         <li class="empty padding " data-ng-if="<?php echo $arrayName?>.length==0">
 
-           <p><?php echo str_replace("{i}",$_LANG["menu.{$associatedType}"],$_LANG["form.associate.empty"]); ?></p>
+            <p><?php echo str_replace("{i}",$_LANG["menu.{$associatedType}"],$_LANG["form.associate.empty"]); ?></p>
         </li>
+
+        <!--
 
         <li data-ng-repeat="i in <?php echo $arrayName?>">
             {{i.data1}}
         </li>
         -->
-        <li class="cl xl3 l4 m6 s12 xs12">
-            <figure>
-                <img src="https://i.pinimg.com/736x/56/79/7e/56797edd0f810b67b11d81b28455a5f0--places-to-go-monastic.jpg">
+        <li  sv-element data-ng-repeat="i in <?php echo $arrayName?>  ">
+            <figure data-ng-if="i.image">
+                <img data-ng-src="{{i.image}}">
             </figure>
             <div class="info">
-                <h3>Demo 1</h3>
-            </div>
-        </li>
-        <li class="cl xl3 l4 m6 s12 xs12">
-            <figure>
-                <img src="https://i.pinimg.com/736x/56/79/7e/56797edd0f810b67b11d81b28455a5f0--places-to-go-monastic.jpg">
-            </figure>
-            <div class="info">
-                <h3>Demo 1</h3>
-            </div>
-        </li>
-        <li class="cl xl3 l4 m6 s12 xs12">
-            <figure>
-                <img src="https://i.pinimg.com/736x/56/79/7e/56797edd0f810b67b11d81b28455a5f0--places-to-go-monastic.jpg">
-            </figure>
-            <div class="info">
-                <h3>Demo 1</h3>
-            </div>
-        </li>
-        <li class="cl xl3 l4 m6 s12 xs12">
-            <figure>
-                <img src="https://i.pinimg.com/736x/56/79/7e/56797edd0f810b67b11d81b28455a5f0--places-to-go-monastic.jpg">
-            </figure>
-            <div class="info">
-                <h3>Demo 1</h3>
+                <h3>{{i.data1}}</h3>
             </div>
         </li>
     </ul>

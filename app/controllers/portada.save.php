@@ -15,28 +15,29 @@ else
 
     $res = [] ;
 
-    $repository = R::dispense($itemType);
+    $item = R::dispense($itemType);
 
     $user = R::findOne('user',' id = ? ',[$userData->id]);
 
     if(!empty($user))
     {
 
-        $repository->user = $user;
+        $item->user = $user;
     }
 
     if(empty($_POST["id"]))
     {
-        $repository->created_at = time();
+        $item->created_at = time();
     }
     else
     {
-        $repository->updated_at = time();
+        $item->updated_at = time();
     }
 
-    ArrayService::setPropertiesToBean($_POST,$repository);
+    ArrayService::setPropertiesToBean($_POST,$item);
 
-    $res = R::store($repository);
+    $res = R::store($item);
+
 
 
     echo json_encode($res);
