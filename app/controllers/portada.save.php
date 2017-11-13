@@ -36,9 +36,19 @@ else
 
     ArrayService::setPropertiesToBean($_POST,$item);
 
+    foreach ($_POST["associated"]["streaming"]["streamings"] as $k=>$v)
+    {
+
+        $streaming = R::findOne("streaming"," id = ?",[$v["id"]]);
+
+
+        $item->link("portada_streaming", ["order"=>$k])->setAttr("streaming",$streaming);
+
+    }
+
+
+
     $res = R::store($item);
-
-
 
     echo json_encode($res);
 }
