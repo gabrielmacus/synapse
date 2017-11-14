@@ -1,3 +1,20 @@
 
-Invalid Bean value: property associated,7126,C:\xampp\htdocs\synapse\.base\db\rb.php
-Invalid Bean value: property associated,7126,C:\xampp\htdocs\synapse\.base\db\rb.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[Trying to get property of non-object,31,C:\xampp\htdocs\synapse\app\controllers\portada.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[Trying to get property of non-object,31,C:\xampp\htdocs\synapse\app\controllers\portada.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],29,C:\xampp\htdocs\synapse\.base\autoload.php
+[Undefined variable: associatedBean,53,C:\xampp\htdocs\synapse\.base\db\read.php],29,C:\xampp\htdocs\synapse\.base\autoload.php

@@ -15,9 +15,8 @@ if(!empty($_GET["act"]))
     {
         case 1:
             //Asi guardo contenido asociado con datos en la tabla intermedia
-            $imagen = R::dispense("image");
 
-            $imagen->name="woods.jpg";
+            $imagen = R::findOne('imagen'," id = ? ",[1]);
 
             $post = R::dispense("post");
 
@@ -26,13 +25,19 @@ if(!empty($_GET["act"]))
             $post->link("post_imagen",
                 [
                     'caption'=>"blahh foobar"
-                ])->setAttr("image",$imagen);
+                ])->setAttr("image_id",$imagen);
 
-            R::storeAll([$post,$imagen]);
+            R::store($post);
 
             break;
 
         case 2:
+            $imagen = R::dispense("image");
+
+            $imagen->name="woods.jpg";
+
+
+            R::store($imagen);
 
             break;
 

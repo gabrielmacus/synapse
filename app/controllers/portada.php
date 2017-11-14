@@ -7,22 +7,8 @@
  */
 
 
-$query ="";
-$params=[];
-
-$query ="";
-
-if(!empty($_GET["id"]))
-{
-
-    $query.=" {$itemType}.id = ? ";
-    $params[]=$_GET["id"];
-}
-
-//$data= R::find($itemType,$query,$params);
-
-$data = R::find('portada',$query,$params);
-
+//Leo los datos
+include (BASE_PATH."/.base/db/read.php");
 
 
 /**

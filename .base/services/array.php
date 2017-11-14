@@ -12,7 +12,7 @@ class ArrayService
     {
         foreach ($array as $k=>$v)
         {
-            $bean[$k]=$v;
+            $bean->setAttr($k,$v);
         }
     }
 
