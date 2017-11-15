@@ -24,8 +24,8 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
             $rootScope.<?php echo $itemType ?>.associated.<?php echo $associatedType?>={};
         }
 
-
         $rootScope.<?php echo $arrayName;?>=[];
+
 
         $rootScope.<?Php echo $groupName?>="<?php echo $_ENV["website"]["url"]."/".$language."/".$_ENV["website"]["panelAccess"]."/".$associatedType."?embed=true&group={$groupName}";?>&filter=";
 
@@ -38,6 +38,8 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
                 var data = event.data;
 
                 console.log(data);
+
+                console.log($rootScope.portada);
                 angular.merge($rootScope.<?php  echo $arrayName?>,data);
                 $rootScope.modal=false;
                 $rootScope.$apply();
@@ -57,23 +59,23 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
         <?php echo $_LANG["form.associate.{$groupName}"];?>
     </label>
     <ul class="flex gutter" sv-root sv-part="<?php echo $arrayName; ?>" >
-        <li class="empty padding " data-ng-if="<?php echo $arrayName?>.length==0">
+        <li class="empty padding " data-ng-if="!<?php echo $arrayName?> || <?php echo $arrayName?>.length==0">
 
             <p><?php echo str_replace("{i}",$_LANG["menu.{$associatedType}"],$_LANG["form.associate.empty"]); ?></p>
         </li>
 
-        <!--
 
-        <li data-ng-repeat="i in <?php echo $arrayName?>">
-            {{i.data1}}
-        </li>
-        -->
         <li  sv-element data-ng-repeat="i in <?php echo $arrayName?>  ">
-            <figure data-ng-if="i.image">
-                <img data-ng-src="{{i.image}}">
-            </figure>
+            <?php
+            if(!empty($imageAttr)) {
+                ?>
+                <figure data-ng-if="<?php echo "i.{$imageAttr}";?>">
+                    <img data-ng-src="<?php echo "{{i.{$imageAttr}}}"; ?>">
+                </figure>
+                <?php
+            }?>
             <div class="info">
-                <h3>{{i.data1}}</h3>
+                <h3><?php echo "{{i.{$data1Attr}}}";?></h3>
             </div>
         </li>
     </ul>
@@ -92,4 +94,6 @@ $groupName=false;
 $arrayName=false;
 $associatedType=false;
 $controllerName=false;
+$imageAttr = false;
+$data1Attr=false;
 ?>

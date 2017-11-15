@@ -9,6 +9,7 @@
     ?>
 
     <?php
+    $data1Attr="name";
     $associatedType="streaming";
     $groupName="streamings";
     include (TEMPLATE_PATH."/base/form/associated.php");

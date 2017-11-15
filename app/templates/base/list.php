@@ -22,7 +22,7 @@ if(count($items)>0)
                 {
                     ?>
                     <div class="checkbox">
-                        <input  data-item='<?php echo json_encode($v);?>'  type="checkbox"  id="<?php echo $v["id"]?>checkbox">
+                        <input  data-item='<?php echo json_encode($data[$v["id"]]);?>'  type="checkbox"  id="<?php echo $v["id"]?>checkbox">
                         <label  for="<?php echo $v["id"]?>checkbox">
                             <i class="material-icons checked">&#xE835;</i>
                             <i class="material-icons unchecked">&#xE834;</i>

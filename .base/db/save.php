@@ -41,23 +41,59 @@ if(!empty($_POST["associated"]))
             foreach ($j as $k=>$v)
             {
                 //$streaming = R::findOne("streaming"," id = ? ",[$v["id"]]);
-
-                $associatedItem = R::dispense($associatedType);
-
-                $associatedItem->id= $v["id"];
-
-                $linkName ="{$associatedType}_{$itemType}";
-
-                $linkData = ["order"=>$k,"array"=>$arrayName];
-
-                if(!empty($v["extra"]))
+                if(empty($v["delete"]))
                 {
-                    //Datos extra en la asociacion
-                    $linkData = array_merge($linkData,$v["extra"]);
+                    //Guardo
+
+                    $associatedItem = R::dispense($associatedType);
+
+                    $associatedItem->id= $v["id"];
+
+                    $linkName ="{$associatedType}_{$itemType}";
+
+                    if(empty($v["link_id"]))
+                    {
+                        //Agrego una asociacion
+                        $linkData = ["position"=>$k,"array"=>$arrayName];
+
+                        if(!empty($v["extra"]))
+                        {
+                            //Datos extra en la asociacion
+                            $linkData = array_merge($linkData,$v["extra"]);
+
+                        }
+
+                        $item->link($linkName,$linkData)->setAttr($associatedType,$associatedItem);
+
+                    }
+                    else
+                    {
+                        //Edito una asociacion
+
+                        $oSql ="UPDATE {$linkName} SET pos = {$k} ";
+
+                        if(!empty($v["extra"]))
+                        {
+                            foreach ($v["extra"] as $j => $i)
+                            {
+                                $oSql.= ",{$j} = '{$i}' ";
+                            }
+                        }
+                        $oSql.= " WHERE id = {$v["link_id"]} ";
+
+                        echo $oSql;
+                        R::exec($oSql);
+
+                    }
+
+
 
                 }
+                else
+                {
+                    //Elimino una asociacion
 
-                $item->link($linkName,$linkData)->setAttr($associatedType,$associatedItem);
+                }
 
             }
 

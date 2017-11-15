@@ -1,17 +1,8 @@
 <?php
 
 
-$query ="";
-$params=[];
+include (BASE_PATH."/.base/db/read.php");
 
-if(!empty($_GET["id"]))
-{
-
-    $query=" id = ? ";
-    $params[]=$_GET["id"];
-}
-
-$streamings= R::find($itemType,$query,$params);
 
 
 /**
@@ -28,12 +19,12 @@ if(empty($_GET["act"]))
 
     $items = [];
 
-    foreach ($streamings as $k=>$v)
+    foreach ($data as $k=>$v)
     {   
         
-        $items[$v->id]["data1"]=$v->name;
-        $items[$v->id]["active"] =$v->pid;
-        $items[$v->id]["id"] =$v->id;
+        $items[$v["id"]]["data1"]=$v["name"];
+        $items[$v["id"]]["active"] =(!empty($v["pid"]))?$v["pid"]:"";
+        $items[$v["id"]]["id"] =$v["id"];
     }
     
 }

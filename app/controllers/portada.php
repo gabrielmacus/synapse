@@ -28,8 +28,8 @@ if(empty($_GET["act"]))
     foreach ($data as $k=>$v)
     {
 
-        $items[$v->id]["data1"]="{$v->name}";
-        $items[$v->id]["id"] =$v->id;
+        $items[$v["id"]]["data1"]="{$v["name"]}";
+        $items[$v["id"]]["id"] =$v["id"];
     }
 
 

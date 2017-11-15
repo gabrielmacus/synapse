@@ -6,9 +6,6 @@
  * Time: 11:11 AM
  */
 
-
-
-
 $query = (empty($query))?"":$query;
 
 $params =(empty($params))?[]:$params;
@@ -21,12 +18,14 @@ if(!empty($_GET["id"]))
     $params[]=$_GET["id"];
 }
 
+$oResult = R::find($itemType,$query,$params);
 
+foreach ($oResult as $oValue)
+{
 
-$data = R::find($itemType,$query,$params);
+    $data[$oValue->id] =$oValue->export();
 
-var_dump($data);
-
+}
 //Asocio los elementos
 if(!empty($data))
 {
@@ -42,28 +41,16 @@ if(!empty($data))
         $dataKeys = array_keys($data);
 
 
-        $oSql="SELECT * FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id AND {$v["table_name"]}.{$itemType}_id IN (".implode(",",$dataKeys).")";
+        $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id AND {$v["table_name"]}.{$itemType}_id IN (".implode(",",$dataKeys).")";
 
         $links = R::getAll($oSql);
 
         foreach ($links as $link)
         {
-           // $associatedBean = R::convertToBean($asociatedType,$link);
-
-            $data[$link["{$itemType}_id"]][$link["array"]][$link["order"]]=$associatedBean;
-
-
+            $data[$link["{$itemType}_id"]]["associated"][$asociatedType][$link["array"]][$link["pos"]]=$link;
         }
-        //echo json_encode($links);
-
-
-        //$assocIds=implode(",",R::getAssoc($oSql));
-
-        //R::find($asociatedType," id IN (?) ",[$assocIds])
 
 
     }
 
 }
-
-echo json_encode($data);
