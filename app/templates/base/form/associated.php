@@ -27,7 +27,11 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
                 $rootScope.<?php echo $itemType ?>.associated.<?php echo $associatedType?>={};
             }
 
-            $rootScope.<?php echo $arrayName;?>={"delete":[],"save":[]};
+            if(!$rootScope.<?php echo $arrayName;?>)
+            {
+                $rootScope.<?php echo $arrayName;?>={"delete":[],"save":[]};
+            }
+
         }
 
 
