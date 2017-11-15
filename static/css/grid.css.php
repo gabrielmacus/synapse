@@ -1,138 +1,35 @@
 
 <?php
+
     header("Content-type: text/css; charset: UTF-8");
 
-    $gutter =8;
-
     $columns=12;
+    $breakpoints =  [1024,768,600];
 
-    $breakpoints=
-    [
-            "xl"=>"",
-            "l"=>1024,
-            "m"=>768,
-            "s"=>600,
-            "xs"=>420
-];
-    ?>
+?>
 
-<?php
-    foreach ($breakpoints as $k=>$v)
-        {
-
-            if(!empty($v))
-                {
-
-                    ?>
-
-                    @media screen and (max-width: <?php echo $v?>px) {
-                    <?php
-
-                    for ($i=1;$i<=$columns;$i++)
-                        {
-
-
-                            ?>
-
-                    <?php
-                        $width = (($i*100)/$columns);
-
-                        }
-                    ?>
-                    }
-                        <?php
-                }
-
-
-        }
-
- ?>
 .flex
 {
     display: flex;
     flex-wrap: wrap;
 }
 
-/*
+.col-3 [class^="cl-"]:nth-child(3n),
+.col-2 [class^="cl-"]:nth-child(2n){ margin-right: 0}
+.col-4 [class^="cl-"]:nth-child(4n) { margin-right: 0}
 
+[class*="cl-"] {float:left;margin-right:1%}
 
-.gutter
-{
-    justify-content: space-between;
-}
+.cl-1 {width:7.416666666666667%}
+.cl-2 {width:15.833333333333332%}
+.cl-3 {width:24.25%}
+.cl-4 {width:32.666666666666664%}
+.cl-5 {width:41.083333333333336%}
+.cl-6 {width:49.5%}
+.cl-7 {width:57.91666666666667%}
+.cl-8 {width:66.33333333333333%}
+.cl-9 {width:74.75%}
+.cl-10 {width:83.16666666666667%}
+.cl-11 {width:91.58333333333334%}
+.cl-12 {width:100%}
 
-
-
-<?php
-    foreach ($breakpoints as $k=>$v)
-        {
-
-            if(!empty($v))
-                {
-                    ?>
-                    @media screen and (max-width: <?php echo $v?>px)
-                    {
-                    <?php
-                    for ($i=1;$i<=$columns;$i++)
-                        {
-
-                        $width = (($i*100)/$columns);
-                            ?>
-
-
-                        .cl.<?php echo $k.$i?>
-                        {
-
-                        <?php echo "width:{$width}%;"?>;
-
-                        }
-                        .gutter .cl.<?php echo $k.$i?>
-                        {
-                            <?php echo "width:calc({$width}% - {$gutter}px);"?>;
-                            margin-bottom: <?php echo $gutter * 2 ?>px;
-                        }
-
-
-                    <?php
-                            }
-                        ?>
-
-                    }
-                <?php
-                }
-                else
-                {
-
-                for ($i=1;$i<=$columns;$i++)
-                                 {
-
-                                 $width = (($i*100)/$columns);
-                                     ?>
-
-                .cl.<?php echo $k.$i?>
-                {
-
-                <?php echo "width:{$width}%;"?>;
-
-                }
-                .gutter .cl.<?php echo $k.$i?>
-                {
-
-                   <?php echo "width:calc({$width}% - {$gutter}px);"?>;
-                    margin-bottom: <?php echo $gutter * 2 ?>px;
-                }
-
-                <?php
-                        }
-
-                }
-
-
-        }
-?>
-.cl:last-child
-{
-    margin-right: 0%;
-}
-
-*/

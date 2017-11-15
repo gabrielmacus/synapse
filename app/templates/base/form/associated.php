@@ -7,41 +7,51 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
 <script>
 
 
+
     app.controller('<?php echo $controllerName?>', function($scope,$rootScope,$http) {
 
-        if(!$rootScope.<?php echo $itemType ?>)
-        {
-            $rootScope.<?php echo $itemType ?>={};
+
+        $rootScope.init<?php echo $itemType.ucfirst($groupName);?>=function () {
+            if(!$rootScope.<?php echo $itemType ?>)
+            {
+                $rootScope.<?php echo $itemType ?>={};
+            }
+
+            if(!$rootScope.<?php echo $itemType ?>.associated)
+            {
+                $rootScope.<?php echo $itemType ?>.associated={};
+            }
+
+            if(!$rootScope.<?php echo $itemType ?>.associated.<?php echo $associatedType?>)
+            {
+                $rootScope.<?php echo $itemType ?>.associated.<?php echo $associatedType?>={};
+            }
+
+            $rootScope.<?php echo $arrayName;?>={"delete":[],"save":[]};
         }
 
-        if(!$rootScope.<?php echo $itemType ?>.associated)
-        {
-            $rootScope.<?php echo $itemType ?>.associated={};
-        }
 
-        if(!$rootScope.<?php echo $itemType ?>.associated.<?php echo $associatedType?>)
-        {
-            $rootScope.<?php echo $itemType ?>.associated.<?php echo $associatedType?>={};
-        }
-
-        $rootScope.<?php echo $arrayName;?>=[];
-
+        $rootScope.init<?php echo $itemType.ucfirst($groupName);?>();
 
         $rootScope.<?Php echo $groupName?>="<?php echo $_ENV["website"]["url"]."/".$language."/".$_ENV["website"]["panelAccess"]."/".$associatedType."?embed=true&group={$groupName}";?>&filter=";
 
         window.addEventListener("message", function (event) {
 
-
             if(event.origin+"<?php echo rtrim($_ENV["website"]["root"],"/");?>/" == "<?php echo rtrim($_ENV["website"]["url"],"/");?>/")
             {
 
+                $rootScope.init<?php echo $itemType.ucfirst($groupName);?>();
+
                 var data = event.data;
 
-                console.log(data);
+                for(var k in data)
+                {
+                    $rootScope.<?php  echo $arrayName?>.save.push(data[k]);
+                }
 
-                console.log($rootScope.portada);
-                angular.merge($rootScope.<?php  echo $arrayName?>,data);
+
                 $rootScope.modal=false;
+
                 $rootScope.$apply();
 
 
@@ -58,14 +68,14 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
     <label>
         <?php echo $_LANG["form.associate.{$groupName}"];?>
     </label>
-    <ul class="flex gutter" sv-root sv-part="<?php echo $arrayName; ?>" >
-        <li class="empty padding " data-ng-if="!<?php echo $arrayName?> || <?php echo $arrayName?>.length==0">
+    <ul class="col-4" sv-root sv-part="<?php echo $arrayName; ?>.save" >
+        <li class="empty padding " data-ng-if="!<?php echo $arrayName?>.save || <?php echo $arrayName?>.save.length==0">
 
             <p><?php echo str_replace("{i}",$_LANG["menu.{$associatedType}"],$_LANG["form.associate.empty"]); ?></p>
         </li>
 
+        <li class="cl-3"  sv-element data-ng-repeat="(k,i) in <?php echo $arrayName?>.save" >
 
-        <li  sv-element data-ng-repeat="i in <?php echo $arrayName?>  ">
             <?php
             if(!empty($imageAttr)) {
                 ?>
@@ -77,6 +87,7 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
             <div class="info">
                 <h3><?php echo "{{i.{$data1Attr}}}";?></h3>
             </div>
+            <span class="delete" data-ng-click="removeAssociated(k,<?php echo $arrayName?>)"><i class="material-icons">&#xE14C;</i></span>
         </li>
     </ul>
 

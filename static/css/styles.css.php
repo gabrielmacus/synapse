@@ -672,17 +672,28 @@
 }
 .associated ul
 {
+
+    background-color: #E0E0E0;
+    padding:10px;
     width: 100%;
     margin-top: 10px;
 }
 .associated ul li:not(.empty)
 {
-
+    background-color: white;
+    min-height: 80px;
     display: flex;
     align-items: center;
     position: relative;
     flex-wrap: wrap;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.associated ul li .delete
+{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+
 }
 
 .associated ul li figure
@@ -690,11 +701,20 @@
     width: 30%;
     height: 10vh;
 }
-.associated ul li .info
+.associated ul li.has-image .info
 {
     width: 70%;
     text-align: center;
 }
+.associated ul li .info
+{
+    width: 100%;
+    text-align: center;
+}
+
+
+
+
 .associated ul li figure img
 {
     width: 100%;

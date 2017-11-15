@@ -175,6 +175,21 @@ if(empty($_GET["embed"]))
                 $rootScope.modal  = false;
             }
 
+            $rootScope.removeAssociated=function (i,arr) {
+
+
+
+                if(!arr.delete)
+                {
+                    arr.delete=[];
+                }
+
+
+                arr.delete.push(angular.copy(arr.save[i]));
+
+               arr.save.splice(i,1);
+
+            }
 
         });
 

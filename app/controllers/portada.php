@@ -28,6 +28,7 @@ if(empty($_GET["act"]))
     foreach ($data as $k=>$v)
     {
 
+
         $items[$v["id"]]["data1"]="{$v["name"]}";
         $items[$v["id"]]["id"] =$v["id"];
     }
@@ -42,11 +43,7 @@ else
 
     if(empty($dontPrint))
     {
-
-
-        $data = json_encode($data);
-
-        echo $data;
+        echo json_encode($data);
 
     }
 

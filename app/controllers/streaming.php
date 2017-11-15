@@ -13,9 +13,9 @@ include (BASE_PATH."/.base/db/read.php");
  */
 if(empty($_GET["act"]))
 {
-    $bodyClass[]='streaming-list';
-    $incBody=TEMPLATE_PATH."/streaming/list.php";
 
+    $bodyClass[]="{$itemType}-list";
+    $incBody=TEMPLATE_PATH."/{$itemType}/list.php";
 
     $items = [];
 
@@ -32,7 +32,7 @@ else
 {
     if(empty($dontPrint))
     {
-        echo json_encode($streamings);
+        echo json_encode($data);
     }
 
 }

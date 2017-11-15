@@ -7,3 +7,11 @@
  */
 
 $incBody=SITE_TEMPLATE_PATH."/home/cuerpo.php";
+
+$_GET["act"] = true;
+$dontPrint=true;
+
+
+$itemType="portada";
+include (BASE_PATH."/.base/db/read.php");
+$dataToSkin = reset($data);

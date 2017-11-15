@@ -28,6 +28,7 @@ else
 
 
 
+
 if(!empty($_POST["associated"]))
 {
 
@@ -37,24 +38,40 @@ if(!empty($_POST["associated"]))
         foreach ($i as $arrayName => $j)
         {
 
+            $linkName ="{$associatedType}_{$itemType}";
 
-            foreach ($j as $k=>$v)
+            if(!empty($j["delete"]))
             {
-                //$streaming = R::findOne("streaming"," id = ? ",[$v["id"]]);
-                if(empty($v["delete"]))
-                {
-                    //Guardo
 
+                foreach ($j["delete"] as $k=>$v)
+                {
+
+
+                    if(!empty($v["link_id"]))
+                    {
+                        R::trash($linkName,$v["link_id"]);
+
+                    }
+
+
+                }
+            }
+
+            if(!empty($j["save"]))
+            {
+                foreach ($j["save"] as $k=>$v)
+                {
+
+                    //Guardo
                     $associatedItem = R::dispense($associatedType);
 
                     $associatedItem->id= $v["id"];
 
-                    $linkName ="{$associatedType}_{$itemType}";
 
                     if(empty($v["link_id"]))
                     {
                         //Agrego una asociacion
-                        $linkData = ["position"=>$k,"array"=>$arrayName];
+                        $linkData = ["pos"=>$k,"array"=>$arrayName];
 
                         if(!empty($v["extra"]))
                         {
@@ -81,20 +98,12 @@ if(!empty($_POST["associated"]))
                         }
                         $oSql.= " WHERE id = {$v["link_id"]} ";
 
-                        echo $oSql;
                         R::exec($oSql);
 
                     }
 
 
-
                 }
-                else
-                {
-                    //Elimino una asociacion
-
-                }
-
             }
 
         }

@@ -20,6 +20,8 @@ if(!empty($_GET["id"]))
 
 $oResult = R::find($itemType,$query,$params);
 
+$data=[];
+
 foreach ($oResult as $oValue)
 {
 
@@ -33,6 +35,7 @@ if(!empty($data))
 
     $asociations = R::getAll($oSql);
 
+
     foreach ($asociations as $k=>$v)
     {
 
@@ -41,13 +44,25 @@ if(!empty($data))
         $dataKeys = array_keys($data);
 
 
-        $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id AND {$v["table_name"]}.{$itemType}_id IN (".implode(",",$dataKeys).")";
+        $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id AND {$v["table_name"]}.{$itemType}_id IN (".implode(",",$dataKeys).")
+        WHERE  {$v["table_name"]}.{$itemType}_id IS NOT NULL ORDER BY pos ASC";
 
         $links = R::getAll($oSql);
 
         foreach ($links as $link)
         {
-            $data[$link["{$itemType}_id"]]["associated"][$asociatedType][$link["array"]][$link["pos"]]=$link;
+
+            if(!empty($_ENV[$_ENV["website"]["panelAccess"]]))
+            {
+                $data[$link["{$itemType}_id"]]["associated"][$asociatedType][$link["array"]]["save"][]=$link;
+            }
+            else
+            {
+                $data[$link["{$itemType}_id"]][$link["array"]][]=$link;
+            }
+
+
+
         }
 
 
