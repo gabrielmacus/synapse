@@ -15,6 +15,16 @@
     include (TEMPLATE_PATH."/base/form/associated.php");
     ?>
 
+
+
+    <?php
+    $data1Attr="name";
+    $associatedType="repository";
+    $groupName="repositorios";
+    include (TEMPLATE_PATH."/base/form/associated.php");
+    ?>
+
+
     <?php
     $text1 =$_LANG["{$itemType}.submit"];
     $text2 =$_LANG["{$itemType}.cancel"];

@@ -6,10 +6,8 @@
  * Time: 0:01
  */
 
-
 //Leo los datos
 include (BASE_PATH."/.base/db/read.php");
-
 
 /**
  * Created by PhpStorm.

@@ -54,6 +54,7 @@
   "form.associate":"Asociar {i}",
   "form.associate.empty":"Sin {i} asociadas",
   "form.associate.streamings":"Transmisiones",
+  "form.associate.repositorios":" ",
 
   "streaming.list":"Listado de transmisiones",
   "streaming.empty":"No hay transmisiones disponibles",

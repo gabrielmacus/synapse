@@ -32,7 +32,8 @@ else
 
                 }
 
-                window.parent.postMessage(itemsJson, "<?php echo $_ENV["website"]["url"];?>");
+
+                window.parent.postMessage({"items":itemsJson,"group":"<?php echo $_GET["group"];?>"}, "<?php echo $_ENV["website"]["url"];?>");
             }
 
         </script>

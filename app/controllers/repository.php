@@ -1,16 +1,6 @@
 <?php
-
-
-$query ="";
-$params=[];
-if(!empty($_GET["id"]))
-{
-
-    $query=" id = ? ";
-    $params[]=$_GET["id"];
-}
-
-$repos= R::find($itemType,$query,$params);
+//Leo los datos
+include (BASE_PATH."/.base/db/read.php");
 
 
 /**
@@ -27,11 +17,11 @@ if(empty($_GET["act"]))
 
     $items = [];
 
-    foreach ($repos as $k=>$v)
+    foreach ($data as $k=>$v)
     {
 
-        $items[$v->id]["data1"]=$v->name;
-        $items[$v->id]["id"] =$v->id;
+        $items[$v["id"]]["data1"]=$v["name"];
+        $items[$v["id"]]["id"] =$v["id"];
     }
 
 }
@@ -39,7 +29,7 @@ else
 {
     if(empty($dontPrint))
     {
-        echo json_encode($repos);
+        echo json_encode($data);
     }
 
 }

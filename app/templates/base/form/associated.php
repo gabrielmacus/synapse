@@ -41,12 +41,13 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
 
         window.addEventListener("message", function (event) {
 
-            if(event.origin+"<?php echo rtrim($_ENV["website"]["root"],"/");?>/" == "<?php echo rtrim($_ENV["website"]["url"],"/");?>/")
+
+            if(event.origin+"<?php echo rtrim($_ENV["website"]["root"],"/");?>/" == "<?php echo rtrim($_ENV["website"]["url"],"/");?>/" && event.data.group == "<?php echo $groupName;?>")
             {
 
                 $rootScope.init<?php echo $itemType.ucfirst($groupName);?>();
 
-                var data = event.data;
+                var data = event.data.items;
 
                 for(var k in data)
                 {
