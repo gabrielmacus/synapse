@@ -52,9 +52,10 @@
   "menu.portada":"Portadas",
 
   "form.associate":"Asociar {i}",
-  "form.associate.empty":"Sin {i} asociadas",
+  "form.associate.empty":"Sin {i}",
+
   "form.associate.streamings":"Transmisiones",
-  "form.associate.repositorios":" ",
+  "form.associate.repositorios":"Repositorios",
 
   "streaming.list":"Listado de transmisiones",
   "streaming.empty":"No hay transmisiones disponibles",
@@ -97,6 +98,8 @@
   "repository.submit":"Guardar",
   "repository.cancel":"Cancelar",
   "repository.error.notExists":"El repositorio seleccionado no existe",
+  "repository.formats":"Formatos permitidos",
+  "repository.":,
 
   "permission.list":"Listado de grupos de permisos",
   "permission.empty":"No hay grupos permisos disponibles",
@@ -106,6 +109,7 @@
   "permission.cancel":"Cancelar",
   "permission.name":"Nombre o identificador del grupo de permisos",
   "permission.loginRedirect":"Redirección de login",
+  "permission.authorizedActions":"Acciones autorizadas",
   "permission.error.notExists":"El grupo de permisos seleccionado no existe",
 
   "user.list":"Listado de usuarios",

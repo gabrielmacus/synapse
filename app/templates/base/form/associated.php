@@ -74,7 +74,7 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
         <?php echo $_LANG["form.associate.{$groupName}"];?>
     </label>
     <ul class="col-4" sv-root sv-part="<?php echo $arrayName; ?>.save" >
-        <li class="empty padding " data-ng-if="!<?php echo $arrayName?>.save || <?php echo $arrayName?>.save.length==0">
+        <li class="empty  " data-ng-if="!<?php echo $arrayName?>.save || <?php echo $arrayName?>.save.length==0">
 
             <p><?php echo str_replace("{i}",$_LANG["menu.{$associatedType}"],$_LANG["form.associate.empty"]); ?></p>
         </li>

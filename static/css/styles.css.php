@@ -282,15 +282,45 @@
         position: relative;
         color: white!important;
     }
+    .base-list li
+    {
+        position: relative;
+    }
     .base-list li.active
     {
         background: #7986CB;
         color: white;
     }
+
+
+
+    .base-list li:after
+    {
+        content: "";
+        width: 4px;
+        background: #212121;
+        position: absolute;
+        left: -6px;
+        opacity: 0;
+        height: 100%;
+        -webkit-transition: all 250ms;
+        -moz-transition: all 250ms;;
+        -ms-transition: all 250ms;;
+        -o-transition: all 250ms;;
+        transition: all 250ms;;
+
+    }
+    .base-list li:hover:after
+    {
+        left: 0px;
+        opacity: 1;
+    }
+
+    /*
     .base-list li:hover
     {
         border-left: 6px solid #212121;
-    }
+    }*/
     .empty
     {
         width:100%;
@@ -666,6 +696,9 @@
 .associated .empty
 {    width: 100%;
     margin-top: 10px;
+    padding-top: 20px;
+    /* padding: 0; */
+    padding-bottom: 20px;
     margin-bottom: 10px;
     text-align: center;
 

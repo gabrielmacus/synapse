@@ -48,7 +48,8 @@ if(!empty($data))
         $dataKeys = array_keys($data);
 
 
-        $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id AND {$v["table_name"]}.{$itemType}_id IN (".implode(",",$dataKeys).")  WHERE  {$v["table_name"]}.{$itemType}_id IS NOT NULL ORDER BY pos ASC";
+        $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id    WHERE  {$v["table_name"]}.{$itemType}_id IN (".implode(",",$dataKeys).") ORDER BY pos ASC";
+
 
         $links = R::getAll($oSql);
 

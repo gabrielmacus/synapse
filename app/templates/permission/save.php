@@ -7,7 +7,7 @@
     include (TEMPLATE_PATH."/base/form/input.php");
     ?>
     <?php
-    $label="Acciones autorizadas";
+    $label=$_LANG["{$itemType}.authorizedActions"];;
     $options=ArrayService::controllersToArray();
 
     unset($options["user.login"]);

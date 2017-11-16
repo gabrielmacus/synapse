@@ -37,7 +37,30 @@ if(empty($_GET["embed"]))
       
         var app = angular.module('app', ['ngAnimate','angular-sortable-view']);
 
+
+
+
+
         app.controller('mainController', function($scope,$rootScope,$http) {
+
+            $rootScope.inArray=function (needles,haystack) {
+
+
+               if(needles && haystack)
+               {
+                   for (var k in needles)
+                   {
+                       if(haystack.indexOf(needles[k])> -1)
+                       {
+                           return true;
+                       }
+                   }
+
+               }
+
+                return false;
+
+            };
 
             $rootScope.toggleMenu = function () {
 
@@ -179,15 +202,20 @@ if(empty($_GET["embed"]))
 
 
 
-                if(!arr.delete)
+                if(arr.save[i]["link_id"])
                 {
-                    arr.delete=[];
+                    if(!arr.delete)
+                    {
+                        arr.delete=[];
+                    }
+
+
+                    arr.delete.push(angular.copy(arr.save[i]));
+
+
                 }
+                arr.save.splice(i,1);
 
-
-                arr.delete.push(angular.copy(arr.save[i]));
-
-               arr.save.splice(i,1);
 
             }
 
