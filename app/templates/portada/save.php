@@ -16,6 +16,17 @@
     ?>
 
 
+    <?php
+    $data1Attr="name";
+    $associatedType="streaming";
+    $groupName="streamings2";
+    include (TEMPLATE_PATH."/base/form/associated.php");
+    ?>
+
+
+
+
+
 
     <?php
     $data1Attr="name";

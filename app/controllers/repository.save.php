@@ -15,29 +15,7 @@ else
 
     $res = [] ;
 
-    $repository = R::dispense($itemType);
-
-    $user = R::findOne('user',' id = ? ',[$userData->id]);
-
-    if(!empty($user))
-    {
-
-        $repository->user = $user;
-    }
-
-    if(empty($_POST["id"]))
-    {
-        $repository->created_at = time();
-    }
-    else
-    {
-        $repository->updated_at = time();
-    }
-
-    ArrayService::setPropertiesToBean($_POST,$repository);
-
-    $res = R::store($repository);
-
+    include (BASE_PATH."/.base/db/save.php");
 
     echo json_encode($res);
 }

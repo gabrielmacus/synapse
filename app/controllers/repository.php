@@ -29,7 +29,16 @@ else
 {
     if(empty($dontPrint))
     {
-        echo json_encode($data);
+        foreach ($data as $k=> $item)
+        {
+            if(!empty($data[$k]["formats"]))
+            {
+                $data[$k]["formats"] =json_decode( $data[$k]["formats"],true);
+            }
+
+        }
+
+        echo json_encode($data,JSON_NUMERIC_CHECK);
     }
 
 }

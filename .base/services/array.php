@@ -12,7 +12,15 @@ class ArrayService
     {
         foreach ($array as $k=>$v)
         {
-            $bean->setAttr($k,$v);
+            if(!is_array($v))
+            {
+                $bean->setAttr($k,$v);
+            }
+            else
+            {
+                $bean->setAttr($k,json_encode($v));
+            }
+
         }
     }
 
