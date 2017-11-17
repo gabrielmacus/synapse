@@ -99,7 +99,7 @@
   "repository.cancel":"Cancelar",
   "repository.error.notExists":"El repositorio seleccionado no existe",
   "repository.formats":"Formatos permitidos",
-  "repository.":,
+  "repository.maxSize":"Tamaño máximo (mb)",
 
   "permission.list":"Listado de grupos de permisos",
   "permission.empty":"No hay grupos permisos disponibles",

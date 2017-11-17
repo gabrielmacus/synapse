@@ -17,17 +17,17 @@
     include (TEMPLATE_PATH."/base/form/select.php");
     ?>
 
+    <!---
     <div data-ng-if="inArray(['jpg','png','gif'],<?php echo "{$itemType}.formats"?>)">
-
-        <?php
-        $type="text";
-        $label=$_LANG["{$itemType}.name"];
-        $model="{$itemType}.name";
-        include (TEMPLATE_PATH."/base/form/input.php");
-        ?>
-
     </div>
+    --->
 
+    <?php
+    $type="number";
+    $label=$_LANG["{$itemType}.maxSize"];
+    $model="{$itemType}.maxSize";
+    include (TEMPLATE_PATH."/base/form/input.php");
+    ?>
 
 
 
