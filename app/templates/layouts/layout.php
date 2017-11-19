@@ -35,7 +35,7 @@ if(empty($_GET["embed"]))
 <section    class="main-container flex animated">
     <script>
       
-        var app = angular.module('app', ['ngAnimate','angular-sortable-view']);
+        var app = angular.module('app', ['ngAnimate','angular-sortable-view','angularFileUpload']);
 
 
 
@@ -137,7 +137,7 @@ if(empty($_GET["embed"]))
 
 
             }
-            $rootScope.save=function (data,type) {
+            $rootScope.save=function (data,type,callback) {
                 if(!type && <?php echo !empty($itemType); ?>)
                 {
                     type="<?php echo $itemType ?>";
@@ -155,7 +155,10 @@ if(empty($_GET["embed"]))
                 $http.post(url,param(data),config)
                     .then(function (e) {
 
-                        location.reload();
+                        if(!callback)
+                        {
+                            location.reload();
+                        }
 
                     },$rootScope.error);
             }

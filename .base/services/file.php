@@ -13,12 +13,12 @@ class FileService
 
         if(!$handle = fopen($path, $type))
         {
-         throw new Exception("file.error.open");
+         throw new Exception("file.error.open",500);
         }
 
        if(!$result = fwrite($handle, $data))
         {
-            throw new Exception("file.error.write");
+            throw new Exception("file.error.write",500);
         }
 
         return $result;
@@ -32,7 +32,7 @@ class FileService
     }
     public static function deleteDir($dirPath) {
         if (! is_dir($dirPath)) {
-            throw new Exception("file.error.notDir");
+            throw new Exception("file.error.notDir",400);
         }
         if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
             $dirPath .= '/';
@@ -47,5 +47,17 @@ class FileService
             }
         }
         rmdir($dirPath);
+    }
+    public static function move($file,$path)
+    {
+
+
+        return move_uploaded_file($file,$path);
+
+    }
+
+    public static function mmkdir($path)
+    {
+        if(!is_dir($path)) { mkdir($path, 0777, true); }
     }
 }

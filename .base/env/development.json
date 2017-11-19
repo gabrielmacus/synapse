@@ -50,6 +50,10 @@
         "timeout": 10,
         "outFileName": "out",
         "outFilePath": "/static/hls"
+    },
+    "upload":
+    {
+        "tmpFolder":".tmp"
     }
 
 }

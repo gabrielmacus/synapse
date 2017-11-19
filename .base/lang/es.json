@@ -50,6 +50,7 @@
   "menu.repository":"Repositorios",
   "menu.user":"Usuarios",
   "menu.portada":"Portadas",
+  "menu.file":"Archivos",
 
   "form.associate":"Asociar {i}",
   "form.associate.empty":"Sin {i}",
@@ -135,6 +136,17 @@
   "portada.submit":"Guardar",
   "portada.cancel":"Cancelar",
   "portada.error.notExists":"La portada seleccionada no existe",
-  "portada.name":"Nombre"
+  "portada.name":"Nombre",
+
+  "file.list":"Listado de archivos",
+  "file.empty":"No hay archivos disponibles",
+  "file.nueva":"Subir archivos",
+  "file.prompt.delete":"¿Desea eliminar la portada ´{i}´?",
+  "file.error.notExists":"El archivo seleccionado no existe",
+  "file.error.tmpUpload":"Error al subir el archivo temporal",
+  "file.submit":"Guardar",
+  "file.name":"Nombre de archivo",
+  "file.cancel":"Cancelar",
+  "file.dropZone":"Arrastre un archivo"
 
 }

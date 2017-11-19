@@ -45,5 +45,6 @@ if(!empty($_GET["act"]))
 }
 
 //$vase->ownProductTagList;
-
+echo hash('sha256',"sercan02");;
+echo "<br>";
 echo "ok";

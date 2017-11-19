@@ -1,5 +1,16 @@
 <div class="form-block">
-    <label><?php echo $label; ?></label>
+    <?php
+    if(!empty($label))
+    {
+        ?>
+        <label><?php echo $label; ?></label>
+        <?php
+    }
+    ?>
+
     <input class="" data-ng-model="<?php echo $model ?>" type="<?php echo $type; ?>">
     <?php include "error.php"?>
 </div>
+<?php
+$label=false;
+?>

@@ -31,7 +31,7 @@ foreach ($oResult as $oValue)
 //Asocio los elementos
 if(!empty($data))
 {
-    $oSql ='SELECT table_name, table_schema AS dbname FROM INFORMATION_SCHEMA.TABLES where table_name like "%'.$itemType.'_%" OR table_name like "%_'.$itemType.'%" AND table_schema = "'.$_ENV["db"]["name"].'"';
+    $oSql ='SELECT table_name, table_schema AS dbname FROM INFORMATION_SCHEMA.TABLES where (table_name like "%'.$itemType.'_%" OR table_name like "%_'.$itemType.'%" ) AND table_schema = "'.$_ENV["db"]["name"].'"';
 
     $asociations = R::getAll($oSql);
 
@@ -50,6 +50,7 @@ if(!empty($data))
 
         $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id    WHERE  {$v["table_name"]}.{$itemType}_id IN (".implode(",",$dataKeys).")
          AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";
+
 
 
         $links = R::getAll($oSql);

@@ -762,3 +762,66 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
+.uploads figure
+{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.24);
+    height: 200px;
+}
+[uploader].drop-zone
+{
+    background: #E0E0E0;
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    margin-bottom: 10px;
+}
+[uploader][nv-file-over]
+{
+    margin: auto;
+    width: 96%;
+    height: 70%;
+    border: dashed 3px #6d6c6c;
+    display: flex;
+    align-items: center;
+}
+[uploader][nv-file-over] p
+{
+    margin: auto;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    color: #6d6c6c;
+}
+[uploader][nv-file-over] p .material-icons
+{
+    position: relative;
+    margin-left: 10px;
+
+
+}
+[uploader][nv-file-over].dragging-file p .material-icons
+{
+
+    
+    animation: onDragFile 0.3s alternate infinite;
+}
+[uploader][nv-file-over].dragging-file p
+{
+    color: #212121;;
+    
+}
+[uploader][nv-file-over].dragging-file
+{
+    border-color: #212121;
+
+}
+
+
+
+
+
+@keyframes onDragFile {
+    0%{bottom: 0px;transform: scale(1);}
+    100%{bottom: 7px;transform: scale(1.2);}
+}

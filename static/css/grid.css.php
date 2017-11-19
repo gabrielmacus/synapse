@@ -14,11 +14,12 @@
     flex-wrap: wrap;
 }
 
-.col-3 [class^="cl-"]:nth-child(3n),
-.col-2 [class^="cl-"]:nth-child(2n){ margin-right: 0}
-.col-4 [class^="cl-"]:nth-child(4n) { margin-right: 0}
+.col-3 .cl:nth-child(3n),
+.col-2 .cl:nth-child(2n){ margin-right: 0}
+.col-4 .cl:nth-child(4n) { margin-right: 0}
 
-[class*="cl-"] {float:left;margin-right:1%}
+.cl {float:left;margin-right:1%}
+.cl img{height:100%;width: 100%;object-fit: cover}
 
 .cl-1 {width:7.416666666666667%}
 .cl-2 {width:15.833333333333332%}

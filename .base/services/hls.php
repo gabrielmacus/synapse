@@ -19,7 +19,7 @@ class HlsService
 
         if(!is_dir($path) && !mkdir($path))
         {
-            throw new Exception("streaming.error.streamingFolder");
+            throw new Exception("streaming.error.streamingFolder",500);
         }
 
         $cmd.=" -f hls {$path}/{$_ENV["hls"]["outFileName"]}.m3u8";
