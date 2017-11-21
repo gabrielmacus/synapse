@@ -69,4 +69,16 @@ class FileService
         return $ext;
 
     }
+
+    public static function makeUrl($file)
+    {
+        if(!empty($file["url"]))
+        {
+            $url  =$_ENV["ftp"]["website"]."/".$file["url"];
+
+            return $url;
+        }
+
+        return false;
+    }
 }

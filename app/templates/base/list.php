@@ -43,7 +43,9 @@ if(count($items)>0)
                     <?php
                     if (!empty($extraActions) && is_array($extraActions)) {
                         foreach ($extraActions as $clave => $valor) {
+
                             $clickAction = (!empty($valor["clickAction"])) ? 'data-ng-click=\'' . str_replace("{item}", json_encode($v), $valor["clickAction"]) . '\'' : "";
+
 
                             $href = (!empty($valor["href"])) ? "href=" . $valor["href"] : "";
                             ?>

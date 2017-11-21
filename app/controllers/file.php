@@ -18,7 +18,7 @@ include (BASE_PATH."/.base/db/read.php");
 if(empty($_GET["act"]))
 {
     $bodyClass[]="{$itemType}-list";
-    $incBody=TEMPLATE_PATH."/{$itemType}/list.php";
+    $incBody=TEMPLATE_PATH."/{$itemType}/save.php";
 
 
     $items = [];
@@ -26,8 +26,14 @@ if(empty($_GET["act"]))
     {
         if(!empty($v["name"]))
         {
-            $items[$v["id"]]["data1"]="{$v["name"]}";
-            $items[$v["id"]]["id"] =$v["id"];
+
+            $f["size"]="{$v["size"]}";
+            $f["id"] =$v["id"];
+            $f["name"]=$v["name"];
+            $f["description"]=$v["description"];
+            $f["url"] =FileService::makeUrl($v);
+
+            $items[]["file"]=$f;
         }
 
     }

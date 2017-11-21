@@ -14,6 +14,12 @@
     flex-wrap: wrap;
 }
 
+
+.fila
+{
+    width: 100%;
+}
+
 .col-3 .cl:nth-child(3n),
 .col-2 .cl:nth-child(2n){ margin-right: 0}
 .col-4 .cl:nth-child(4n) { margin-right: 0}

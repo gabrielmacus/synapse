@@ -1,14 +1,20 @@
 
-<form   class="save flex padding" <?php if(!empty($_GET["id"])){ echo "data-ng-init='load({$_GET["id"]})'"; } ?> data-ng-submit="saveFiles()">
+<form   class="save flex padding"  data-ng-submit="saveFiles()">
     <script>
         app.controller('uploadController', function($rootScope, FileUploader) {
             $rootScope.uploader = new FileUploader(
                 {autoUpload :true,url:"<?php echo "{$_ENV["website"]["url"]}"?>/panel/file/upload?act=true"}
             );
-            $rootScope.uploads=[];
+
+
+            $rootScope.uploads=<?php echo json_encode($items);?>;
+
+
+
             $rootScope.uploader.onBeforeUploadItem = function(item) {
+                item.edited=true;
                 $rootScope.uploads.push(item);
-                console.info('onBeforeUploadItem', item);
+               // console.info('onBeforeUploadItem', item);
             };
             $rootScope.uploader.onProgressItem = function(fileItem, progress) {
 
@@ -22,7 +28,7 @@
 
                 if(!fileItem.isError )
                 {
-
+                    //TODO deberia aparecer un toast avisandome que el archivo se subio correctamente
                     $rootScope.uploads[idx].file.url = response[0];
                 }
                 else
@@ -43,9 +49,10 @@
                 {
                     var ext = url.split(".");
 
-
-
                     ext = ext[ext.length - 1];
+
+                    //Elimino el qs
+                    ext = ext.split("?")[0];
 
                     switch (ext)
                     {
@@ -68,18 +75,48 @@
 
             }
 
+            $rootScope.onChangeItem=function (item) {
+
+                $rootScope.uploads[item].edited=true;
+
+            }
+            $rootScope.deleteFile=function (item) {
+
+                if($rootScope.uploads[item].file.id)
+                {
+                    $rootScope.uploads[item].file.delete=true;
+                    $rootScope.uploads[item].edited=true;
+                }
+                else
+                {
+                    $rootScope.uploads.splice(item,1);
+                }
+
+            }
+
             $rootScope.saveFiles=function () {
 
-                asyncForEach($rootScope.uploads,function () {
+                asyncForEach($rootScope.uploads.filter(function (el) { return el.edited == true; }),function () {
+
+                    location.reload();
 
                 },function (item,index,next) {
 
-                    var file =$rootScope.uploads[index].file;
-
-                    console.log(file);
+                    var file = item.file;
 
 
-                    $rootScope.save({"url":file.url,"name":file.name,"description":file.description},"file",function () {
+                    var saveFile ={"url":file.url,"name":file.name,"description":file.description};
+
+                    if(file.id)
+                    {
+                        saveFile.id=file.id;
+                    }
+                    if(file.delete)
+                    {
+                        saveFile.delete = true;
+                    }
+
+                    $rootScope.save(saveFile,"file",function () {
 
                         next();
                     });
@@ -89,6 +126,7 @@
                 });
 
             }
+
         });
     </script>
 
@@ -112,22 +150,31 @@
         </script>
 
 
-        <ul class="uploads col-3">
+        <ul class="uploads col-3 fila">
             <li class="scale-fade cl cl-4" ng-repeat="(k,upload) in uploads">
+
+                <span class="delete" data-ng-click="deleteFile(k)"><i class="material-icons">&#xE5CD;</i></span>
+
+                <div class="deleted-overlay scale-fade" data-ng-if="upload.file.delete">
+                    <i class="material-icons">&#xE872;</i>
+                </div>
 
 
                 <figure data-ng-if="getType(upload.file.url ) == 'image'">
-                    <img data-ng-src="{{upload.file.url}}">
+                    <img data-ng-src="{{upload.file.url}}?w=426&h=200">
                 </figure>
 
                 <?php
                 $type="text";
                 $model="upload.file.name";
+                $onChange="onChangeItem(k)";
                 $placeholder=$_LANG["file.name"];
                 include (TEMPLATE_PATH."/base/form/input.php");
 
                 $type="text";
                 $model="upload.file.description";
+
+                $onChange="onChangeItem(k)";
                 $placeholder=$_LANG["file.description"];
                 include (TEMPLATE_PATH."/base/form/input.php");
 
@@ -135,6 +182,11 @@
 
             </li>
         </ul>
+
+        <div data-ng-if="uploads.length == 0" class="scale-fade empty">
+
+            <p><?php echo $_LANG["file.empty"];?></p>
+        </div>
 
 
     </div>

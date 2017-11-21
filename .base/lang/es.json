@@ -137,19 +137,21 @@
   "portada.cancel":"Cancelar",
   "portada.error.notExists":"La portada seleccionada no existe",
   "portada.name":"Nombre",
+  "portada.error.idNotSpecified":"El id de la portada no fue especificado",
 
   "file.list":"Listado de archivos",
   "file.empty":"No hay archivos disponibles",
   "file.nueva":"Subir archivos",
   "file.prompt.delete":"¿Desea eliminar el archivo ´{i}´?",
-  "file.error.notExists":"El archivo seleccionado no existe",
   "file.error.tmpUpload":"Error al subir el archivo temporal",
   "file.error.ftpUpload":"Error al subir el archivo final",
   "file.error.tmpFileNotExists":"El archivo que se quiere subir es inexistente",
   "file.submit":"Guardar",
-  "file.name":"Nombre de archivo",
-  "file.description":"Descripcion de archivo",
+  "file.name":"Nombre de archivo...",
+  "file.description":"Descripcion de archivo...",
   "file.cancel":"Cancelar",
   "file.dropZone":"Arrastre un archivo",
   "file.error.notExists":"El archivo solicitado no existe"
+
+
 }

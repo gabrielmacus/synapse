@@ -2,3 +2,5 @@
 - Para las acciones de un formulario , usar {$itemType} ✔
 - Al producirse un error, distinguir si debe usar pagina de error o no, y mostrarla si es el caso
 - Deberia poder elegir no cargarla bd, por ejemplo, con los archivos estaticos
+- Crear arbol de categorias para posts. Info: https://stackoverflow.com/questions/2175882/how-to-represent-a-data-tree-in-sql (materialized path)
+- Crear paginador

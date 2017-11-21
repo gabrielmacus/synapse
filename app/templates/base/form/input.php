@@ -8,9 +8,10 @@
     }
     ?>
 
-    <input <?php echo (!empty($placeholder))?"placeholder='{$placeholder}'":""; ?> class="" data-ng-model="<?php echo $model ?>" type="<?php echo $type; ?>">
+    <input <?php echo !empty($onChange)?"data-ng-change='{$onChange}'":""; ?> <?php echo (!empty($placeholder))?"placeholder='{$placeholder}'":""; ?> class="" data-ng-model="<?php echo $model ?>" type="<?php echo $type; ?>">
     <?php include "error.php"?>
 </div>
 <?php
 $label=false;
+$onChange=false;
 ?>

@@ -13,5 +13,12 @@ $dontPrint=true;
 
 
 $itemType="portada";
+
+$query = " WHERE selected  = ?";
+$params = [1];
+
 include (BASE_PATH."/.base/db/read.php");
+
 $dataToSkin = reset($data);
+
+echo json_encode($dataToSkin);

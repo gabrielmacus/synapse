@@ -45,9 +45,7 @@ else
 
     }
 
-
-
-
-
-    echo json_encode($res);
+    if(empty($dontPrint)) {
+        echo json_encode($res);
+    }
 }

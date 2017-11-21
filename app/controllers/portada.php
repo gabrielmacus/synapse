@@ -29,6 +29,7 @@ if(empty($_GET["act"]))
 
         $items[$v["id"]]["data1"]="{$v["name"]}";
         $items[$v["id"]]["id"] =$v["id"];
+        $items[$v["id"]]["active"] = (!empty($v["selected"]))?"active":"";
     }
 
 

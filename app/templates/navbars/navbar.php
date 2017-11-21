@@ -2,6 +2,21 @@
 <nav class="flex ">
 
 
+    <?php
+
+    if($k=array_search("home",$userPermissions))
+    {
+        $v =$userPermissions[$k];
+        ?>
+        <a class="padding <?php echo ($itemType==$v)?"active":""; ?>" href="<?php echo "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$v}"?>">
+            <?php echo $_LANG["menu.{$v}"] ?>
+        </a>
+        <?php
+        unset($userPermissions[$k]);
+
+    }
+    ?>
+
 
     <?php
 

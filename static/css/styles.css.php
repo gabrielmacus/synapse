@@ -767,6 +767,10 @@
     box-shadow: 0 1px 3px rgba(0,0,0,0.5), 0 1px 2px rgba(0,0,0,0.24);
     height: 200px;
 }
+.uploads li{
+    margin-top: 10px;
+    position: relative;
+}
 [uploader].drop-zone
 {
     background: #E0E0E0;
@@ -779,7 +783,7 @@
 [uploader][nv-file-over]
 {
     margin: auto;
-    width: 96%;
+    width: 97.3%;
     height: 70%;
     border: dashed 3px #6d6c6c;
     display: flex;
@@ -817,11 +821,68 @@
 
 }
 
+.uploads .delete
+{
+    right: 5px;
+    position: absolute;
+    top: 5px;
+    color: #E53935;
+}
+.uploads .delete i
+{
+    font-weight: 600;
+    font-size: 25px;
+}
+.uploads .deleted-overlay
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(33, 33, 33,0.8);
 
-
-
-
+    display: flex;
+    align-items: center;
+}
+.uploads .deleted-overlay i
+{
+    color: white;
+    font-size: 100px;
+    margin: auto;
+}
+.uploads + .empty
+{
+    padding: 10px;
+    text-align: center;
+    color: black;
+    background: white;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+.uploads + .empty p
+{
+    font-size: 20px;
+    margin-top: 20px;
+}
 @keyframes onDragFile {
     0%{bottom: 0px;transform: scale(1);}
     100%{bottom: 7px;transform: scale(1.2);}
+}
+.portada-list li.active .unselect
+{
+    display: inline;
+}
+
+.portada-list li.active .select
+{
+    display: none;
+}
+
+.portada-list li:not(.active) .unselect
+{
+    display: none;
+}
+
+.portada-list li:not(.active) .select
+{
+    display: inline;
 }
