@@ -157,8 +157,11 @@ if(empty($_GET["embed"]))
 
                         if(!callback)
                         {
-                            location.reload();
+                        return    location.reload();
                         }
+
+                        return callback();
+
 
                     },$rootScope.error);
             }

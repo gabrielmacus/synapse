@@ -60,4 +60,13 @@ class FileService
     {
         if(!is_dir($path)) { mkdir($path, 0777, true); }
     }
+    public static function getExt($name)
+    {
+        $ext = explode(".",$name);
+
+        $ext = end($ext);
+
+        return $ext;
+
+    }
 }

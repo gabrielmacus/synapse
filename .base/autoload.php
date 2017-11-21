@@ -26,7 +26,14 @@ define('SITE_VALIDATION_PATH',BASE_PATH.'/site/validations');
 set_error_handler(function($errno, $errstr, $errfile, $errline){
 
 
-    throw new Exception("[{$errstr},{$errline},{$errfile}]",$errno);
+    if(error_reporting())
+    {
+
+        throw new Exception("[{$errstr},{$errline},{$errfile}]",$errno);
+
+
+    }
+
 
 
 

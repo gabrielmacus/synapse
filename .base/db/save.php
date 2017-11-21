@@ -9,12 +9,20 @@
 
 $item = (empty($item))? R::dispense($itemType):$item;
 
-$user = R::findOne('user',' id = ? ',[$userData->id]);
+/*$user = R::findOne('user',' id = ? ',[$userData->id]);
 
 if(!empty($user))
 {
 
     $item->user = $user;
+}
+*/
+if(!empty($userData))
+{
+    $user = R::dispense("user");
+    $user->id =$userData->id;
+    $item->user = $user;
+
 }
 
 if(empty($_POST["id"]))

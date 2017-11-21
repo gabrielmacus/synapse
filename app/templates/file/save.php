@@ -76,8 +76,10 @@
 
                     var file =$rootScope.uploads[index].file;
 
+                    console.log(file);
 
-                    $rootScope.save(file,"file",function () {
+
+                    $rootScope.save({"url":file.url,"name":file.name,"description":file.description},"file",function () {
 
                         next();
                     });
@@ -121,7 +123,14 @@
                 <?php
                 $type="text";
                 $model="upload.file.name";
+                $placeholder=$_LANG["file.name"];
                 include (TEMPLATE_PATH."/base/form/input.php");
+
+                $type="text";
+                $model="upload.file.description";
+                $placeholder=$_LANG["file.description"];
+                include (TEMPLATE_PATH."/base/form/input.php");
+
                 ?>
 
             </li>

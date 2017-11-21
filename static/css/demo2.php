@@ -40,11 +40,44 @@ if(!empty($_GET["act"]))
             R::store($imagen);
 
             break;
+        case 3:
 
+
+            $ftp = new \FtpClient\FtpClient();
+            $ftp->connect($_ENV["ftp"]["host"]);
+            $ftp->login($_ENV["ftp"]["user"], $_ENV["ftp"]["password"]);
+
+
+            $ftp->pasv(true);
+
+            $ftp->mkdir('path/to/create/dir');
+
+            break;
+        case 4:
+
+
+            $ftp = new \FtpClient\FtpClient();
+            $ftp->connect($_ENV["ftp"]["host"]);
+            $ftp->login($_ENV["ftp"]["user"], $_ENV["ftp"]["password"]);
+
+            $date = date("Y/m/d");
+
+
+            $ftpFolder= rtrim($_ENV["ftp"]["folder"],"/")."/".$date."/";
+
+            echo $ftp->exec("mkdir {$ftpFolder}");
+
+
+            break;
+
+        case 5:
+            $a ="2017/11/21/5a137d33a5cac/file_3.jpg";
+
+            echo dirname($a);
+            break;
     }
 }
 
 //$vase->ownProductTagList;
-echo hash('sha256',"sercan02");;
-echo "<br>";
+
 echo "ok";

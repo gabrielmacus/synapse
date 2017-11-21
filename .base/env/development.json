@@ -54,6 +54,14 @@
     "upload":
     {
         "tmpFolder":".tmp"
+    },
+    "ftp":
+    {
+        "user":"sy",
+        "password":"admin",
+        "folder":"files",
+        "host":"localhost",
+        "website":"http://localhost/synapse-media/files"
     }
 
 }
