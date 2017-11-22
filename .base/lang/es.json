@@ -51,6 +51,7 @@
   "menu.user":"Usuarios",
   "menu.portada":"Portadas",
   "menu.file":"Archivos",
+  "menu.category":"Categorias",
 
   "form.associate":"Asociar {i}",
   "form.associate.empty":"Sin {i}",
@@ -151,7 +152,12 @@
   "file.description":"Descripcion de archivo...",
   "file.cancel":"Cancelar",
   "file.dropZone":"Arrastre un archivo",
-  "file.error.notExists":"El archivo solicitado no existe"
+  "file.error.notExists":"El archivo solicitado no existe",
+
+  "category.cancel":"Cancelar",
+  "category.submit":"Guardar",
+  "category.empty":"Sin categorias establecidas",
+  "category.list":"Árbol de categorias"
 
 
 }
