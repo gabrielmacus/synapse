@@ -35,7 +35,7 @@ if(empty($_GET["embed"]))
 <section    class="main-container flex animated">
     <script>
       
-        var app = angular.module('app', ['ngAnimate','angular-sortable-view','angularFileUpload']);
+        var app = angular.module('app', ['ngAnimate','angular-sortable-view','angularFileUpload','ui.tree']);
 
 
 

@@ -157,7 +157,8 @@
   "category.cancel":"Cancelar",
   "category.submit":"Guardar",
   "category.empty":"Sin categorias establecidas",
-  "category.list":"Árbol de categorias"
+  "category.list":"Árbol de categorias",
+  "category.new":"Nueva categoria"
 
 
 }

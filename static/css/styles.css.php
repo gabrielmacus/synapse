@@ -148,7 +148,7 @@
         font-size: 18px;
 
     }
-    .form-block button
+    .form-block button,input[type='button']
     {
 
         float: right;
@@ -885,4 +885,58 @@
 .portada-list li:not(.active) .select
 {
     display: inline;
+}
+.categories-tree
+{
+    background: #E0E0E0;
+    padding: 10px;
+    width: 100%;
+}
+.categories-tree .angular-ui-tree-handle
+{
+    background: white;
+    margin-bottom: 10px;
+    border-left:3px solid black;
+    padding: 10px;
+    font-weight: 100;
+
+}
+.category-list .new-category
+{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: auto;
+    padding: 5px;
+}
+.category-list .empty
+{
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+.category-list .empty p
+{
+    margin: auto;
+}
+
+.category-add .form-block
+{
+    width: auto;
+    display: block;
+    float: left;
+}
+.category-add label
+{
+    margin-right: 10px;
+    font-size: 18px;
+}
+.category-add [type='button']{
+    padding: 7px;
+    font-size: 17px;
+}
+.category-list .delete
+{
+    position: absolute;
+    top: 7px;
+    right: 10px;
 }
