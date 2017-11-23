@@ -119,7 +119,7 @@ if(empty($_GET["embed"]))
 
             }
 
-            $rootScope.delete  = function (id,type) {
+            $rootScope.delete  = function (id,type,callback) {
 
                 if(!type && <?php echo !empty($itemType); ?>)
                 {
@@ -131,7 +131,15 @@ if(empty($_GET["embed"]))
                     .then(function (e) {
                         console.log(e.data);
 
-                        location.reload();
+                        if(!callback)
+                        {
+                            location.reload();
+                        }
+                        else
+                        {
+                            callback();
+                        }
+
 
                     },$rootScope.error);
 
@@ -160,7 +168,7 @@ if(empty($_GET["embed"]))
                         return    location.reload();
                         }
 
-                        return callback();
+                        return callback(e);
 
 
                     },$rootScope.error);

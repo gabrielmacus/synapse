@@ -5,19 +5,52 @@
 
             $rootScope.categories=[];
 
+            $rootScope.treeOptions = {
+                beforeDrop:function (e) {
+
+
+                    if( e.dest.nodesScope.$nodeScope.$modelValue)
+                    {
+
+                        console.log( e.dest.nodesScope.$nodeScope.$modelValue.id);
+                    }
+
+
+                    /*
+                    var dest = e.dest.nodesScope.$nodeScope.$modelValue.id;
+                    var source = angular.copy(e.source.nodeScope.$modelValue);
+                    source.belongs=dest;
+                    console.log(source);
+                    /*$rootScope.save(angular.copy(e.source.nodeScope.$modelValue),"category",function () {
+
+                    });*/
+                    return true;
+
+
+                }
+            };
+
             $rootScope.addCategory=function (cat) {
 
 
+                $rootScope.save({name:cat,belongs:0},"category",function (e) {
 
-                $rootScope.categories.push(
-                    {"name":cat,"categories":[]}
-                )
+                    $rootScope.categories.push(
+                        {"name":cat,"categories":[],"id":e.data}
+                    )
+
+                });
+
 
 
             }
             $rootScope.deleteCategory=function (k,arr) {
 
-                arr[k].delete=true;
+                $rootScope.delete(arr[k].id,"category",function () {
+
+                    $rootScope.categories.splice(k,1);
+
+                });
 
             }
         });
@@ -48,14 +81,36 @@
             <p><?php echo $_LANG["category.empty"];?></p>
         </div>
 
-        <div data-ng-if="categories.length > 0" class="categories-tree" ui-tree>
+
+        <!-- Nested node template -->
+        <script type="text/ng-template" id="nodes_renderer.html">
+            <div ui-tree-handle>
+                {{item.name}}
+            </div>
+            <span data-ng-click="deleteCategory(k,item.categories)" class="delete"><i class="material-icons">&#xE5CD;</i></span>
+
+            <ol ui-tree-nodes="" ng-model="item.categories">
+                <li ng-repeat="(k,item) in item.categories" ui-tree-node ng-include="'nodes_renderer.html'">
+                </li>
+            </ol>
+        </script>
+
+        <div ui-tree  data-ng-if="categories.length > 0" class="categories-tree" >
+            <ol ui-tree-nodes="" ng-model="categories" id="tree-root">
+                <li ng-repeat="(k,item) in categories" ui-tree-node ng-include="'nodes_renderer.html'"></li>
+            </ol>
+        </div>
+
+
+        <!--
+        <div data-ng-if="categories.length > 0" class="categories-tree" ui-tree="treeOptions">
             <ol ui-tree-nodes="" ng-model="categories">
-                <li data-ng-if="!item.delete" ng-repeat="(k,item) in categories" ui-tree-node>
+                <li ng-repeat="(k,item) in categories" ui-tree-node>
                     <div ui-tree-handle>
                         {{item.name}}
                     </div>
                     <ol ui-tree-nodes="" ng-model="item.categories">
-                        <li  data-ng-if="!item.delete" ng-repeat="(j,subItem) in item.categories" ui-tree-node>
+                        <li ng-repeat="(j,subItem) in item.categories" ui-tree-node>
                             <div ui-tree-handle>
                                 {{subItem.name}}
                             </div>
@@ -65,16 +120,11 @@
                     <span data-ng-click="deleteCategory(k,categories)" class="delete"><i class="material-icons">&#xE5CD;</i></span>
                 </li>
             </ol>
-        </div>
+        </div>-->
 
     </div>
 
 
-    <?php
-    $text1 =$_LANG["{$itemType}.submit"];
-    $text2 =$_LANG["{$itemType}.cancel"];
-    include (TEMPLATE_PATH."/base/form/submit.php");
-    ?>
 
 </form>
 
