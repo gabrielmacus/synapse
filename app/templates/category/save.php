@@ -3,28 +3,32 @@
     <script>
         app.controller('categoriesTreeController', function($rootScope, FileUploader) {
 
-            $rootScope.categories=[];
+            $rootScope.categories=<?php echo json_encode($items);?>;
 
             $rootScope.treeOptions = {
                 beforeDrop:function (e) {
 
+                    var source = angular.copy(e.source.nodeScope.$modelValue);
+                    source.belongs=0;
+                    delete source.categories;
 
-                    if( e.dest.nodesScope.$nodeScope.$modelValue)
+                    if( e.dest.nodesScope.$nodeScope && e.dest.nodesScope.$nodeScope.$modelValue)
                     {
 
-                        console.log( e.dest.nodesScope.$nodeScope.$modelValue.id);
+                      var dest=e.dest.nodesScope.$nodeScope.$modelValue.id;
+                      source.belongs=dest;
+
+
                     }
 
 
-                    /*
-                    var dest = e.dest.nodesScope.$nodeScope.$modelValue.id;
-                    var source = angular.copy(e.source.nodeScope.$modelValue);
-                    source.belongs=dest;
-                    console.log(source);
-                    /*$rootScope.save(angular.copy(e.source.nodeScope.$modelValue),"category",function () {
+                    $rootScope.save(source,"category",function () {
 
-                    });*/
-                    return true;
+
+
+                    });
+
+
 
 
                 }
@@ -36,7 +40,7 @@
                 $rootScope.save({name:cat,belongs:0},"category",function (e) {
 
                     $rootScope.categories.push(
-                        {"name":cat,"categories":[],"id":e.data}
+                        {"name":cat,"categories":[],"id":parseInt(e.data)}
                     )
 
                 });
@@ -44,13 +48,42 @@
 
 
             }
-            $rootScope.deleteCategory=function (k,arr) {
 
-                $rootScope.delete(arr[k].id,"category",function () {
+            $rootScope.deleteCategoryRecursive=function (id,arr) {
 
-                    $rootScope.categories.splice(k,1);
+                if(!arr)
+                {
+                    arr=$rootScope.categories;
+                }
+
+                for (var i = 0; i < arr.length; i++) {
+
+                    if (arr[i].id == id) {
+
+
+                        return arr.splice(i,1);
+
+                    }
+
+                    if(arr[i].categories)
+                    {
+                        $rootScope.deleteCategoryRecursive(id,arr[i].categories);
+                    }
+
+
+                }
+
+
+            }
+
+            $rootScope.deleteCategory=function (id,arr) {
+
+                $rootScope.delete(id,"category",function () {
+
+                    $rootScope.deleteCategoryRecursive(id,arr);
 
                 });
+
 
             }
         });
@@ -87,7 +120,7 @@
             <div ui-tree-handle>
                 {{item.name}}
             </div>
-            <span data-ng-click="deleteCategory(k,item.categories)" class="delete"><i class="material-icons">&#xE5CD;</i></span>
+            <span data-ng-click="deleteCategory(item.id)" class="delete"><i class="material-icons">&#xE5CD;</i></span>
 
             <ol ui-tree-nodes="" ng-model="item.categories">
                 <li ng-repeat="(k,item) in item.categories" ui-tree-node ng-include="'nodes_renderer.html'">
@@ -95,7 +128,7 @@
             </ol>
         </script>
 
-        <div ui-tree  data-ng-if="categories.length > 0" class="categories-tree" >
+        <div ui-tree="treeOptions"  data-ng-if="categories.length > 0" class="categories-tree" >
             <ol ui-tree-nodes="" ng-model="categories" id="tree-root">
                 <li ng-repeat="(k,item) in categories" ui-tree-node ng-include="'nodes_renderer.html'"></li>
             </ol>

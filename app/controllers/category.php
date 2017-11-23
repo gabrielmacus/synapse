@@ -13,13 +13,9 @@ if(empty($_GET["act"]))
     $bodyClass[]="{$itemType}-list";
     $incBody=TEMPLATE_PATH."/{$itemType}/save.php";
 
-
     $items = [];
-    foreach ($data as $k=>$v)
-    {
 
-    }
-
+    ArrayService::makeCategoriesTree($data,0,$items);
 
 
 
@@ -27,6 +23,14 @@ if(empty($_GET["act"]))
 else
 {
 
+
+    if(!empty($_GET["tree"]) && $_GET["tree"] == true)
+    {
+        $cat = $data;
+        $data=[];
+        ArrayService::makeCategoriesTree($cat,0,$data);
+
+    }
 
     if(empty($dontPrint))
     {

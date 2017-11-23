@@ -148,7 +148,7 @@
         font-size: 18px;
 
     }
-    .form-block button,input[type='button']
+    .form-block button,input[type='button'],.button
     {
 
         float: right;

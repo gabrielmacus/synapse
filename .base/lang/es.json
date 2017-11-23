@@ -52,6 +52,7 @@
   "menu.portada":"Portadas",
   "menu.file":"Archivos",
   "menu.category":"Categorias",
+  "menu.post":"Posts",
 
   "form.associate":"Asociar {i}",
   "form.associate.empty":"Sin {i}",
@@ -158,7 +159,16 @@
   "category.submit":"Guardar",
   "category.empty":"Sin categorias establecidas",
   "category.list":"Árbol de categorias",
-  "category.new":"Nueva categoria"
+  "category.new":"Nueva categoria",
+
+
+  "post.cancel":"Cancelar",
+  "post.submit":"Guardar",
+  "post.list":"Listado de posts",
+  "post.nuevo":"Nuevo post",
+  "post.empty":"No hay posts disponibles",
+  "post.prompt.delete":"¿Desea eliminar el post ´{i}´?",
+  "post.title":"Título"
 
 
 }

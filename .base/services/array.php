@@ -65,4 +65,25 @@ class ArrayService
         return $controllers;
     }
 
+    static function makeCategoriesTree($categories,$parentId=0,&$arr=[])
+    {
+
+        foreach ($categories as $k=>$v)
+        {
+            if($v["belongs"] == $parentId)
+            {
+
+                $categories[$k]["categories"]=[];
+
+                self::makeCategoriesTree($categories,$v["id"],$categories[$k]["categories"]);
+
+                $arr[]=$categories[$k];
+            }
+
+
+        }
+
+
+    }
+
 }
