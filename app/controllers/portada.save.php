@@ -8,6 +8,10 @@
 
 if(empty($_GET["act"]))
 {
+
+
+
+
     $incBody=TEMPLATE_PATH."/{$itemType}/save.php";
 }
 else

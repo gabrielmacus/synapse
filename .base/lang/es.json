@@ -168,7 +168,8 @@
   "post.nuevo":"Nuevo post",
   "post.empty":"No hay posts disponibles",
   "post.prompt.delete":"¿Desea eliminar el post ´{i}´?",
-  "post.title":"Título"
+  "post.title":"Título",
+  "post.text":"Texto"
 
 
 }
