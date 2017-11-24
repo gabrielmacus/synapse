@@ -17,6 +17,7 @@ if(empty($_GET["act"]))
 
     foreach ($data as $k=>$v){
         $items[$v["id"]]["data1"] =$v["title"];
+        $items[$v["id"]]["data2"] =$v["text"];
         $items[$v["id"]]["id"]=$v["id"];
     }
 

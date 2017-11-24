@@ -221,7 +221,15 @@
         margin-bottom: 5px;
         align-items: center;
         display: flex;
+        flex-wrap: wrap;
         background-color: #E0E0E0;
+    }
+    .base-list li .text
+    {
+        font-size: 15px;
+        margin-top: 10px;
+        color: grey;
+        line-height: 18px;
     }
     .base-list li:last-child
     {
@@ -940,6 +948,9 @@
     top: 7px;
     right: 10px;
 }
+
+
+
 trix-toolbar
 {
     margin-top: 10px;
@@ -948,4 +959,12 @@ trix-editor
 {
     width: 100%;
     border-radius: 0;
+}
+
+.modal-box .submit
+{
+    margin-bottom: 0;
+    background: transparent;
+    margin-top: 0;
+    padding: 0;
 }

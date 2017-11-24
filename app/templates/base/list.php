@@ -35,10 +35,11 @@ if(count($items)>0)
 
 
                 <a href="<?php echo (!empty($urlAction))?$urlAction."?id={$k}":"" ?>" class="name" data-id="<?Php echo $k;?>" ><?php echo $v["data1"];?></a>
-            <?php
-            if(empty($_GET["embed"]))
-            {?>
-                <span class="controls">
+
+                <?php
+                if(empty($_GET["embed"]))
+                {?>
+                    <span class="controls">
 
                     <?php
                     if (!empty($extraActions) && is_array($extraActions)) {
@@ -55,15 +56,34 @@ if(count($items)>0)
                     }
                     ?>
 
-                    <a class="edit" href="<?php echo $editUrl . "?id={$v["id"]}"; ?>"><i
-                                class="material-icons">&#xE254;</i></a>
-				
+                        <a class="edit" href="<?php echo $editUrl . "?id={$v["id"]}"; ?>"><i
+                                    class="material-icons">&#xE254;</i></a>
+
                     <a data-ng-click="openModal('<?php echo str_replace("{i}", $v["data1"], $deletePrompt) ?>','yesNo',false,'delete(<?php echo $k; ?>)')"
                        class="delete"><i class="material-icons">&#xE872;</i></a>
-					
+
                 </span>
-            <?php
-            }?>
+                    <?php
+                }?>
+
+
+
+
+
+                <?php
+                if(!empty($v["data2"]))
+                {
+                    ?>
+                    <div class="text">
+                        <p>
+                            <?php echo $v["data2"]?>
+                        </p>
+                    </div>
+                    <?php
+                }
+                ?>
+
+
             </li>
             <?php
         }

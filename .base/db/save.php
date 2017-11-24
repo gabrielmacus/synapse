@@ -17,6 +17,10 @@ if(!empty($user))
     $item->user = $user;
 }
 */
+
+
+
+
 if(!empty($userData))
 {
     $user = R::dispense("user");
@@ -123,6 +127,18 @@ if(!empty($_POST["associated"]))
 
 
 unset($_POST["associated"]);
+
+//Inserto la categoria
+if(!empty($_POST["category"]))
+{
+   $cat = R::dispense("category");
+
+   $cat->id = $_POST["category"];
+
+   $item->category = $cat;
+
+   unset($_POST["category"]);
+}
 
 ArrayService::setPropertiesToBean($_POST,$item);
 
