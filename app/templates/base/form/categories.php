@@ -9,7 +9,7 @@ if(!empty($categories))
 
             <div  class="form-block " data-ng-if="s.categories.length">
                 <label>Categoria {{k + 1}}</label>
-                <select  data-ng-change="changeCategory(s.model,k)" data-ng-model="s.model">
+                <select data-ng-class="s.model"  data-ng-change="changeCategory(s.model,k)" data-ng-model="s.model">
 
 
                     <option data-ng-repeat="item in s.categories"  data-ng-value="{{item.id}}">{{item.name}}</option>
@@ -63,7 +63,34 @@ if(!empty($categories))
                     if(!oldValue && newValue){
 
                         //Ya fueron cargados los datos
-                        console.log(newValue);
+                        if(newValue["categories"])
+                        {
+
+                            newValue["categories"].splice(0,1);
+
+                            for(var k in newValue["categories"])
+                            {
+                                var id = newValue["categories"][k]["id"];
+                                $rootScope.changeCategory(id,k);
+
+
+                                var className = ".category"+(parseInt(k)+1);
+
+                                var selector = className+" option";
+
+                                var elements= document.querySelectorAll(selector);
+
+                                for(var j in elements)
+                                {
+                                    console.log(elements[j].value);
+                                    console.log(id);
+
+                                }
+
+
+
+                            }
+                        }
 
                         unbindWatch();
 

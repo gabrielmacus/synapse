@@ -65,6 +65,36 @@ class ArrayService
         return $controllers;
     }
 
+    static function makeCategoriesBreadCrumb($categories,$childrenId,&$breadcrumb=[])
+    {
+
+
+           foreach ($categories as $k=>$v)
+           {
+
+               if($v["id"] == $childrenId)
+               {
+                   $breadcrumb[$v["id"]]=$v;
+
+                   if(!empty($v["belongs"]))
+                   {
+                       self::makeCategoriesBreadCrumb($categories,$v["belongs"],$breadcrumb);
+                   }
+                   else
+                   {
+                       $breadcrumb = array_reverse($breadcrumb);
+                   }
+
+
+               }
+
+
+
+
+           }
+
+
+    }
     static function makeCategoriesTree($categories,$parentId=0,&$arr=[])
     {
 

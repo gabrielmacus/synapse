@@ -17,5 +17,12 @@ else
 
     include (BASE_PATH."/.base/db/save.php");
 
-    echo json_encode($res);
+    $cat = $res;
+
+    //Leo las categorias actualizadas y las guardo en caché
+
+    FileService::write(json_encode(R::find('category')),BASE_PATH."/.base/cache/categories.json",'w');
+
+
+    echo json_encode($cat);
 }

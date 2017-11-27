@@ -6,6 +6,29 @@
  * Time: 11:11 AM
  */
 
+//Obtengo las categorias
+$catFilePath=BASE_PATH."/.base/cache/categories.json";
+
+$cat = [];
+
+if(file_exists($catFilePath))
+{
+    //Si existe, levanto la caché
+    $cat = json_decode(file_get_contents($catFilePath),true);
+}
+else
+{
+    //Si no, levanto desde bd y guardo en caché
+    $cat = R::find('category');
+    FileService::write(json_encode($cat),BASE_PATH."/.base/cache/categories.json",'w');
+
+}
+
+
+//
+
+
+
 $query = (empty($query))?"":$query;
 
 $params =(empty($params))?[]:$params;
@@ -20,6 +43,8 @@ if(!empty($_GET["id"]))
 
 $oResult = R::find($itemType,$query,$params);
 
+
+
 $data=[];
 
 foreach ($oResult as $oValue)
@@ -27,7 +52,23 @@ foreach ($oResult as $oValue)
 
     $data[$oValue->id] =$oValue->export();
 
+    if(!empty($data[$oValue->id]["category_id"]))
+    {
+        $catBreadcrumb=[];
+
+        ArrayService::makeCategoriesBreadCrumb($cat,$data[$oValue->id]["category_id"],$catBreadcrumb);
+
+        $data[$oValue->id]["categories"] = $catBreadcrumb;
+
+    }
+
+
+
+
 }
+
+
+
 //Asocio los elementos
 if(!empty($data))
 {
