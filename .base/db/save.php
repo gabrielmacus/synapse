@@ -9,14 +9,6 @@
 
 $item = (empty($item))? R::dispense($itemType):$item;
 
-/*$user = R::findOne('user',' id = ? ',[$userData->id]);
-
-if(!empty($user))
-{
-
-    $item->user = $user;
-}
-*/
 
 
 
@@ -129,15 +121,15 @@ if(!empty($_POST["associated"]))
 unset($_POST["associated"]);
 
 //Inserto la categoria
-if(!empty($_POST["category"]))
+if(!empty($_POST["category_id"]))
 {
    $cat = R::dispense("category");
 
-   $cat->id = $_POST["category"];
+   $cat->id = $_POST["category_id"];
 
    $item->category = $cat;
 
-   unset($_POST["category"]);
+   unset($_POST["category_id"]);
 }
 
 ArrayService::setPropertiesToBean($_POST,$item);

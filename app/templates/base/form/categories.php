@@ -8,7 +8,7 @@ if(!empty($categories))
 
 
             <div  class="form-block " data-ng-if="s.categories.length">
-                <label>Categoria {{k + 1}}</label>
+                <label><?php echo $_LANG["form.category"];?> {{k + 1}}</label>
                 <select data-ng-class="s.model"  data-ng-change="changeCategory(s.model,k)" data-ng-model="s.model">
 
 
@@ -31,7 +31,9 @@ if(!empty($categories))
 
             $rootScope.categories = <?php echo json_encode(array_values($categories));?>;
 
-            $rootScope.selects.push({"model":"category1","categories":$rootScope.categories.filter(function (p1, p2, p3) { return p1.belongs ==<?php echo $mainCategoryId?>;  })});
+            $rootScope.category1={};
+
+            $rootScope.selects.push({"model":$rootScope.category1,"categories":$rootScope.categories.filter(function (p1, p2, p3) { return p1.belongs ==<?php echo $mainCategoryId?>;  })});
 
             $rootScope.changeCategory=function (id,k) {
 
@@ -48,9 +50,11 @@ if(!empty($categories))
                     $rootScope.<?php echo $itemType ?>={};
                 }
 
-                $rootScope.<?php echo $itemType ?>.category=id;
+                $rootScope.<?php echo $itemType ?>.category_id=id;
 
-                $rootScope.selects.push({"model":"category"+$rootScope.selects.length,"categories":filter});
+                $rootScope["category"+$rootScope.selects.length]={};
+
+                $rootScope.selects.push({"model":$rootScope["category"+$rootScope.selects.length],"categories":filter});
 
 
             }
@@ -70,28 +74,11 @@ if(!empty($categories))
 
                             for(var k in newValue["categories"])
                             {
-                                var id = newValue["categories"][k]["id"];
+                                var id = parseInt(newValue["categories"][k]["id"]);
+
+                                $rootScope.selects[$rootScope.selects.length-1].model = id;
+
                                 $rootScope.changeCategory(id,k);
-
-
-                                var className = ".category"+(parseInt(k)+1);
-
-                                var selector = className+" option";
-
-                                var elements= document.querySelectorAll(selector);
-
-                                console.log(className);
-
-                                for(var j in elements)
-                                {
-                                    if(elements[j].value == "number:"+id)
-                                    {
-                                        document.querySelector(className).selectedIndex = j;
-                                    }
-
-
-                                }
-
 
 
                             }
