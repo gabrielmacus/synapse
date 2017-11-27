@@ -80,10 +80,15 @@ if(!empty($categories))
 
                                 var elements= document.querySelectorAll(selector);
 
+                                console.log(className);
+
                                 for(var j in elements)
                                 {
-                                    console.log(elements[j].value);
-                                    console.log(id);
+                                    if(elements[j].value == "number:"+id)
+                                    {
+                                        document.querySelector(className).selectedIndex = j;
+                                    }
+
 
                                 }
 
