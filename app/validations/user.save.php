@@ -75,7 +75,7 @@ if(!empty($_POST[$prop]) && !ValidationService::validate($_POST[$prop],$regex))
 
 
 
-$prop="permissions_group";
+$prop="permission_id";
 $msg =$_LANG["validation.error.cantBeEmpty"];
 if(empty($_POST[$prop]) || !is_numeric($_POST[$prop]))
 {

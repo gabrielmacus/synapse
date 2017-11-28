@@ -916,3 +916,166 @@ trix-editor
     margin-top: 0;
     padding: 0;
 }
+
+.radio-select
+{
+    width: 100%;
+    margin-top: 10px;
+    max-height: 200px;
+    overflow-y: scroll;
+}
+.radio-select li
+{       padding: 10px;
+    /* margin-top: 10px; */
+    /* padding-bottom: 15px; */
+    /* padding-left: 15px; */
+    border-bottom: 1px solid #BDBDBD;
+    background: #EEEEEE;
+    /* display: flex; */
+    /* align-items: center; */
+    position: relative;
+    /* bottom: 10px; */
+    float: left;
+    display: block;
+    width: 100%;
+}
+.radio-select li .data
+{
+    float: left;
+    display: block;
+    position: relative;
+    top: 4px;
+    color: #3F51B5;
+    /* font-weight: 600; */
+    letter-spacing: 1px;
+    margin-left: 30px;
+}
+.radio-select li .options
+{
+    float: right;
+}
+
+.radio-select input[type="radio"]
+{
+    width:auto;
+}
+.radio-select li.selected
+{
+    background-color: #5C6BC0
+;
+}
+.radio-select li.selected .data,.radio-select li.selected .label
+{
+
+    color: #ffffff;
+
+
+
+}
+
+.radio-select .selected,.radio-select .unselected
+{display: none}
+
+.radio-select li input[type="checkbox"]:checked ~ .selected
+{
+    display: block;
+}
+
+.radio-select li input[type="checkbox"]
+{
+    position: absolute;
+    left: -100000px;
+}
+
+.radio-select li input[type="checkbox"]:not(:checked) ~ .unselected
+ {
+     display: block;
+ }
+.radio-select li .check
+{
+    position: absolute;
+    bottom: 6px;
+
+}.noselect {
+     -webkit-touch-callout: none; /* iOS Safari */
+     -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+     -ms-user-select: none; /* Internet Explorer/Edge */
+     user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+ }
+
+
+
+.radio-select li input[type="checkbox"]:checked ~ .selected
+{
+    display: block;
+}
+
+.radio-select li input[type="checkbox"],.radio-select li input[type="radio"]
+{
+    position: absolute;
+    left: -100000px;
+}
+
+
+.radio-select li input[type="radio"] ~ label
+{
+    padding: 2px;
+    font-size: 18px;
+    position: relative;
+}
+
+.radio-select li input[type="radio"] ~ label .unselected,
+.radio-select li input[type="radio"] ~ label .selected
+{
+    position: relative;
+    top: 3px;font-size: 20px;
+}
+
+
+
+.radio-select li input[type="radio"]:not(:checked) ~ label .unselected
+{
+    display: inline;
+}
+.radio-select li input[type="radio"]:checked ~ label .selected
+{
+    display: inline;
+}
+
+.radio-select li input[type="radio"]:checked ~ label
+{
+    background: #5C6BC0;
+    color:white;box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+@media screen and (max-width: 1159px) {
+    .radio-select .data
+    {
+        margin-left: 0px!important;
+    }
+    .radio-select .options
+    {
+        width: 100%;
+    }
+
+    .radio-select .radio
+    {
+        width: 100%;
+        display: block;
+    }
+
+    .radio-select label
+    {
+        display: block;
+    }
+    .radio-select .check
+    {
+        top: -8px;
+        right: 5px;
+    }
+
+
+}

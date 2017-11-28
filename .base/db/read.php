@@ -33,6 +33,9 @@ $query = (empty($query))?"":$query;
 
 $params =(empty($params))?[]:$params;
 
+
+//$permissionType=$userPermissions[$itemType]
+
 if(!empty($_GET["id"]))
 {
 

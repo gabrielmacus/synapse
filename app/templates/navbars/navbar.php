@@ -4,9 +4,11 @@
 
     <?php
 
-    if($k=array_search("home",$userPermissions))
+    $k = "home";
+
+    if(!empty($userPermissions[$k]) && !empty($userPermissions[$k]["type"]))
     {
-        $v =$userPermissions[$k];
+        $v =$userPermissions[$k]["action"];
         ?>
         <a class="padding <?php echo ($itemType==$v)?"active":""; ?>" href="<?php echo "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$v}"?>">
             <?php echo $_LANG["menu.{$v}"] ?>
@@ -23,15 +25,19 @@
     foreach ($userPermissions as $k=>$v)
     {
 
-
-        if(!strpos($v,"."))
+        $v=$v["action"];
+        if(!empty($v))
         {
-            ?>
-            <a class="padding <?php echo ($itemType==$v)?"active":""; ?>" href="<?php echo "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$v}"?>">
-                <?php echo $_LANG["menu.{$v}"] ?>
-            </a>
-            <?php
+            if(!strpos($v,"."))
+            {
+                ?>
+                <a class="padding <?php echo ($itemType==$v)?"active":""; ?>" href="<?php echo "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$v}"?>">
+                    <?php echo $_LANG["menu.{$v}"] ?>
+                </a>
+                <?php
+            }
         }
+
     }
     ?>
 

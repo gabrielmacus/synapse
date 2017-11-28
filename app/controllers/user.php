@@ -4,7 +4,7 @@
 $query ="";
 $params=[];
 
-$query ="SELECT user.*,permission.* FROM user LEFT JOIN permission ON user.permissions_group = permission.id WHERE user.id != {$userData->id} AND user.permissions_group != {$_ENV["auth"]["developerPermissionGroup"]}";
+$query ="SELECT user.*,permission.* FROM user LEFT JOIN permission ON user.permission_id = permission.id WHERE user.id != {$userData->id} AND user.permission_id != {$_ENV["auth"]["developerPermissionGroup"]}";
 
 if(!empty($_GET["id"]))
 {

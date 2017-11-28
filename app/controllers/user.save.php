@@ -28,7 +28,9 @@ else
 
     $itemToSave = R::dispense($itemType);
 
-    if(empty($_POST["type"]) || $_POST["type"] == "account")
+    $_POST["type"] = (empty($_POST["type"]))?"account":$_POST["type"];
+
+    if($_POST["type"] == "account")
     {
         $user = R::findOne('user',' id = ? ',[$userData->id]);
 
@@ -50,16 +52,20 @@ else
     }
 
 
-    unset($_POST["permissions_group_id"]);
+    $p = R::findOne('permission'," id = ? ",[$_POST['permission_id']]);
 
-    ArrayService::setPropertiesToBean($_POST,$itemToSave);
-
-    $p = R::findOne('permission'," id = ? ",[$_POST['permissions_group']]);
 
     if(empty($p))
     {
         throw new Exception("user.error.permissionsNotFound",500);
     }
+
+
+    unset($_POST["permission_id"]);
+
+    ArrayService::setPropertiesToBean($_POST,$itemToSave);
+
+
 
     $itemToSave->password = hash('sha256', $itemToSave->password );
 

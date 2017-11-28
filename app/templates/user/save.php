@@ -39,7 +39,7 @@
 
     <?php
     $label=$_LANG["{$itemType}.permissions"];
-    $model="{$itemType}.permissions_group";
+    $model="{$itemType}.permission_id";
     $options = $permissions_options;
     include (TEMPLATE_PATH."/base/form/select.php");
     ?>

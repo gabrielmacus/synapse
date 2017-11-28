@@ -28,7 +28,8 @@ else
                 $_POST["password"] = hash('sha256',$_POST["password"]);
 
 
-                $user = R::findOne('user','  (username = ? OR email = ?) AND password = ? AND type = "account"',[$_POST["user"],$_POST["user"],$_POST["password"]]);
+
+                $user = R::findOne('user','  (username = ? OR email = ?) AND password = ? AND type = "account" ',[$_POST["user"],$_POST["user"],$_POST["password"]]);
 
                 if(empty($user))
                 {
@@ -67,40 +68,55 @@ else
                 throw new Exception("{$_GET["act"]}.auth.error.inactive",400);
             }
 
-            $gpPermission=R::findOne('permission',' name = ? ',[$_GET["act"]]);
+            $permission=R::findOne('permission',' name = ? ',[$_GET["act"]]);
 
-            if(empty($gpPermission))
+            if(empty($permission))
             {
                 throw new Exception("{$_GET["act"]}.auth.error.inactive",400);
             }
 
             $idtoken=$_POST["idtoken"];
+
             unset($_POST["idtoken"]);
+
             $_POST["password"] = $idtoken;
+
             $_POST["type"]=$_GET["act"];
-
-            list($username, $domain) = explode('@', $_POST["email"] . "@"); // ."@" is a trick: look note below
-            //."@": This is made to avoid in short critical errors with the list command and ensure that explode will produce at least two variables as needed.
-
-
-            $_POST["username"]=$username;
-            $_POST["permissions_group"]=$gpPermission->id;
-            $_POST["status"]=1;
-
-            //Si hay otro usuario con el mismo nombre de usuario que genere a partir del email, genero otro igual pero con el numero de cantidad
-            $usernameCount=R::count('user',' username = ? ',[$_POST["username"]]);
-
-            $_POST["username"] = ($usernameCount==0)?$_POST["username"]:$_POST["username"].$usernameCount;
-
 
             $snUser = R::findOne('user',' email = ? ',[$_POST["email"]]);
 
+
             if(empty($snUser))
             {
+
+                //Creo un usuario nuevo
+
+
+                list($username, $domain) = explode('@', $_POST["email"] . "@"); // ."@" is a trick: look note below
+                //."@": This is made to avoid in short critical errors with the list command and ensure that explode will produce at least two variables as needed.
+
+                $_POST["username"]=$username;
+                $_POST["permission_id"]=$permission->id;
+                $_POST["status"]=1;
+
+                //Si hay otro usuario con el mismo nombre de usuario que genere a partir del email, genero otro igual pero con el numero de cantidad
+                $usernameCount=R::count('user',' username = ? ',[$_POST["username"]]);
+
+                $_POST["username"] = ($usernameCount==0)?$_POST["username"]:$_POST["username"].$usernameCount;
+
+
+
+
+
                 include (CONTROLLER_PATH."/user.save.php");
             }
             else
             {
+
+
+
+
+
                 if($snUser->type != $_GET["act"])
                 {
                     throw new Exception("{$_GET["act"]}.auth.error.alreadyTakenEmail",400);

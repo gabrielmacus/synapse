@@ -116,6 +116,9 @@
   "permission.loginRedirect":"Redirección de login",
   "permission.authorizedActions":"Acciones autorizadas",
   "permission.error.notExists":"El grupo de permisos seleccionado no existe",
+  "permission.actions.me":"Usuario",
+  "permission.actions.group":"Grupo",
+  "permission.actions.everyone":"Cualquiera",
 
   "user.list":"Listado de usuarios",
   "user.empty":"No hay usuarios disponibles",

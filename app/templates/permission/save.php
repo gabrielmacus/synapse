@@ -1,4 +1,4 @@
-<form  class="save flex padding" <?php if(!empty($_GET["id"])){ echo "data-ng-init='load({$_GET["id"]})'"; } ?> data-ng-submit="save(<?php echo $itemType;?>)">
+<form  class="save flex padding" <?php if(!empty($_GET["id"])){ echo "data-ng-init='load({$_GET["id"]})'"; }else echo "data-ng-init='{$itemType}={}'" ?> data-ng-submit="save(<?php echo $itemType;?>)">
 
     <?php
     $type="text";
@@ -7,18 +7,35 @@
     include (TEMPLATE_PATH."/base/form/input.php");
     ?>
     <?php
+
+
+
+    $label=$_LANG["{$itemType}.authorizedActions"];;
+
+    $data["list"] = ArrayService::controllersToArray();
+    unset($data["list"]["user.login"]);
+    unset($data["list"]["user.salir"]);
+
+    $data["options"]=[1=>"{$itemType}.actions.me",2=>"{$itemType}.actions.group",3=>"{$itemType}.actions.everyone"];
+    $model="{$itemType}.actions";
+
+
+
+
+
+    include (TEMPLATE_PATH."/base/form/radio-select.php");
+
+    /*
     $label=$_LANG["{$itemType}.authorizedActions"];;
     $options=ArrayService::controllersToArray();
 
-    unset($options["user.login"]);
-    unset($options["user.salir"]);
 
-    /*
-     * /streaming/watch*/
+
 
     $multiple=true;
     $model="{$itemType}.actions";
     include (TEMPLATE_PATH."/base/form/select.php");
+    */
     ?>
 
 
