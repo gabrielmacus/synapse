@@ -1,4 +1,10 @@
 
-[Undefined index: menu.,33,C:\xampp\htdocs\synapse\app\templates\navbars\navbar.php],32,C:\xampp\htdocs\synapse\.base\autoload.php
-[Undefined index: menu.,34,C:\xampp\htdocs\synapse\app\templates\navbars\navbar.php],32,C:\xampp\htdocs\synapse\.base\autoload.php
-[Undefined index: menu.,34,C:\xampp\htdocs\synapse\app\templates\navbars\navbar.php],32,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
+user.error.permissions,40,C:\xampp\htdocs\synapse\.base\db\delete.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php

@@ -10,6 +10,7 @@
 
 
 
+
 if($userData->permission_id != $_ENV["auth"]["developerPermissionGroup"]) {
 
 
@@ -27,20 +28,31 @@ if($userData->permission_id != $_ENV["auth"]["developerPermissionGroup"]) {
     $userPermissions = json_decode($userPermissions->actions,true);
 
 
+    if( empty($userPermissions["{$uri["module"]}{$uri["action"]}"]) || empty($userPermissions["{$uri["module"]}{$uri["action"]}"]["action"])) {
 
+        if (empty($_GET["act"]))
+        {
+            header("Location: {$userPermissionsRedirect}");
+            exit();
+        }
+        else
+        {
+            throw new Exception("user.error.permissions",400);
+        }
 
-
-    if( empty($userPermissions["{$uri["module"]}{$uri["action"]}"]))
-    {
-        header("Location: {$userPermissionsRedirect}");
-        exit();
     }
 
 
 }
 else
 {
-    $userPermissions = ArrayService::controllersToArray();
+
+    $controllersArray=ArrayService::controllersToArray();
+    foreach ($controllersArray as $k=>$v)
+    {
+        $userPermissions[$k]= ["action"=>$k,"type"=>3];
+    }
+
 
     $DEVELOPER_MODE= true;
 }

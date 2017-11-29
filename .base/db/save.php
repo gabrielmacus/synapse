@@ -23,10 +23,61 @@ if(!empty($userData))
 
 if(empty($_POST["id"]))
 {
+    //Creo
     $item->created_at = time();
 }
 else
 {
+    //Edito
+
+
+    $itemToEdit=R::find($itemType," id = ? ",[$_POST["id"]]);
+
+    if(empty($itemToEdit))
+    {
+        throw new Exception("{$itemType}.error.notExists",400);
+    }
+
+    $itemToEdit = reset($itemToEdit);
+
+    if(empty($DEVELOPER_MODE))
+    {
+        //Soy un usuario no desarrollador
+
+        $permissionType=$userPermissions["{$uri["module"]}{$uri["action"]}"]["type"];
+
+        switch ($permissionType)
+        {
+            case PERMISSION_ME:
+                //Si puedo editar solo mis datos
+
+                if($userData->id != $itemToEdit->user_id)
+                {
+                    throw new Exception("user.error.permissions",400);
+                }
+
+
+                break;
+            case PERMISSION_GROUP:
+                //Si puedo editar solo los datos del grupo
+
+                if($userData->permission_id != $itemToEdit->user->permission_id)
+                {
+                    throw new Exception("user.error.permissions",400);
+                }
+
+
+                break;
+            case PERMISSION_EVERYONE:
+                //Si puedo editar los datos de todos
+
+
+                break;
+
+        }
+
+    }
+
     $item->updated_at = time();
 }
 

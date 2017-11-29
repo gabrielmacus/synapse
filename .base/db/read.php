@@ -25,16 +25,53 @@ else
 }
 
 
-//
 
-
+$oSql="SELECT {$itemType}.*, user.username as 'user_username', user.type as 'user_type',user.email as 'user_email',user.name as 'user_name',user.surname as 'user_surname' FROM {$itemType}  LEFT JOIN user ON {$itemType}.user_id = user.id";
 
 $query = (empty($query))?"":$query;
 
 $params =(empty($params))?[]:$params;
 
 
-//$permissionType=$userPermissions[$itemType]
+if(empty($DEVELOPER_MODE))
+{
+    //Soy un usuario no desarrollador
+
+    $permissionType=$userPermissions["{$uri["module"]}{$uri["action"]}"]["type"];
+
+
+
+    switch ($permissionType)
+    {
+        case PERMISSION_ME:
+            //Si puedo leer solo mis datos
+
+            $query = (!empty($query)) ? $query.=" AND  {$itemType}.user_id = ? ":"  {$itemType}.user_id = ?";
+
+            $params[]=$userData->id;
+
+
+            break;
+        case PERMISSION_GROUP:
+
+            $query=(!empty($query))?" AND user.permission_id = ? ":" user.permission_id = ?";
+
+            $params[]=$userData->permission_id;
+
+
+            break;
+        case PERMISSION_EVERYONE:
+            //Si puedo leer los datos de todos
+
+
+            break;
+
+    }
+
+}
+
+
+
 
 if(!empty($_GET["id"]))
 {
@@ -44,8 +81,10 @@ if(!empty($_GET["id"]))
     $params[]=$_GET["id"];
 }
 
-$oResult = R::find($itemType,$query,$params);
+$oSql=(!empty($query))?"{$oSql} WHERE {$query} ":$oSql;
 
+
+$oResult  = R::getAll($oSql,$params);
 
 
 $data=[];
@@ -53,15 +92,15 @@ $data=[];
 foreach ($oResult as $oValue)
 {
 
-    $data[$oValue->id] =$oValue->export();
+    $data[$oValue["id"]] =$oValue;
 
-    if(!empty($data[$oValue->id]["category_id"]))
+    if(!empty($data[$oValue["id"]]["category_id"]))
     {
         $catBreadcrumb=[];
 
-        ArrayService::makeCategoriesBreadCrumb($cat,$data[$oValue->id]["category_id"],$catBreadcrumb);
+        ArrayService::makeCategoriesBreadCrumb($cat,$data[$oValue["id"]]["category_id"],$catBreadcrumb);
 
-        $data[$oValue->id]["categories"] = $catBreadcrumb;
+        $data[$oValue["id"]]["categories"] = $catBreadcrumb;
 
     }
 

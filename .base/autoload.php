@@ -20,8 +20,10 @@ define("SITE_TEMPLATE_PATH",BASE_PATH."/site/templates");
 define('SITE_POLICIES_PATH',BASE_PATH.'/site/policies');
 define('SITE_VALIDATION_PATH',BASE_PATH.'/site/validations');
 
-
-
+//Tipos de permisos
+define("PERMISSION_ME",1);
+define("PERMISSION_GROUP",2);
+define("PERMISSION_EVERYONE",3);
 
 set_error_handler(function($errno, $errstr, $errfile, $errline){
 

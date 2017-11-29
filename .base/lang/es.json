@@ -84,6 +84,7 @@
   "user.error.inactive":"Usuario no activado",
   "user.error.suspended":"Usuario suspendido. Contacte un administrador si cree que no hay motivo para la suspensión",
 
+
   "validation.error.maxLength":"La longitud máxima es de {c} caracteres",
   "validation.error.minLength":"La longitud mínima es de {c} caracteres",
   "validation.error.lengthBetween":"Debe contener de {a} a {b} caracteres",
@@ -173,7 +174,8 @@
   "post.empty":"No hay posts disponibles",
   "post.prompt.delete":"¿Desea eliminar el post ´{i}´?",
   "post.title":"Título",
-  "post.text":"Texto"
+  "post.text":"Texto",
+  "post.error.notExists":"El post seleccionado no existe"
 
 
 }

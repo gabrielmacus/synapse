@@ -75,6 +75,13 @@ if(!empty($_GET["act"]))
 
             echo dirname($a);
             break;
+
+        case 6:
+
+            echo json_encode(R::findMulti(['post','user'],"SELECT post.*,user.* FROM post,user WHERE post.user_id = user.id AND user.permission_id = ? ",[3]));
+
+
+            break;
     }
 }
 

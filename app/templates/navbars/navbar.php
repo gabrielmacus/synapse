@@ -25,8 +25,8 @@
     foreach ($userPermissions as $k=>$v)
     {
 
-        $v=$v["action"];
-        if(!empty($v))
+        $v=(!empty($v["action"]))?$v["action"]:false;
+        if($v)
         {
             if(!strpos($v,"."))
             {
