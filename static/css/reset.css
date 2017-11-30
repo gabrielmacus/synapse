@@ -50,3 +50,11 @@ html,body
     min-height: 100%;
 
 }
+/* W3.CSS 2.99 Mar 2017 by Jan Egil and Borge Refsnes */
+html{box-sizing:border-box}*,*:before,*:after{box-sizing:inherit}
+
+a:visited,a:-webkit-any-link
+{
+    color: inherit;
+    text-decoration: inherit;
+}

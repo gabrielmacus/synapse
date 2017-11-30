@@ -116,4 +116,24 @@ class ArrayService
 
     }
 
+    static function loadCategories()
+    {
+        $catFilePath=BASE_PATH."/.base/cache/categories.json";
+
+
+        if(file_exists($catFilePath))
+        {
+            //Si existe, levanto la caché
+            $cat = json_decode(file_get_contents($catFilePath),true);
+        }
+        else
+        {
+            //Si no, levanto desde bd y guardo en caché
+            $cat = R::find('category');
+            FileService::write(json_encode($cat),BASE_PATH."/.base/cache/categories.json",'w');
+
+        }
+        return $cat;
+    }
+
 }

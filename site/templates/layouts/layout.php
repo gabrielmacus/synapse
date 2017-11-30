@@ -12,9 +12,13 @@
 
     ?>
 </head>
-<body >
+<body class="<?php echo (!empty($bodyClass))?implode(" ",$bodyClass):"";?>" >
+<div class="nav-container">
+    <?php include SITE_TEMPLATE_PATH."/common/navbar.php";?>
 
+</div>
 <div class="layout">
+
 
     <div class="container">
         <?php

@@ -7,23 +7,8 @@
  */
 
 //Obtengo las categorias
-$catFilePath=BASE_PATH."/.base/cache/categories.json";
 
-$cat = [];
-
-if(file_exists($catFilePath))
-{
-    //Si existe, levanto la caché
-    $cat = json_decode(file_get_contents($catFilePath),true);
-}
-else
-{
-    //Si no, levanto desde bd y guardo en caché
-    $cat = R::find('category');
-    FileService::write(json_encode($cat),BASE_PATH."/.base/cache/categories.json",'w');
-
-}
-
+$cat = ArrayService::loadCategories();
 
 
 $oSql="SELECT {$itemType}.*, user.username as 'user_username', user.type as 'user_type',user.email as 'user_email',user.name as 'user_name',user.surname as 'user_surname' FROM {$itemType}  LEFT JOIN user ON {$itemType}.user_id = user.id";

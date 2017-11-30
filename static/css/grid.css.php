@@ -43,7 +43,7 @@
 
     $columns=12;
     $breakpoints =  ["l"=>1024,"m"=>768,"s"=>600];
-    $margin = 3.5;
+    $margin = 2.1;
 
 
     ?>
