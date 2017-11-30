@@ -1,10 +1,5 @@
 
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
+user.error.inactive,44,C:\xampp\htdocs\synapse\app\controllers\user.login.php
 user.error.permissions,40,C:\xampp\htdocs\synapse\.base\db\delete.php
 [readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,44,C:\xampp\htdocs\synapse\route.php],34,C:\xampp\htdocs\synapse\.base\autoload.php
+[Undefined variable: v,21,C:\xampp\htdocs\synapse\site\templates\home\cuerpo.php],34,C:\xampp\htdocs\synapse\.base\autoload.php

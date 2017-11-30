@@ -19,7 +19,7 @@
     "auth": {
         "secret": "sada3wqqwe",
         "sessionTime": 5184000,
-        "developerPermissionGroup":10,
+        "developerPermissionGroup":1000,
         "gp":
         {
             "active":true,

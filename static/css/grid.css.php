@@ -1,10 +1,76 @@
 
 <?php
 
+
+    function generateGrid($size,$columns,$margin)
+    {
+            ?>
+
+
+    <?php
+       for($i=1;$i<=$columns;$i++)
+           {
+               ?>
+
+
+    .col-<?php echo $size?>-<?php echo $i;?> .cl:nth-child(<?php echo $i?>n)
+    {
+        margin-right: 0!important;
+    }
+
+    .cl.<?php echo "{$size}-{$i}";?>
+    {
+    <?php
+    $w = ($columns / $i);
+
+    $w = (($i * 100) / $columns) -  ($margin - ($margin / $w)) ;
+
+    echo "width:{$w}%";
+    ?>
+    }
+
+
+
+
+    <?php
+            }
+        ?>
+    <?php
+    }
+
+
     header("Content-type: text/css; charset: UTF-8");
 
     $columns=12;
-    $breakpoints =  [1024,768,600];
+    $breakpoints =  ["l"=>1024,"m"=>768,"s"=>600];
+    $margin = 3.5;
+
+
+    ?>
+ @media screen and (min-width: <?php echo reset($breakpoints)+1?>px) {
+
+     <?php  generateGrid("xl",$columns,$margin); ?>
+
+ }
+
+<?php
+
+    foreach ($breakpoints as $k=>$v)
+        {
+            ?>
+
+   @media screen and (max-width: <?php echo $v?>px) {
+
+
+       <?php  generateGrid($k,$columns,$margin);?>
+
+
+   }
+
+
+
+<?php
+        }
 
 ?>
 
@@ -20,12 +86,18 @@
     width: 100%;
 }
 
+
+
+/*
 .col-3 .cl:nth-child(3n),
 .col-2 .cl:nth-child(2n){ margin-right: 0}
 .col-4 .cl:nth-child(4n) { margin-right: 0}
-
 .cl {float:left;margin-right:1%}
+*/
 .cl img{height:100%;width: 100%;object-fit: cover}
+.cl {float:left;margin-right:<?php echo $margin;?>%}
+
+/*
 
 .cl-1 {width:7.416666666666667%}
 .cl-2 {width:15.833333333333332%}
@@ -39,4 +111,4 @@
 .cl-10 {width:83.16666666666667%}
 .cl-11 {width:91.58333333333334%}
 .cl-12 {width:100%}
-
+*/

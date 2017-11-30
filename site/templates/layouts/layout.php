@@ -12,10 +12,17 @@
 
     ?>
 </head>
-<body>
+<body >
 
-<?php
-include ($incBody);
-?>
+<div class="layout">
+
+    <div class="container">
+        <?php
+        include ($incBody);
+        ?>
+    </div>
+
+</div>
+
 </body>
 </html>

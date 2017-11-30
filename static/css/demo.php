@@ -16,6 +16,8 @@ $user->username = "gabrielmacus";
 
 $user->password=hash('sha256',"demodemo");
 
+$user->status  = 1;
+
 $user->created_at = time();
 
 $user->type ="account";
