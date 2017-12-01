@@ -10,7 +10,6 @@
 
 
 
-
 if($userData->permission_id != $_ENV["auth"]["developerPermissionGroup"]) {
 
 

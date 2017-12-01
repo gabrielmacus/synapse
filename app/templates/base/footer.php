@@ -18,6 +18,12 @@ else
         <a onclick="sendItems()" class=" btn">
           <?php echo $_LANG["modal.aceptar"];?>
         </a>
+        <a  style="margin-right: 10px;" class=" btn">
+            <?php echo $_LANG["modal.cancelar"];?>
+        </a>
+        <a style="margin-right: 10px;" href="<?php echo (empty($href)) ? "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$itemType}/save?embed=true" : $href; ?>" class=" btn">
+            <?php echo $text;?>
+        </a>
         <script>
 
             function sendItems() {

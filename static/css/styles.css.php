@@ -1079,3 +1079,11 @@ trix-editor
 
 
 }
+
+.handle
+{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    cursor: move;
+}

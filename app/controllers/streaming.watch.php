@@ -13,10 +13,11 @@ if(empty($_GET["act"]))
     $incBody=TEMPLATE_PATH."/streaming/watch.php";
     $dontPrint= true;
     $_GET["act"]=true;
+
     include CONTROLLER_PATH."/streaming.php";
 
    
-   $streaming = reset($streamings);
+   $streaming = reset($data);
     
     
 }

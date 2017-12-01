@@ -83,6 +83,8 @@ else
 
             $_POST["type"]=$_GET["act"];
 
+
+
             $snUser = R::findOne('user',' email = ? ',[$_POST["email"]]);
 
 
@@ -124,13 +126,22 @@ else
                 else
                 {
                     $_POST["id"]=$snUser->id;
+
+                    $_POST["permission_id"] = $snUser->permission->id;
+
+                    $_POST["username"] = $snUser->username;
+
                     include (CONTROLLER_PATH."/user.save.php");
                 }
 
             }
 
             $user =$_POST;
+
             $user["token"]=$idtoken;
+
+            
+
             include (BASE_PATH."/.base/auth/set-cookie.php");
 
 

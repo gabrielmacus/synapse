@@ -61,7 +61,7 @@ else
     }
 
 
-    unset($_POST["permission_id"]);
+    //unset($_POST["permission_id"]);
 
     ArrayService::setPropertiesToBean($_POST,$itemToSave);
 

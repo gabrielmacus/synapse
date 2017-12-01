@@ -10,7 +10,7 @@ $title =$_LANG["streaming.list"];
 include TEMPLATE_PATH."/base/header.php";
 
 
-$urlAction=$_ENV["website"]["root"]."/{$itemType}/watch";
+$urlAction=$_ENV["website"]["root"]."/{$language}/{$_ENV["website"]["panelAccess"]}/{$itemType}/watch";
 
 $controller ="{$itemType}Controller";
 

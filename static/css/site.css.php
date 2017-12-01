@@ -28,10 +28,13 @@ html,body
 }
 .post .date
 {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 .post .category{
     float: right;
+    color:<?php echo $color_b;?>;
+    font-weight: 500;
+    text-decoration: underline;
 
 }
 .post figure img

@@ -1,7 +1,7 @@
 <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 <?php
-$title="{$streaming->name}";
+$title="{$streaming["name"]}";
 include TEMPLATE_PATH."/base/header.php";
 ?>
 
