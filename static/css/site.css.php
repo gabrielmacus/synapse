@@ -61,7 +61,7 @@ html,body
 {
     padding: 20px;
 
-    max-height:171px;
+    max-height: 171px;px;
 }
 .post .amount
 {
