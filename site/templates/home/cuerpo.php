@@ -20,16 +20,22 @@ window.onload=function () {
             <header>
 
                 <figure>
-                    <img src="http://localhost/synapse-media/files/2017/11/30/5a2008e6b7fa2/file_1.jpg?w=426&h=230">
+                    <img src="<?PHP echo $v["image"];?>">
                 </figure>
+
+                <span class="amount">$1000</span>
 
             </header>
             <section >
 
+                <div class="fila date">
+                    <time class="date">16-06-2017</time>
+
+                    <span class="category">Autos</span>
+                </div>
 
                 <h2 class="ellipsis title"><?php echo $v["title"];?></h2>
 
-                <time class="date"></time>
 
                 <div class=" text-container">
 

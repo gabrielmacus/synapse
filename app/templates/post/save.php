@@ -7,6 +7,13 @@
     ?>
 
     <?php
+    $data1Attr="name";
+    $associatedType="file";
+    $groupName="images";
+    include (TEMPLATE_PATH."/base/form/associated.php");
+    ?>
+
+    <?php
     $type="text";
     $label=$_LANG["{$itemType}.title"];
     $model="{$itemType}.title";

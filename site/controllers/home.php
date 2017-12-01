@@ -25,4 +25,5 @@ for($i=1;$i<=5;$i++)
     $data[$i]["text"]=
         "<p>Vendo clio mio 2001 diesel en buen estado, se escuchan ofertas razonables, recibo whatsapp, se vende para comprar uno mas nuevo, anda perfecto...</p>";
 
+    $data[$i]["image"]="http://localhost/synapse-media/files/2017/12/01/5a20907c47727/file_1.jpg?w=426&h=270";
 }

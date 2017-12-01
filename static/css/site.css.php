@@ -14,7 +14,7 @@ html,body
 .layout > .container
 {
     /*width: 93%;*/
-    width: 100%;
+    width: 100%;    margin-bottom: 20px;
 }
 
 .post
@@ -23,8 +23,16 @@ html,body
     background: white;
     overflow: hidden;
     margin-top: 20px;
-
+    position: relative;
    /* max-height: 317px;*/
+}
+.post .date
+{
+    margin-bottom: 5px;
+}
+.post .category{
+    float: right;
+
 }
 .post figure img
 {
@@ -53,7 +61,18 @@ html,body
 {
     padding: 20px;
 
-    max-height:146px;
+    max-height:171px;
+}
+.post .amount
+{
+    position: absolute;
+    top: 10px;
+    color: white;
+    left: 10px;
+    background-color: rgba(33,33,33,0.7);
+    padding: 5px;
+    font-weight: 500;
+    letter-spacing: 1px;
 }
 .post .title
 {
