@@ -176,7 +176,9 @@
   "post.prompt.delete":"¿Desea eliminar el post ´{i}´?",
   "post.title":"Título",
   "post.text":"Texto",
-  "post.error.notExists":"El post seleccionado no existe"
+  "post.error.notExists":"El post seleccionado no existe",
+
+  "pagination.goto":"Ir a la página {i}"
 
 
 }

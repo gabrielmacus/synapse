@@ -7,9 +7,11 @@
     ?>
     <title>Document</title>
 </head>
-<body data-ng-controller="mainController" data-ng-app="app" class="flex <?php if(!empty($bodyClass)){ echo implode(" ",$bodyClass); }?>">
+<body data-ng-controller="mainController" data-ng-app="app" class="flex <?php echo (!empty($_GET["embed"]))?"embed":false; ?> <?php if(!empty($bodyClass)){ echo implode(" ",$bodyClass); }?>">
 
 <?php
+
+
 if(empty($_GET["embed"]))
 {
     ?>
@@ -242,6 +244,21 @@ if(empty($_GET["embed"]))
 <?php include (TEMPLATE_PATH."/modal/yesNo.php"); ?>
 <?php include (TEMPLATE_PATH."/modal/iframe.php"); ?>
 
+<?php
+if(!empty($_GET["profile"]))
+{
+    $_PROFILE["end"]= microtime(true);
+
+    $_PROFILE["s"]  =$_PROFILE["end"] - $_PROFILE["start"];
+    $_PROFILE["ms"] = $_PROFILE["s"] * 1000;
+    $_PROFILE["us"] =  $_PROFILE["ms"] * 1000 ;
+
+
+
+    include (TEMPLATE_PATH."/profile/bar.php");
+
+}
+?>
 
 </body>
 </html>

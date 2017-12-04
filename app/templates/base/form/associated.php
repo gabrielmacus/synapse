@@ -86,26 +86,31 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
         <?php echo $_LANG["form.associate.{$groupName}"];?>
     </label>
     <ul class="col-s-1 col-m-2 col-l-3 col-xl-4" sv-root sv-part="<?php echo $arrayName; ?>.save" >
+
         <li class="empty  " data-ng-if="!<?php echo $arrayName?>.save || <?php echo $arrayName?>.save.length==0">
 
             <p><?php echo str_replace("{i}",$_LANG["menu.{$associatedType}"],$_LANG["form.associate.empty"]); ?></p>
         </li>
 
         <li class="cl s-12 m-6 l-4 xl-3"  sv-element data-ng-repeat="(k,i) in <?php echo $arrayName?>.save" >
-            <span class="delete" data-ng-click="removeAssociated(k,<?php echo $arrayName?>)"><i class="material-icons">&#xE5CD;</i></span>
 
-            <span class="handle" sv-handle><i class="material-icons">&#xE89F;</i></span>
-            <?php
-            if(!empty($imageAttr)) {
-                ?>
-                <figure data-ng-if="<?php echo "i.{$imageAttr}";?>">
-                    <img data-ng-src="<?php echo "{{i.{$imageAttr}}}"; ?>">
-                </figure>
+            <div class="wrapper">
+                <span class="delete" data-ng-click="removeAssociated(k,<?php echo $arrayName?>)"><i class="material-icons">&#xE5CD;</i></span>
+
+                <span class="handle" sv-handle><i class="material-icons">&#xE89F;</i></span>
                 <?php
-            }?>
-            <div class="info">
-                <h3><?php echo "{{i.{$data1Attr}}}";?></h3>
+                if(!empty($imageAttr)) {
+                    ?>
+                    <figure data-ng-if="<?php echo "i.{$imageAttr}";?>">
+                        <img data-ng-src="<?php echo "{{i.{$imageAttr}}}"; ?>">
+                    </figure>
+                    <?php
+                }?>
+                <div class="info">
+                    <h3><?php echo "{{i.{$data1Attr}}}";?></h3>
+                </div>
             </div>
+
 
         </li>
     </ul>

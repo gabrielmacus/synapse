@@ -20,7 +20,7 @@ else
           <?php echo $_LANG["modal.aceptar"];?>
         </a>
 
-        <a style="margin-right: 10px;" href="<?php echo (empty($href)) ? "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$itemType}/save?".http_build_query($_GET) : $href; ?>" class=" btn">
+        <a style="margin-right: 10px;" href="<?php echo (empty($href)) ? "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$itemType}/save?".http_build_query($_GET) : $href; ?>" class="add btn">
             <?php echo $text;?>
         </a>
 

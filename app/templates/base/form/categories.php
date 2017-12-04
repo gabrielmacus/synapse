@@ -31,6 +31,8 @@ if(!empty($categories))
 
             $rootScope.categories = <?php echo json_encode(array_values($categories));?>;
 
+
+
             $rootScope.category1={};
 
             $rootScope.selects.push({"model":$rootScope.category1,"categories":$rootScope.categories.filter(function (p1, p2, p3) { return p1.belongs ==<?php echo $mainCategoryId?>;  })});

@@ -6,6 +6,9 @@
  * Time: 22:07
  */
 
+$_PROFILE["start"]= microtime(true);
+
+
 define('BASE_PATH',dirname(dirname(__FILE__)));
 define('LOG_PATH',BASE_PATH."/.base/log");
 

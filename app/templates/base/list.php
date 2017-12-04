@@ -14,7 +14,7 @@ if(count($items)>0)
         foreach ($items as $k=>$v)
         {
             ?>
-            <li class="animated padding <?php if(!empty($v["active"])){ echo "active"; } ?>" >
+            <li class="<?php echo (!empty($v["image"]))?"with-image":""; ?> animated padding <?php if(!empty($v["active"])){ echo "active"; } ?>" >
 
 
                 <?php
@@ -30,16 +30,26 @@ if(count($items)>0)
                     </div>
                     <?php
                 }
+
+                if(!empty($v["image"]))
+                {
+                    ?>
+                    <figure class="thumbnail">
+                        <img src="<?php echo $v["image"];?>">
+                    </figure>
+                    <?php
+                }
                 ?>
 
 
+                <div class="data">
 
-                <a href="<?php echo (!empty($urlAction))?$urlAction."?id={$k}":"" ?>" class="name" data-id="<?Php echo $k;?>" ><?php echo $v["data1"];?></a>
+                    <a href="<?php echo (!empty($urlAction))?$urlAction."?id={$k}":"" ?>" class="name" data-id="<?Php echo $k;?>" ><?php echo $v["data1"];?></a>
 
-                <?php
-                if(empty($_GET["embed"]))
-                {?>
-                    <span class="controls">
+                    <?php
+                    if(empty($_GET["embed"]))
+                    {?>
+                        <span class="controls">
 
                     <?php
                     if (!empty($extraActions) && is_array($extraActions)) {
@@ -56,32 +66,33 @@ if(count($items)>0)
                     }
                     ?>
 
-                        <a class="edit" href="<?php echo $editUrl . "?id={$v["id"]}"; ?>"><i
-                                    class="material-icons">&#xE254;</i></a>
+                            <a class="edit" href="<?php echo $editUrl . "?id={$v["id"]}"; ?>"><i
+                                        class="material-icons">&#xE254;</i></a>
 
                     <a data-ng-click="openModal('<?php echo str_replace("{i}", $v["data1"], $deletePrompt) ?>','yesNo',false,'delete(<?php echo $k; ?>)')"
                        class="delete"><i class="material-icons">&#xE872;</i></a>
 
                 </span>
+                        <?php
+                    }?>
+
                     <?php
-                }?>
-
-
-
-
-
-                <?php
-                if(!empty($v["data2"]))
-                {
+                    if(!empty($v["data2"]))
+                    {
+                        ?>
+                        <div class="text">
+                            <p>
+                                <?php echo $v["data2"]?>
+                            </p>
+                        </div>
+                        <?php
+                    }
                     ?>
-                    <div class="text">
-                        <p>
-                            <?php echo $v["data2"]?>
-                        </p>
-                    </div>
-                    <?php
-                }
-                ?>
+                </div>
+
+
+
+
 
 
             </li>
@@ -91,4 +102,9 @@ if(count($items)>0)
 
     </ul>
     <?php
-}?>
+
+    include "pagination.php";
+
+
+}
+?>

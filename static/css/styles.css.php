@@ -74,6 +74,18 @@
     {
         width:100%;
     }
+
+    body.embed
+    {
+        padding-bottom: 60px;
+
+    }
+
+    body.embed.file-list footer .btn.add
+    {
+     display: none;
+    }
+
     .form-block
     {
         display: flex;
@@ -172,6 +184,32 @@
         flex-wrap: wrap;
         background-color: #E0E0E0;
     }
+    .base-list li .thumbnail
+    {
+        width: 15%;
+    }
+    .base-list li .thumbnail img
+    {
+        width: 100%;
+        height:100%;
+        object-fit: cover;
+    }
+
+    .base-list li .data
+    {
+
+        height: 100%;
+        width: 100%;
+    }
+
+    .base-list li.with-image .data
+    {
+        width: 85%;
+        padding-left: 20px;
+    }
+
+
+
     .base-list li .text
     {
         font-size: 15px;
@@ -607,6 +645,11 @@
     margin-right: 10px;
     position: relative;
 }
+.file-list .checkbox{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+}
 .checked,.unchecked
 {
     display: none;
@@ -665,7 +708,20 @@
     background-color: #E0E0E0;
     padding:10px;
     width: 100%;
+
     margin-top: 10px;
+}
+
+.associated ul li .wrapper
+{
+    display: flex;
+    text-align: center;
+    width: 100%;
+}
+.associated ul li .info
+{
+    display: flex;
+    text-align: center;
 }
 .associated ul li:not(.empty)
 {
@@ -687,7 +743,7 @@
 
 .associated ul li figure
 {
-    width: 30%;
+    width: 40%;
     height: 10vh;
 }
 .associated ul li.has-image .info
@@ -1086,4 +1142,75 @@ trix-editor
     left: 5px;
     top: 5px;
     cursor: move;
+}
+.profile-results
+{
+    height: 30px;
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #EEEEEE;
+    width: 100%;
+}
+.profile-results .unit
+{    padding: 10px;
+    /* display: block; */
+    color: #F57C00;
+
+}
+
+.pagination
+{
+    width: 100%;
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.pagination .page a
+{
+    -webkit-transition: all 100ms;
+    -moz-transition: all 100ms;;
+    -ms-transition: all 100ms;;
+    -o-transition: all 100ms;;
+    transition: all 100ms;;
+    margin-right: 10px;
+    padding: 10px;
+    border-bottom: 2px solid #212121;
+
+}
+.pagination .page:nth-last-child(2) a
+{
+    margin-right: 0;
+}
+.pagination .page.active a
+{
+    color:#5C6BC0;
+    border-bottom: 2px solid #5C6BC0;
+}
+.pagination .page:hover a
+{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background: #5C6BC0;
+    color: white;
+    border: 0;
+}
+.pagination .next
+{
+    margin-left: 20px;
+}
+.pagination .prev
+{
+    margin-right: 20px;
+}
+
+.pagination .next.disabled, .pagination .prev.disabled{
+opacity: 0.2;
+}
+.pagination .next:not(.disabled):hover,.pagination .prev:not(.disabled):hover
+{
+    color:#5C6BC0;
+    transform: scale(1.3);
 }

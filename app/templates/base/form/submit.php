@@ -1,5 +1,6 @@
 
 <div class="form-block submit">
+
     <button type="submit" class="padding">
         <?php echo $text1; ?>
     </button>

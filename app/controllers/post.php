@@ -15,9 +15,19 @@ if(empty($_GET["act"]))
 
     $items = [];
 
+
+
     foreach ($data as $k=>$v){
         $items[$v["id"]]["data1"] =$v["title"];
         $items[$v["id"]]["data2"] =strip_tags($v["text"],"<p></p>");
+
+    if(!empty($v["associated"]) && !empty($v["associated"]["file"]) && !empty($v["associated"]["file"]["images"]))
+    {
+        $image = reset($v["associated"]["file"]["images"]["save"])["url"];
+
+        $items[$v["id"]]["image"]=$image;
+    }
+
         $items[$v["id"]]["id"]=$v["id"];
     }
 

@@ -153,6 +153,22 @@
         <ul class="uploads col-s-1 col-m-2  col-l-3 col-xl-4 fila">
             <li class="scale-fade cl s-12 m-6 l-4 xl-3" ng-repeat="(k,upload) in uploads">
 
+                <?php
+                if(!empty($_GET["embed"]))
+                {
+                    ?>
+                    <div class="checkbox" data-ng-if="upload.file.id">
+                        <input  data-item='{{upload.file}}'  type="checkbox"  id="{{upload.file.id}}checkbox">
+                        <label  for="{{upload.file.id}}checkbox">
+                            <i class="material-icons checked">&#xE835;</i>
+                            <i class="material-icons unchecked">&#xE834;</i>
+                        </label>
+                    </div>
+                    <?php
+                }
+                ?>
+
+
                 <span class="delete" data-ng-click="deleteFile(k)"><i class="material-icons">&#xE5CD;</i></span>
 
                 <div class="deleted-overlay scale-fade" data-ng-if="upload.file.delete">
@@ -193,9 +209,18 @@
 
 
     <?php
-    $text1 =$_LANG["{$itemType}.submit"];
-    $text2 =$_LANG["{$itemType}.cancel"];
-    include (TEMPLATE_PATH."/base/form/submit.php");
+
+        $text1 =$_LANG["{$itemType}.submit"];
+        $text2 =$_LANG["{$itemType}.cancel"];
+        include (TEMPLATE_PATH."/base/form/submit.php");
+
+    if(!empty($_GET["embed"]))
+    {
+
+        $text = $_LANG["{$itemType}.nueva"];
+
+        include TEMPLATE_PATH."/base/footer.php";
+    }
     ?>
 
 </form>

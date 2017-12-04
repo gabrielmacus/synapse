@@ -9,13 +9,14 @@
 //Obtengo las categorias
 
 $cat = ArrayService::loadCategories();
+// user.username as 'user_username', user.type as 'user_type',user.email as 'user_email',user.name as 'user_name',user.surname as 'user_surname'
 
-
-$oSql="SELECT {$itemType}.*, user.username as 'user_username', user.type as 'user_type',user.email as 'user_email',user.name as 'user_name',user.surname as 'user_surname' FROM {$itemType}  LEFT JOIN user ON {$itemType}.user_id = user.id";
+$oSql="SELECT {$itemType}.*  FROM {$itemType}  LEFT JOIN user ON {$itemType}.user_id = user.id";
 
 $query = (empty($query))?"":$query;
 
 $params =(empty($params))?[]:$params;
+
 
 
 if(empty($DEVELOPER_MODE))
@@ -67,6 +68,9 @@ if(!empty($_GET["id"]))
 }
 
 $oSql=(!empty($query))?"{$oSql} WHERE {$query} ":$oSql;
+
+//Pagino
+include "pagination.php";
 
 
 $oResult  = R::getAll($oSql,$params);
@@ -128,6 +132,12 @@ if(!empty($data))
 
             if(!empty($_ENV[$_ENV["website"]["panelAccess"]]))
             {
+                if($asociatedType == "file" && !empty($link["url"])){
+
+                    $link["url"] = $_ENV["ftp"]["website"]."/".$link["url"];
+
+                }
+
                 $data[$link["{$itemType}_id"]]["associated"][$asociatedType][$link["array"]]["save"][]=$link;
             }
             else

@@ -8,6 +8,7 @@
 
     <?php
     $data1Attr="name";
+    $imageAttr="url";
     $associatedType="file";
     $groupName="images";
     include (TEMPLATE_PATH."/base/form/associated.php");

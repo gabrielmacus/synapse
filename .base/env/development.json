@@ -2,6 +2,11 @@
     "youtube": {
         "cmd": "C:\\youtube-dl"
     },
+    "pagination":
+    {
+        "limit":6,
+        "paginatorOffset":2
+    },
     "curl": {
 
         "timeout": 20
