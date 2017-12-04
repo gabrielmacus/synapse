@@ -5,14 +5,16 @@
  * Date: 04/12/2017
  * Time: 03:14 PM
  */
-if(!empty($_PAGINATION))
-{unset($_GET["p"]);
+if(!empty($_PAGINATION) && $_PAGINATION["pages"] > 1)
+{
+
+    unset($_GET["p"]);
     ?>
 
-    <ol class="pagination <?php echo (empty($_PAGINATION["prevPage"]))?"disabled":""; ?> ">
+    <ol class="pagination ">
 
-        <li class="prev">
-            <a  href="<?php echo (empty($_PAGINATION["prevPage"]))?"":"?p={$_PAGINATION["prevPage"]}&".http_build_query($_GET["p"]); ?>"><i class="material-icons">&#xE408;</i></a>
+        <li class="prev <?php echo (empty($_PAGINATION["prevPage"]))?"disabled":""; ?> ">
+            <a  href="<?php echo (empty($_PAGINATION["prevPage"]))?"":"?p={$_PAGINATION["prevPage"]}&".http_build_query($_GET); ?>"><i class="material-icons">&#xE408;</i></a>
         </li>
 
 
@@ -30,10 +32,11 @@ if(!empty($_PAGINATION))
         ?>
 
         <li class="next <?php echo (empty($_PAGINATION["nextPage"]))?"disabled":""; ?>">
-            <a href="<?php echo (empty($_PAGINATION["nextPage"]))?"":"?p={$_PAGINATION["nextPage"]}&".http_build_query($_GET["p"]); ?>"><i class="material-icons">&#xE409;</i></a>
+            <a href="<?php echo (empty($_PAGINATION["nextPage"]))?"":"?p={$_PAGINATION["nextPage"]}&".http_build_query($_GET); ?>"><i class="material-icons">&#xE409;</i></a>
         </li>
 
     </ol>
 
     <?php
+
 }

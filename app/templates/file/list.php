@@ -25,6 +25,7 @@ $text = $_LANG["{$itemType}.nueva"];
 include TEMPLATE_PATH."/base/footer.php";
 
 
+
 ?>
 
 <script>

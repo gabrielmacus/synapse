@@ -6,7 +6,7 @@
  * Time: 11:02
  */
 
-
+set_time_limit(0);
 
 if(!empty($_GET["act"])) {
 

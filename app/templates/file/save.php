@@ -221,7 +221,13 @@
 
         include TEMPLATE_PATH."/base/footer.php";
     }
+
+
     ?>
 
 </form>
+<?php
+
+include TEMPLATE_PATH."/base/pagination.php";
+?>
 

@@ -6,7 +6,8 @@
  * Time: 02:10 PM
  */
 
-if(!empty($oSql))
+
+if(!empty($oSql) && empty($_GET["id"]))
 {
     $limit = (!empty($limit))?$limit:$_ENV["pagination"]["limit"];
 
@@ -20,7 +21,7 @@ if(!empty($oSql))
 
     $oPages = ceil($oResultCount / $limit);
 
-    if($oPages > 0 && $_GET["p"] > $oPages)
+    if(!empty($_GET["p"]) && $oPages > 0 && $_GET["p"] > $oPages)
     {
 
         //Si estoy en una pagina vacia, voy a la ultima con contenido
@@ -62,7 +63,6 @@ if(!empty($oSql))
 
 
     }
-
     if($_PAGINATION["actualPage"] - 1 > 0)
     {
         $_PAGINATION["prevPage"] = $_PAGINATION["actualPage"] - 1;

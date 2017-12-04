@@ -8,6 +8,7 @@ $deletePrompt=$_LANG["{$itemType}.prompt.delete"];
 
 if(count($items)>0)
 {
+    include "search.php";
     ?>
     <ul class="base-list flex" <?php if(!empty($controller)){ echo  "data-ng-controller='{$controller}'"; } ?>>
         <?php
