@@ -15,16 +15,28 @@ else
     <footer style="    position: fixed;
     right: 0;
     bottom: 0;" class=" padding base-footer">
-        <a onclick="sendItems()" class=" btn">
+
+        <a   onclick="sendItems()" class=" btn">
           <?php echo $_LANG["modal.aceptar"];?>
         </a>
-        <a  style="margin-right: 10px;" class=" btn">
-            <?php echo $_LANG["modal.cancelar"];?>
-        </a>
-        <a style="margin-right: 10px;" href="<?php echo (empty($href)) ? "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$itemType}/save?embed=true" : $href; ?>" class=" btn">
+
+        <a style="margin-right: 10px;" href="<?php echo (empty($href)) ? "{$_ENV["website"]["root"]}/{$language}/{$_ENV["website"]["panelAccess"]}/{$itemType}/save?".http_build_query($_GET) : $href; ?>" class=" btn">
             <?php echo $text;?>
         </a>
+
+
+
+        <a style="margin-right: 10px;"  onclick="closeModalParent()" class=" btn">
+            <?php echo $_LANG["modal.cancelar"];?>
+        </a>
+
         <script>
+            
+            function closeModalParent() {
+
+                window.parent.postMessage({type:"close","group":"<?php echo $_GET["group"];?>"}, "<?php echo $_ENV["website"]["url"];?>");
+
+            }
 
             function sendItems() {
                 var items=document.querySelectorAll(".checkbox [data-item]:checked");
@@ -39,7 +51,7 @@ else
                 }
 
 
-                window.parent.postMessage({"items":itemsJson,"group":"<?php echo $_GET["group"];?>"}, "<?php echo $_ENV["website"]["url"];?>");
+                window.parent.postMessage({type:"add","items":itemsJson,"group":"<?php echo $_GET["group"];?>"}, "<?php echo $_ENV["website"]["url"];?>");
             }
 
         </script>

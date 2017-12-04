@@ -45,17 +45,29 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
             if(event.origin+"<?php echo rtrim($_ENV["website"]["root"],"/");?>/" == "<?php echo rtrim($_ENV["website"]["url"],"/");?>/" && event.data.group == "<?php echo $groupName;?>")
             {
 
-                $rootScope.init<?php echo $itemType.ucfirst($groupName);?>();
 
-                var data = event.data.items;
-
-                for(var k in data)
+                switch (event.data.type)
                 {
-                    $rootScope.<?php  echo $arrayName?>.save.push(data[k]);
+                    case "add":
+                        $rootScope.init<?php echo $itemType.ucfirst($groupName);?>();
+
+                        var data = event.data.items;
+
+                        for(var k in data)
+                        {
+                            $rootScope.<?php  echo $arrayName?>.save.push(data[k]);
+                        }
+
+
+                        $rootScope.modal=false;
+                        break;
+
+                    case "close":
+                        $rootScope.closeModal();
+                        break;
                 }
 
 
-                $rootScope.modal=false;
 
                 $rootScope.$apply();
 

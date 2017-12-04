@@ -209,13 +209,11 @@ if(empty($_GET["embed"]))
 
             }
             $rootScope.closeModal=function () {
+
                 $rootScope.modal  = false;
             }
 
             $rootScope.removeAssociated=function (i,arr) {
-
-
-                alert("A");
 
                 if(arr.save[i]["link_id"])
                 {

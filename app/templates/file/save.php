@@ -150,8 +150,8 @@
         </script>
 
 
-        <ul class="uploads col-3 fila">
-            <li class="scale-fade cl cl-4" ng-repeat="(k,upload) in uploads">
+        <ul class="uploads col-s-1 col-m-2  col-l-3 col-xl-4 fila">
+            <li class="scale-fade cl s-12 m-6 l-4 xl-3" ng-repeat="(k,upload) in uploads">
 
                 <span class="delete" data-ng-click="deleteFile(k)"><i class="material-icons">&#xE5CD;</i></span>
 
