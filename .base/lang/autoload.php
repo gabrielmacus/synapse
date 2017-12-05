@@ -7,7 +7,17 @@
  */
 
 
+$langPath=BASE_PATH."/app/lang/{$language}.json";
+$siteLangPath= BASE_PATH."/site/lang/{$language}.json";
 
-$_LANG= json_decode(file_get_contents(BASE_PATH."/.base/lang/{$language}.json"),true);
+if(!file_exists($langPath) || !file_exists($siteLangPath))
+{
+    throw new Exception("error.langNotExists",400);
+}
+
+$_LANG= json_decode(file_get_contents($langPath),true);
+
+$_SITE_LANG= json_decode(file_get_contents($siteLangPath),true);
+
 
 

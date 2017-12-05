@@ -236,7 +236,7 @@
         float: right;
         text-align: right;
     }
-    [data-ng-click]{
+    [data-ng-click],[onclick]{
         cursor: pointer;
     }
     body > header
@@ -249,10 +249,18 @@
         width: 100%;
     }
     nav .avatar
-    {    margin-left: auto;
+    {     margin-right: auto;
         display: flex;
+        color: white;
         align-items: center;
-        margin-right: 20px;
+        margin-left: 20px;
+    }
+    nav .avatar .wrapper
+    {
+        display: flex;
+        position: relative;
+        align-items: center;
+        margin: auto;
     }
     nav .avatar figure
     {
@@ -265,6 +273,8 @@
     {
         margin-right: 20px;
         /* font-weight: 600; */
+        display: flex;
+        align-items: center;
         letter-spacing: 1px;
     }
     nav .avatar figure img
@@ -522,6 +532,29 @@
         }
     }
       @media screen and (max-width: 768px ) {
+          .category-add{
+              width: 100%;
+          }
+
+          .category-add .form-block:nth-child(1)
+          {
+              width: 90%;
+          }
+          .category-add .form-block:nth-child(1) input
+          {
+              width: 100%;
+          }
+          .category-add .form-block:nth-child(2)
+          {
+              top: 18px;
+              position: relative;
+
+              width:10%
+          }
+          .category-add .form-block:nth-child(2) input
+          {
+              margin-right: 0;
+          }
 
 
           .modal-container .modal-box
@@ -530,7 +563,7 @@
           }
 
           body > header
-          {
+          {    overflow: scroll;
               position: fixed;
               height: 100%;
               width: 65%!important;
@@ -541,7 +574,7 @@
               display: block;
               display: block!important;
               background-color: #3949AB;
-              width: 65%;
+
               position: absolute;
               /* margin-top: 70px; */
               height: 100%;
@@ -551,9 +584,22 @@
           {
               left: 0;
           }
+          body > header .avatar
+          {
+              margin-left: 0px;
+
+              background-color: #5C6BC0;
+              padding: 20px;
+          }
           body > header.active + .main-container
           {
               left: 65%;
+          }
+          body > header nav .active:after
+          {
+              width:100%;
+              right: 0%;
+              height: 2px;
           }
           body > header nav a
           {
@@ -612,12 +658,13 @@
         box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
         top: 50px;
         padding: 10px;
-        right: 20px;
+        right: 0px;
+        z-index: 1000;
     }
     nav .menu a{
 
         font-weight: 600;
-        color: black!important;
+        color: #3F51B5!important;
     }
     .triangle
     {
@@ -717,6 +764,7 @@
     display: flex;
     text-align: center;
     width: 100%;
+
 }
 .associated ul li .info
 {
@@ -904,7 +952,7 @@
     padding: 10px;
     width: 100%;
 }
-.categories-tree .angular-ui-tree-handle
+.categories-tree .data
 {
     background: white;
     margin-bottom: 10px;
@@ -912,6 +960,18 @@
     padding: 10px;
     font-weight: 100;
 
+}
+.categories-tree .edit-mode
+{
+    width: 10%;
+    font-size: 18px;
+    padding: 5px;
+    margin-top: 0;
+    max-width: 60%;
+}
+.categories-tree .confirm i
+{
+    font-size: 24px;
 }
 .category-list .new-category
 {
@@ -937,6 +997,8 @@
     display: block;
     float: left;
 }
+
+
 .category-add label
 {
     margin-right: 10px;
@@ -952,7 +1014,16 @@
     top: 7px;
     right: 10px;
 }
-
+.category-list .edit
+{
+    position: absolute;
+    top: 7px;
+    right: 45px;
+}
+.category-list .edit i
+{
+    font-size: 22px;
+}
 
 
 trix-toolbar

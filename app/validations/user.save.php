@@ -29,16 +29,23 @@ if(!empty($_POST[$prop]) && !ValidationService::validate($_POST[$prop],$regex))
 }
 
 
-$min=4;$max=100;
-$regex ="/^.{{$min},{$max}}$/";
-$msg  = str_replace("{a}",$min,$_LANG["validation.error.lengthBetween"]);
-$msg  = str_replace("{b}",$max,$msg);
-$prop="password";
-if(empty($_POST[$prop]) || !ValidationService::validate($_POST[$prop],$regex))
+if(empty($_POST["id"]))
 {
-    $validationErrors["{$itemType}.{$prop}"][]=$msg;
-}
+    $min=4;$max=100;
+    $regex ="/^.{{$min},{$max}}$/";
+    $msg  = str_replace("{a}",$min,$_LANG["validation.error.lengthBetween"]);
+    $msg  = str_replace("{b}",$max,$msg);
+    $prop="password";
+    if(empty($_POST[$prop]) || !ValidationService::validate($_POST[$prop],$regex))
+    {
+        $validationErrors["{$itemType}.{$prop}"][]=$msg;
+    }
 
+}
+elseif(empty($_POST["password"]))
+{
+    unset($_POST["password"]);
+}
 
 
 
@@ -65,13 +72,20 @@ if(!empty($_POST[$prop]) && !ValidationService::validate($_POST[$prop],$regex))
 }
 
 
+
+
+
+
 $regex ='/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/';
 $prop="email";
 $msg = $_LANG["validation.error.invalidEmail"];
-if(!empty($_POST[$prop]) && !ValidationService::validate($_POST[$prop],$regex))
+if(empty($_POST[$prop]) || !ValidationService::validate($_POST[$prop],$regex))
 {
     $validationErrors["{$itemType}.{$prop}"][]=$msg;
 }
+
+
+
 
 
 

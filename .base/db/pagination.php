@@ -7,7 +7,7 @@
  */
 
 
-if(!empty($oSql) && empty($_GET["id"]))
+if(!empty($oSql) && empty($_GET["id"]) && empty($dontPaginate))
 {
     $limit = (!empty($limit))?$limit:$_ENV["pagination"]["limit"];
 
@@ -17,7 +17,9 @@ if(!empty($oSql) && empty($_GET["id"]))
 
     $oSqlCount = "SELECT count(*) as 'total' FROM ({$oSql}) as cant";
 
-    $oResultCount= R::getAll($oSqlCount)[0]['total'];
+
+
+    $oResultCount= R::getAll($oSqlCount,$params)[0]['total'];
 
     $oPages = ceil($oResultCount / $limit);
 

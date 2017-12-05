@@ -7,7 +7,7 @@
     ?>
     <title>Document</title>
 </head>
-<body data-ng-controller="mainController" data-ng-app="app" class="flex <?php echo (!empty($_GET["embed"]))?"embed":false; ?> <?php if(!empty($bodyClass)){ echo implode(" ",$bodyClass); }?>">
+<body data-ng-cloak data-ng-controller="mainController" data-ng-app="app" class=" flex <?php echo (!empty($_GET["embed"]))?"embed":false; ?> <?php if(!empty($bodyClass)){ echo implode(" ",$bodyClass); }?>">
 
 <?php
 

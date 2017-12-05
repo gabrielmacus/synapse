@@ -69,8 +69,13 @@ if(!empty($_GET["id"]))
 
 $oSql=(!empty($query))?"{$oSql} WHERE {$query} ":$oSql;
 
+//Ordeno
+$oSql=" {$oSql} ORDER BY updated_at,created_at DESC";
+
+
 //Pagino
 include "pagination.php";
+
 
 
 $oResult  = R::getAll($oSql,$params);

@@ -44,6 +44,12 @@
     include (TEMPLATE_PATH."/base/form/select.php");
     ?>
 
+    <?php
+    $label=$_LANG["{$itemType}.status"];
+    $model="{$itemType}.status";
+    $options = [0=>$_LANG["{$itemType}.status.inactive"],1=>$_LANG["{$itemType}.status.active"],2=>$_LANG["{$itemType}.status.suspended"]];
+    include (TEMPLATE_PATH."/base/form/select.php");
+    ?>
 
     <?php
     $text1 =$_LANG["{$itemType}.submit"];

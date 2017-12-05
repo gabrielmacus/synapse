@@ -75,6 +75,23 @@
 
 
             }
+            $rootScope.editCategory=function (item) {
+                item.editing=true;
+            }
+
+            $rootScope.confirmEditCategory=function (item) {
+
+                var itemToSave = angular.copy(item);
+
+                delete itemToSave.editing;
+
+                $rootScope.save(itemToSave,"category",function (e) {
+
+                    delete item.editing;
+
+                });
+
+            }
 
             $rootScope.deleteCategory=function (id,arr) {
 
@@ -117,9 +134,16 @@
 
         <!-- Nested node template -->
         <script type="text/ng-template" id="nodes_renderer.html">
-            <div ui-tree-handle>
-                {{item.name}}
+            <div class="data">
+                <span data-ng-if="!item.editing" ui-tree-handle class="name">{{item.name}}</span>
+                <input data-ng-if="item.editing" class="edit-mode" data-ng-model="item.name">
             </div>
+
+            <span data-ng-click="editCategory(item)"  data-ng-if="!item.editing"  class="edit"><i class="material-icons">&#xE254;</i></span>
+
+            <span data-ng-click="confirmEditCategory(item)" data-ng-if="item.editing" class="edit confirm"><i class="material-icons">&#xE876;</i></span>
+
+
             <span data-ng-click="deleteCategory(item.id)" class="delete"><i class="material-icons">&#xE5CD;</i></span>
 
             <ol ui-tree-nodes="" ng-model="item.categories">

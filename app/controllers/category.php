@@ -6,8 +6,14 @@
  * Time: 20:26
  */
 
+//No pagino
+
+$dontPaginate = true;
+
 //Leo los datos
 include (BASE_PATH."/.base/db/read.php");
+
+
 if(empty($_GET["act"]))
 {
     $bodyClass[]="{$itemType}-list";

@@ -60,6 +60,10 @@ else
      if(empty($dontPrint))
     {
 
+        foreach ($data as $k=>$v)
+        {
+            unset($data[$k]["password"]);
+        }
 
         $data = json_encode($data);
 

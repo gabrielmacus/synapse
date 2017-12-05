@@ -37,6 +37,8 @@
 
   "error":"Error desconocido",
 
+  "error.langNotExists":"El lenguaje seleccionado no esta disponible",
+
   "home.welcome":"Bienvenido, {username}",
 
   "login.usuario":"Usuario",
@@ -135,6 +137,10 @@
   "user.permissions":"Grupo de permisos",
   "user.username":"Nombre de usuario",
   "user.error.notExists":"El usuario seleccionado no existe",
+  "user.status.inactive":"Inactivo",
+  "user.status.active":"Activo",
+  "user.status.suspended":"Suspendido",
+  "user.status":"Estado",
 
 
   "portada.list":"Listado de portadas",
