@@ -25,14 +25,23 @@
 
 
 
+    <?php
+    $data1Attr="title";
+    $imageAttr="associated.file.images.save[0].url";
+    $associatedType="post";
+    $groupName="posts";
+    include (TEMPLATE_PATH."/base/form/associated.php");
+    ?>
+
 
 
 
     <?php
+    /*
     $data1Attr="name";
     $associatedType="repository";
     $groupName="repositorios";
-    include (TEMPLATE_PATH."/base/form/associated.php");
+    include (TEMPLATE_PATH."/base/form/associated.php");*/
     ?>
 
 

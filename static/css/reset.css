@@ -45,7 +45,7 @@ table {
 html,body
 {
     font-family: 'Roboto', sans-serif;
-    overflow-x: hidden;
+   /* overflow-x: hidden;*/
     width: 100%;
     min-height: 100%;
 

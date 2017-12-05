@@ -41,13 +41,13 @@
 
     header("Content-type: text/css; charset: UTF-8");
 
-    $columns=12;
-    $breakpoints =  ["l"=>1024,"m"=>768,"s"=>600];
-    $margin = 2.1;
+    $columns=24;
+    $breakpoints =  ["s"=>[0,600],"m"=>[601,768],"l"=>[769,1024]];
+    $margin = 1.5;
 
 
     ?>
- @media screen and (min-width: <?php echo reset($breakpoints)+1?>px) {
+ @media screen and (min-width: <?php echo end($breakpoints)[1]+1?>px) {
 
      <?php  generateGrid("xl",$columns,$margin); ?>
 
@@ -59,7 +59,7 @@
         {
             ?>
 
-   @media screen and (max-width: <?php echo $v?>px) {
+   @media screen and (min-width: <?php echo $v[0]?>px) and (max-width: <?php echo $v[1]?>px) {
 
 
        <?php  generateGrid($k,$columns,$margin);?>

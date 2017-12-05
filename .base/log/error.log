@@ -1,9 +1,18 @@
 
-SQLSTATE[HY093]: Invalid parameter number: no parameters were bound,720,C:\xampp\htdocs\synapse\.base\db\rb.php
-SQLSTATE[HY093]: Invalid parameter number: no parameters were bound,720,C:\xampp\htdocs\synapse\.base\db\rb.php
-SQLSTATE[HY093]: Invalid parameter number: no parameters were bound,720,C:\xampp\htdocs\synapse\.base\db\rb.php
-SQLSTATE[HY093]: Invalid parameter number: no parameters were bound,720,C:\xampp\htdocs\synapse\.base\db\rb.php
-user.error.permissions,40,C:\xampp\htdocs\synapse\.base\db\delete.php
-user.error.permissions,40,C:\xampp\htdocs\synapse\.base\db\delete.php
-SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY updated_at,created_at' at line 1,720,C:\xampp\htdocs\synapse\.base\db\rb.php
-SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'ORDER BY updated_at,created_at' at line 1,720,C:\xampp\htdocs\synapse\.base\db\rb.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[Undefined index: post,76,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[Undefined index: post,76,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[Undefined index: post,76,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[Array to string conversion,24,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[Array to string conversion,24,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[Array to string conversion,24,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[include(C:\xampp\htdocs\synapse/app/controllers/files.php): failed to open stream: No such file or directory,75,C:\xampp\htdocs\synapse\.base\url\load.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php

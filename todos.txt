@@ -12,3 +12,5 @@
 - Crear módulo de perfil de usuario
 - Arreglar grilla, al usar el 50% en las columnas, no respeta el margen en la segunda fila
 - Agregar soporte para contenido sindicado
+- Chequear si no existe una tabla intermedia con el mismo nombre pero al reves, para usarla en vez de crear otra, al asociar elementos
+- Soporte para datos extra en la tabla intermedia

@@ -689,8 +689,13 @@
     }
 .checkbox
 {
+
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    /*
     margin-right: 10px;
-    position: relative;
+    position: relative;*/
 }
 .file-list .checkbox{
     position: absolute;
@@ -769,6 +774,8 @@
 .associated ul li .info
 {
     display: flex;
+
+    overflow: hidden;
     text-align: center;
 }
 .associated ul li:not(.empty)
