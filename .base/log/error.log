@@ -1,18 +1,6 @@
 
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[Undefined index: post,76,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[Undefined index: post,76,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[Undefined index: post,76,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[Array to string conversion,24,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[Array to string conversion,24,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[Array to string conversion,24,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[include(C:\xampp\htdocs\synapse/app/controllers/files.php): failed to open stream: No such file or directory,75,C:\xampp\htdocs\synapse\.base\url\load.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+SQLSTATE[HY000]: General error: 1221 Incorrect usage of UNION and ORDER BY,720,C:\xampp\htdocs\synapse\.base\db\rb.php
+SQLSTATE[21000]: Cardinality violation: 1222 The used SELECT statements have a different number of columns,720,C:\xampp\htdocs\synapse\.base\db\rb.php
+SQLSTATE[21000]: Cardinality violation: 1222 The used SELECT statements have a different number of columns,720,C:\xampp\htdocs\synapse\.base\db\rb.php
+[Undefined index: types,109,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[Array to string conversion,84,C:\xampp\htdocs\synapse\.base\db\aggregate.php],37,C:\xampp\htdocs\synapse\.base\autoload.php

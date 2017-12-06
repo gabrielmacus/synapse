@@ -107,4 +107,11 @@ foreach ($oResult as $oValue)
 
 //Asocio los elementos
 $type=$itemType;
-include "aggregate.php";
+if(empty($_GET["debugo"]))
+{
+    include "aggregate.old.php";
+}
+else
+{
+    include "aggregate.php";
+}
