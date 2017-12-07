@@ -136,4 +136,39 @@ class ArrayService
         return $cat;
     }
 
+    static  function setNestedArray(&$array, $path, $value ="", $delimiter = '.') {
+        $pathParts = explode($delimiter, $path);
+
+        $lastKey = end($pathParts);
+
+        $current = &$array;
+
+
+        foreach($pathParts as $key) {
+
+            $val = ($key == $lastKey && !empty($value))?$value:[];
+
+
+            if(empty($current[$key]))
+            {
+                $current[$key]=$val;
+            }
+
+
+
+            $current = &$current[$key];
+
+
+
+
+        }
+
+
+
+
+
+
+    }
+
+
 }

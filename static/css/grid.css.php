@@ -41,7 +41,7 @@
 
     header("Content-type: text/css; charset: UTF-8");
 
-    $columns=24;
+    $columns=12;
     $breakpoints =  ["s"=>[0,600],"m"=>[601,768],"l"=>[769,1024]];
     $margin = 1.5;
 

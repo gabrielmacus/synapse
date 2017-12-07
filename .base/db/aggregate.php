@@ -5,7 +5,7 @@
  * Date: 05/12/2017
  * Time: 03:25 PM
  */
-
+/*
 function _agreggate($type,$data=false,&$associatedItems=[], $asociations=false)
 {
 
@@ -60,7 +60,7 @@ function _agreggate($type,$data=false,&$associatedItems=[], $asociations=false)
 
     }
 }
-
+*/
 
 function agreggate($types,$data=false,$asociations=false)
 {
@@ -73,9 +73,8 @@ function agreggate($types,$data=false,$asociations=false)
         }
 
 
-        $oSql="";
-
-
+        //Obtengo los diferentes ids
+        $dataKeys = array_column($data,"id");
         foreach ($asociations as $k => $v) {
 
 
@@ -91,8 +90,7 @@ function agreggate($types,$data=false,$asociations=false)
 
                     $asociatedType = reset($asociatedType);
 
-                    $dataKeys = array_keys($data);
-
+                  //  $dataKeys = array_keys($data);
 
                     $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id    WHERE  {$v["table_name"]}.{$type}_id IN (" . implode(",", $dataKeys) . ")
          AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";
@@ -101,10 +99,23 @@ function agreggate($types,$data=false,$asociations=false)
 
                     foreach ($links as $link) {
 
-                        $link["path"] = "{$link["{$type}_id"]}.associated.{$asociatedType}.{$link["array"]}.save";
+                        //$link["path"] = "{$link["{$type}_id"]}.associated.{$asociatedType}.{$link["array"]}.save";
 
-                        $associatedItems["items"][$link["id"]]=$link;
+                        $link["path"] = "associated.{$asociatedType}.{$link["array"]}.save.{$link["id"]}";
 
+                        $link["parent_type"]=$type;
+
+                        $link["parent_id"]=$link["{$type}_id"];
+
+                        $link["type"] = $asociatedType;
+
+                        //$associatedItems["items"][$link["id"]]=$link;
+
+                        //$associatedItems["items"][]=$link;
+
+
+
+                        $associatedItems["items"]["{$link["id"]}_{$asociatedType}"]=$link;
 
                         if(empty($associatedItems["types"]) || !in_array($asociatedType,$associatedItems["types"]))
                         {
@@ -112,14 +123,11 @@ function agreggate($types,$data=false,$asociations=false)
 
                         }
 
-                        ?>
-                        <pre>
-                            <?php print_r($oSql); ?>
-                        </pre>
-                        <?php
 
 
                     }
+
+
 
 
                 }
@@ -140,10 +148,69 @@ function agreggate($types,$data=false,$asociations=false)
 }
 
 
+$oSql = 'SELECT table_name, table_schema AS dbname FROM INFORMATION_SCHEMA.TABLES where table_schema = "' . $_ENV["db"]["name"] . '"';
+
+$asociations = R::getAll($oSql);
+
+$aggregationLevels = (empty($aggregationLevels)|| !is_numeric($aggregationLevels))?3:$aggregationLevels;
+
+$lastTypes =[$type];
+
+$lastItems = $data;
+
+$associatedItems = [];
+
+for ($i=1;$i<=$aggregationLevels;$i++)
+{
+
+    $aggregation = agreggate($lastTypes,$lastItems,$asociations);
+
+    if(!empty($aggregation["types"]) && !empty($aggregation["items"]))
+    {
+        $lastTypes = $aggregation["types"];
+
+        $lastItems = $aggregation["items"];
+
+        $associatedItems = $associatedItems + $lastItems;
+
+    }
+
+
+}
+$associatedItems =array_reverse($associatedItems,true);
 
 
 
+foreach ($associatedItems as $k=>$v)
+{
 
+
+    if(!empty($associatedItems["{$v["parent_id"]}_{$v["parent_type"]}"]))
+    {
+
+        ArrayService::setNestedArray($associatedItems["{$v["parent_id"]}_{$v["parent_type"]}"],$v["path"],$v);
+    }
+
+
+
+}
+
+
+foreach ($associatedItems as $k=>$v)
+{
+    if(!empty($data[$v["parent_id"]]) && $type == $v["parent_type"])
+    {
+        ArrayService::setNestedArray($data[$v["parent_id"]],$v["path"],$v);
+
+    }
+}
+
+
+
+//DebugService::print_formatted($data);
+
+
+/*
 
 
 $associatedItems = agreggate([$type],$data);
@@ -167,6 +234,18 @@ print_r($associatedItems3);
 echo "<pre>";
 
 exit();
+*/
+
+
+
+
+
+
+
+
+
+
+
 /*
 
 $associatedItems3 = agreggate($associatedItems2["types"],$data);

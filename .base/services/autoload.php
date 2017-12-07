@@ -18,6 +18,8 @@ require_once ("hls.php");
 require_once ("classes/Process.php");
 require_once ("validation.php");
 require_once ("useragent.php");
+require_once ("debug.php");
+
 
 require_once ("FtpClient/FtpException.php");
 require_once ("FtpClient/FtpClient.php");
