@@ -104,7 +104,8 @@ foreach ($oResult as $oValue)
 }
 
 
-
 //Asocio los elementos
 $type=$itemType;
 include "aggregate.php";
+
+

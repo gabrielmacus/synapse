@@ -106,6 +106,7 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
                     </figure>
                     <?php
                 }?>
+
                 <div class="info">
                     <h3><?php echo "{{i.{$data1Attr}}}";?></h3>
                 </div>

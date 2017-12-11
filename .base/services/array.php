@@ -149,16 +149,34 @@ class ArrayService
             $val = ($key == $lastKey && !empty($value))?$value:[];
 
 
+
             if(empty($current[$key]))
             {
-                $current[$key]=$val;
+
+                //$current[$key]=$val;
+
+                if(!is_numeric($key))
+                {
+                    $current[$key]=$val;
+                }
+                else
+                {
+                    $current[]=$val;
+
+                    //DebugService::print_formatted($current);
+                }
+
             }
 
+            if(!is_numeric($key)) {
+                $current = &$current[$key];
+            }
+            else
+            {
+                $current=&$val;
+            }
 
-
-            $current = &$current[$key];
-
-
+            //$current = &$current[$key];
 
 
         }

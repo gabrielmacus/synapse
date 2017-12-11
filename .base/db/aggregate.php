@@ -61,6 +61,14 @@ function _agreggate($type,$data=false,&$associatedItems=[], $asociations=false)
     }
 }
 */
+function ordPos($a, $b)
+{
+
+    if ($a["pos"] == $b["pos"]) {
+        return 0;
+    }
+    return ($a["pos"] > $b["pos"]) ? -1 : 1;
+}
 
 function agreggate($types,$data=false,$asociations=false)
 {
@@ -101,6 +109,11 @@ function agreggate($types,$data=false,$asociations=false)
 
                         //$link["path"] = "{$link["{$type}_id"]}.associated.{$asociatedType}.{$link["array"]}.save";
 
+                        if($asociatedType == "file")
+                        {
+                            $link["url"]="{$_ENV["ftp"]["website"]}/{$link["url"]}";
+                        }
+
                         $link["path"] = "associated.{$asociatedType}.{$link["array"]}.save.{$link["id"]}";
 
                         $link["parent_type"]=$type;
@@ -127,7 +140,7 @@ function agreggate($types,$data=false,$asociations=false)
 
                     }
 
-
+                    uasort($associatedItems["items"],"ordPos");
 
 
                 }
@@ -152,7 +165,7 @@ $oSql = 'SELECT table_name, table_schema AS dbname FROM INFORMATION_SCHEMA.TABLE
 
 $asociations = R::getAll($oSql);
 
-$aggregationLevels = (empty($aggregationLevels)|| !is_numeric($aggregationLevels))?3:$aggregationLevels;
+$aggregationLevels = (empty($aggregationLevels)|| !is_numeric($aggregationLevels))?2:$aggregationLevels;
 
 $lastTypes =[$type];
 
@@ -180,7 +193,6 @@ for ($i=1;$i<=$aggregationLevels;$i++)
 $associatedItems =array_reverse($associatedItems,true);
 
 
-
 foreach ($associatedItems as $k=>$v)
 {
 
@@ -189,6 +201,8 @@ foreach ($associatedItems as $k=>$v)
     {
 
         ArrayService::setNestedArray($associatedItems["{$v["parent_id"]}_{$v["parent_type"]}"],$v["path"],$v);
+
+
     }
 
 
@@ -201,6 +215,8 @@ foreach ($associatedItems as $k=>$v)
     if(!empty($data[$v["parent_id"]]) && $type == $v["parent_type"])
     {
         ArrayService::setNestedArray($data[$v["parent_id"]],$v["path"],$v);
+
+
 
     }
 }

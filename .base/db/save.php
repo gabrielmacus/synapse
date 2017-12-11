@@ -25,6 +25,7 @@ if(empty($_POST["id"]))
 {
     //Creo
     $item->created_at = time();
+    $item->updated_at = null;
 }
 else
 {
