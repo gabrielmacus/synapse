@@ -65,30 +65,32 @@ if(!empty($categories))
             var unbindWatch = $rootScope.$watch("<?php echo $itemType?>",
                 function (newValue,oldValue) {
 
-
-                    if(!oldValue && newValue){
-
-                        //Ya fueron cargados los datos
-                        if(newValue["categories"])
-                        {
-
-                            newValue["categories"].splice(0,1);
-
-                            for(var k in newValue["categories"])
-                            {
-                                var id = parseInt(newValue["categories"][k]["id"]);
-
-                                $rootScope.selects[$rootScope.selects.length-1].model = id;
-
-                                $rootScope.changeCategory(id,k);
+                   
+                     if(!oldValue.id && newValue.id){
 
 
-                            }
-                        }
+                         //Ya fueron cargados los datos
+                         if(newValue["categories"])
+                         {
 
-                        unbindWatch();
+                             newValue["categories"].splice(0,1);
 
-                    }
+                             for(var k in newValue["categories"])
+                             {
+                                 var id = parseInt(newValue["categories"][k]["id"]);
+
+                                 $rootScope.selects[$rootScope.selects.length-1].model = id;
+
+                                 $rootScope.changeCategory(id,k);
+
+
+                             }
+                         }
+
+                         unbindWatch();
+
+                     }
+
 
 
                 })

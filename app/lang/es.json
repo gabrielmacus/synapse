@@ -59,6 +59,7 @@
   "form.associate":"Asociar {i}",
   "form.associate.empty":"Sin {i}",
 
+  "form.associate.users":"Usuarios",
   "form.associate.streamings":"Transmisiones",
   "form.associate.streamings2":"Transmisiones 2",
   "form.associate.repositorios":"Repositorios",

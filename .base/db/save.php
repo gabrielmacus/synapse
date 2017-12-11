@@ -94,7 +94,21 @@ if(!empty($_POST["associated"]))
         foreach ($i as $arrayName => $j)
         {
 
-            $linkName ="{$associatedType}_{$itemType}";
+            $oSql = 'SELECT table_name, table_schema AS dbname FROM INFORMATION_SCHEMA.TABLES where table_schema = "' . $_ENV["db"]["name"] . '" AND table_name = "'."{$associatedType}_{$itemType}".'" OR  table_name= "'."{$itemType}_{$associatedType}".'"';
+
+            $oLink= R::getAll($oSql);
+
+            if(empty($oLink))
+            {
+                $linkName ="{$associatedType}_{$itemType}";
+            }
+            else{
+
+                $linkName =reset($oLink)["table_name"];
+
+            }
+
+
 
             if(!empty($j["delete"]))
             {
@@ -132,11 +146,22 @@ if(!empty($_POST["associated"]))
                         if(!empty($v["extra"]))
                         {
                             //Datos extra en la asociacion
-                            $linkData = array_merge($linkData,$v["extra"]);
+                            $linkData = $linkData + $v["extra"] ;//array_merge($linkData,$v["extra"]);
 
                         }
 
-                        $item->link($linkName,$linkData)->setAttr($associatedType,$associatedItem);
+
+                        $linkType = $associatedType;
+
+                        if($associatedType == $itemType)
+                        {
+                            $linkType.="2";
+                        }
+
+
+
+                        $item->link($linkName,$linkData)->setAttr($linkType,$associatedItem);
+
 
                     }
                     else

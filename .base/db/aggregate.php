@@ -99,9 +99,24 @@ function agreggate($types,$data=false,$asociations=false)
                     $asociatedType = reset($asociatedType);
 
                   //  $dataKeys = array_keys($data);
-
+                    /*
                     $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id    WHERE  {$v["table_name"]}.{$type}_id IN (" . implode(",", $dataKeys) . ")
+         AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";*/
+
+                    if($type != $asociatedType)
+                    {
+                        $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id    WHERE  {$v["table_name"]}.{$type}_id IN (" . implode(",", $dataKeys) . ")
          AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";
+
+                    }
+                    else
+                    {
+                        $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}2_id    WHERE  {$v["table_name"]}.{$type}_id IN (" . implode(",", $dataKeys) . ")
+         AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";
+
+                    }
+
+
 
                     $links = R::getAll($oSql);
 
@@ -140,7 +155,11 @@ function agreggate($types,$data=false,$asociations=false)
 
                     }
 
-                    uasort($associatedItems["items"],"ordPos");
+                    if(!empty($associatedItems))
+                    {
+
+                        uasort($associatedItems["items"],"ordPos");
+                    }
 
 
                 }
