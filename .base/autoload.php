@@ -51,15 +51,20 @@ set_error_handler(function($errno, $errstr, $errfile, $errline){
 if(empty($env) || $env = "DEV")
 {
     $env = file_get_contents(BASE_PATH."/.base/env/development.json");
+    $siteEnv = file_get_contents(BASE_PATH."/site/env/development.json");
     
 }
 else if ($env = "PROD")
 {
     $env = file_get_contents(BASE_PATH."/.base/env/production.json");
-
+    $siteEnv = file_get_contents(BASE_PATH."/site/env/production.json");
 }
 
 $_ENV = json_decode($env,true);
+$_ENV["siteEnv"] = json_decode($siteEnv,true);
+
+
+
 
 include ("url/autoload.php");
 

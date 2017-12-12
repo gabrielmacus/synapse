@@ -13,12 +13,12 @@ $elements =
 
 ?>
 
-<div class="col-s-1 col-m-2 col-l-3 col-xl-3 flex">
+<div class="col-s-1 col-m-1 col-l-3 col-xl-3 flex">
 
     <?php foreach($elements as $k=>$v)
     {
         ?>
-        <div class="box  cl s-12 m-6 l-4 xl-4 " >
+        <div class="box  cl s-12 m-12 l-4 xl-4 " >
 
             <header class="front flex animated">
 

@@ -3,20 +3,25 @@
 <a class="logo"></a>
 
 
-<a>Inicio</a>
-<a>Servicios</a>
-<a>Tips</a>
-<a>Contacto</a>
-<a>Nuestros trabajos</a>
+<a href="#inicio">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#tips">Tips</a>
+<a href="#contacto">Contacto</a>
+<a href="#portfolio">Nuestros trabajos</a>
 
 <span class="sn">
-    <a>
-        <img src="http://www.southdademiddle.org/ourpages/auto/2017/4/22/60815884/fb-art.jpg">
+    <a class="facebook">
+        <?php include SITE_TEMPLATE_PATH."/svg/facebook.php"?>
     </a>
 
-    <a>
-        <img src="http://hot97svg.com/wp-content/uploads/2016/09/2016_instagram_logo.png">
+    <a class="instagram">
+       <?php include SITE_TEMPLATE_PATH."/svg/instagram.php"?>
     </a>
+
+     <a class="twitter">
+        <?php include SITE_TEMPLATE_PATH."/svg/twitter.php"?>
+     </a>
+
 </span>
 
 </nav>

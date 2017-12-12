@@ -4,6 +4,7 @@
      $color_b="#FFA726";
      $color_c="white";
      $color_d="#EEEEEE";
+     $color_e="#616161";
  ?>
 
 @import url('https://fonts.googleapis.com/css?family=Muli:400,600,800');
@@ -32,7 +33,7 @@ a
 {
 cursor: pointer;
 }
-.main-navbar a:not(.logo):after
+.main-navbar  a:not(.logo):after
 {
 
 
@@ -70,11 +71,20 @@ img
     height: 100%;
     object-fit: cover;
 }
-.section#inicio .css-slider .css-slide,.section#inicio .css-slider .css-slide figure
-{
+figure
+{    width: 100%;
+    height: 100%;
 
+}
+.section#inicio .css-slider .css-slide
+{
     width: 100%;
     height: 100%;
+
+}
+.css-slider
+{
+    border-bottom: 1px solid <?php echo $color_a;?>;
 }
 .css-slide figure
 {
@@ -96,6 +106,10 @@ img
 {
     width: 80%;
     margin: auto;
+    float: left;
+    overflow: hidden;
+    left: 10%;
+    position: relative;
 }
 .section > .header > .title
 {
@@ -160,13 +174,14 @@ display: flex;
     right: 100%;
     padding: 20px;
     width:100%;
-    font-weight: 600;
+    font-weight: 300;
     color: white;
     line-height: 20px;
 }
 .section#servicios .box .back p
 {    background: rgba(0,0,0,0.8);
     padding: 10px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,1);
 }
 
 
@@ -190,7 +205,6 @@ display: flex;
 {
     width: 100%;
     float: left;
-    margin-bottom: 20px;
 }
 .section#tips .list > .item .text
 {
@@ -221,14 +235,163 @@ display: flex;
     margin-right: 20px;
     margin-left: auto;
 }
-.sn a img
+.sn a svg
 {
-    height: 30px;
+    height: 20px;
     width: auto;
+    transition:all 150ms;
+    fill: <?php echo $color_c ?>;
 }
 .sn a
 {
     padding: 0;
     height: 100%;
-    display: flex;
+    display: inline-flex;
+    margin-right: 10px;
+}
+.sn a:last-child
+{
+    margin-right: 0;
+}
+.sn a:after
+{
+    display: none;
+}
+.sn a.facebook:hover svg
+{
+
+    fill: 	#8b9dc3;
+}
+.sn a.instagram:hover svg
+{
+    fill:#d6249f;
+}
+.sn a.twitter:hover svg
+{
+
+    fill:#1dcaff;
+
+}
+.sn a:hover svg
+{
+    transform:scale(1.2) rotate(-10deg);
+}
+#map
+{
+    width: 100%;height: 100%;
+}
+.contacto
+{
+    margin-top: 20px;
+}
+.contacto .direccion
+{
+    margin-bottom: 20px;
+    font-size: 15px;
+    color: <?php echo $color_e?>;
+}
+
+.contacto .fb
+{
+
+    /*display: flex;
+    flex-wrap: wrap;
+    */
+}
+
+.contacto .fb .fb-page
+{
+    margin: auto
+
+}
+
+.contacto form
+{
+    margin-top: 34px;
+}
+
+.form-block label,.form-block input,.form-block textarea
+{
+    width: 100%;
+    outline: 0;
+
+
+}
+
+.form-block input,.form-block textarea
+
+{    padding: 5px;
+    float: left;
+    margin-top: 10px;
+    font-size: 18px;
+    border: 0;
+    color: <?php echo $color_e?>;
+    border: 1px solid <?php echo $color_a?>;
+}
+
+.contacto .form-block:first-child
+{
+    margin-top: 0;
+}
+
+.form-block
+{
+    position: relative;
+    margin-top: 10px;
+    float: left;
+    width: 100%;
+    display: block;
+}
+.form-block label
+{
+    color: <?php echo $color_a?>;
+}
+
+.form-block button[type='submit']
+{
+    float: right;
+    border: 0;
+    padding: 10px;
+    font-size: 13px;
+    color: <?php echo $color_c?>;
+    font-weight: 600;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    background: <?php echo $color_a?>;
+}
+
+.form-block button[type='submit']:hover
+{
+
+    color: <?php echo $color_c?>;
+    background: <?php echo $color_a?>;
+    opacity: 0.7;
+}
+
+
+.form-block button[type='submit']:active
+{ outline: 0;
+    color: <?php echo $color_a?>;
+    background: <?php echo $color_c?>;
+
+}
+
+.portfolio-item
+{
+    margin-top: 20px;
+    position: relative;
+    max-height: 250px;
+}
+.portfolio-item .caption{
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    color: white;
+    width: 100%;
+    background: rgba(0,0,0,0.6);
+    padding: 10px;
+    opacity: 0.5;
+}
+.portfolio-item:hover .caption
+{
+    opacity: 1;
 }
