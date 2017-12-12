@@ -33,14 +33,14 @@ $portfolio=
 
 ?>
 
-<div class="col-s-1 col-m-2 col-l-3 col-xl-3 flex">
+<div class="col-s-1 col-m-2 col-l-3 col-xl-4 flex">
 
     <?php
     foreach ($portfolio as $k=>$v)
     {
         ?>
 
-        <a class="cl s-12 m-6 l-4 xl-4 portfolio-item">
+        <a class="cl s-12 m-6 l-4 xl-3 portfolio-item">
 
             <figure>
                 <img src="<?php echo $v["image"]["url"]?>">

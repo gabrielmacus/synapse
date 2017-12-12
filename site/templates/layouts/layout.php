@@ -22,6 +22,7 @@
 
     <div class="container">
         <?php
+
         include ($incBody);
         ?>
     </div>

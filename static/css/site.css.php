@@ -12,14 +12,65 @@
 body
 {
     font-family: 'Muli', sans-serif;
+    width: 100%;
+    float: left;
+}
 
+
+.layout,.nav-container
+{
+    width: 100%;
+    float: left;
+}
+.nav-container
+{
+    height: 56px;
 }
 .main-navbar
 {
+    z-index: 1100;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     display: flex;
+    position: fixed;
+    width: 100%;
     background-color: <?php echo $color_a?>;
 }
+.main-navbar.pinned
+{
+
+  background-color: <?php echo $color_c?>;
+}
+.main-navbar.pinned a
+{
+    color: <?php echo $color_a?>;
+}
+
+.main-navbar.pinned .sn a.facebook svg
+{
+
+    fill: 		#3b5998;
+}
+#map
+{
+    min-height: 25vh;
+}
+.main-navbar.pinned .sn a.instagram svg
+{
+    fill:#d6249f;
+}
+.main-navbar.pinned .sn a.twitter svg
+{
+
+    fill:#1dcaff;
+
+}
+
+.main-navbar.pinned a:after
+{
+    background-color: <?php echo $color_a?>!important;
+}
+
+
 .main-navbar a
 {
     padding: 20px;
@@ -58,7 +109,7 @@ cursor: pointer;
     width: 90%;
 }
 
-.section#inicio .css-slider
+.section.inicio .css-slider
 {
     height: 70vh;
     width: 100%;
@@ -76,7 +127,7 @@ figure
     height: 100%;
 
 }
-.section#inicio .css-slider .css-slide
+.section.inicio .css-slider .css-slide
 {
     width: 100%;
     height: 100%;
@@ -92,7 +143,7 @@ figure
     position: relative;
 }
 
-.section#inicio .css-slider figcaption
+.section.inicio .css-slider figcaption
 {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     position: absolute;
@@ -110,6 +161,7 @@ figure
     overflow: hidden;
     left: 10%;
     position: relative;
+    padding-top: 50px;
 }
 .section > .header > .title
 {
@@ -127,7 +179,7 @@ figure
     position: relative;
     display: block;
 }
-.section#servicios .box
+.section.servicios .box
 {
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
     margin-top: 20px;
@@ -135,7 +187,7 @@ figure
     overflow: hidden;
     position: relative;
 }
-.section#servicios .box .front
+.section.servicios .box .front
 {
 
 
@@ -148,7 +200,7 @@ figure
     background-color: <?php echo $color_d;?>;
     height: 100%;
 }
-.section#servicios .box .front h3
+.section.servicios .box .front h3
 {
     text-align: center;
     margin: auto;
@@ -156,7 +208,7 @@ figure
     width: 65%;
     padding: 10px;
 }
-.section#servicios .box .front figure
+.section.servicios .box .front figure
 {
     height: 100%;
     width: 35%;
@@ -165,7 +217,11 @@ figure
 {
     transition: all 250ms ease-out;
 }
-.section#servicios .box .back
+.animated-2
+{
+    transition: all 300ms linear;
+}
+.section.servicios .box .back
 {
     position: absolute;
     top: 0;
@@ -178,35 +234,35 @@ display: flex;
     color: white;
     line-height: 20px;
 }
-.section#servicios .box .back p
+.section.servicios .box .back p
 {    background: rgba(0,0,0,0.8);
     padding: 10px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,1);
 }
 
 
-.section#servicios .box:hover .front figure
+.section.servicios .box:hover .front figure
 {
     filter:blur(3px);
     width: 100%;
 }
 
-.section#servicios .box:hover .back
+.section.servicios .box:hover .back
 {
     right:0%;
 }
-.section#tips .list > .item
+.section.tips .list > .item
 {
     margin-top: 20px;
     border: 1px solid black;
     padding: 20px;
 }
-.section#tips .list
+.section.tips .list
 {
     width: 100%;
     float: left;
 }
-.section#tips .list > .item .text
+.section.tips .list > .item .text
 {
     display: flex;
     font-size: 18px;
@@ -215,17 +271,17 @@ display: flex;
 }
 @media all and (max-width: 601px) {
 
-    .section#tips .list > .item .icon
+    .section.tips .list > .item .icon
     {
         margin-bottom: 20px;
     }
 
-    .section#inicio .css-slider
+    .section.inicio .css-slider
     {
         height: 40vh;
 
     }
-    .section#inicio .css-slider figcaption
+    .section.inicio .css-slider figcaption
     {
         font-size: 20px;
     }
