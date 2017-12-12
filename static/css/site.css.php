@@ -59,7 +59,7 @@ cursor: pointer;
 
 .section#inicio .css-slider
 {
-    height: 45vh;
+    height: 70vh;
     width: 100%;
     position: relative;
 
@@ -97,7 +97,7 @@ img
     width: 80%;
     margin: auto;
 }
-.section .header .title
+.section > .header > .title
 {
     font-weight: 600;
     color: <?php echo $color_a?>;
@@ -105,7 +105,7 @@ img
     margin-top: 20px;
     margin-bottom: 20px;
 }
-.section .header .line{
+.section > .header > .line{
     width: 100%;
     height: 1px;
     opacity: 0.4;
@@ -155,13 +155,18 @@ img
 {
     position: absolute;
     top: 0;
-
+display: flex;
+    height: 100%;
     right: 100%;
-    padding: 30px;
+    padding: 20px;
     width:100%;
     font-weight: 600;
     color: white;
     line-height: 20px;
+}
+.section#servicios .box .back p
+{    background: rgba(0,0,0,0.8);
+    padding: 10px;
 }
 
 
@@ -174,4 +179,56 @@ img
 .section#servicios .box:hover .back
 {
     right:0%;
+}
+.section#tips .list > .item
+{
+    margin-top: 20px;
+    border: 1px solid black;
+    padding: 20px;
+}
+.section#tips .list
+{
+    width: 100%;
+    float: left;
+    margin-bottom: 20px;
+}
+.section#tips .list > .item .text
+{
+    display: flex;
+    font-size: 18px;
+    line-height: 24px;
+    align-items: center;
+}
+@media all and (max-width: 601px) {
+
+    .section#tips .list > .item .icon
+    {
+        margin-bottom: 20px;
+    }
+
+    .section#inicio .css-slider
+    {
+        height: 40vh;
+
+    }
+    .section#inicio .css-slider figcaption
+    {
+        font-size: 20px;
+    }
+
+}
+.sn{
+    margin-right: 20px;
+    margin-left: auto;
+}
+.sn a img
+{
+    height: 30px;
+    width: auto;
+}
+.sn a
+{
+    padding: 0;
+    height: 100%;
+    display: flex;
 }
