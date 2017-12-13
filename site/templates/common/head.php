@@ -11,3 +11,6 @@
 <script src="<?php echo $_ENV["website"]["url"]; ?>/static/js/scroll.js"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
+
+
+<script src="<?php echo $_ENV["website"]["url"]; ?>/static/js/atomic.min.js"></script>

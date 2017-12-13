@@ -5,6 +5,8 @@
      $color_c="white";
      $color_d="#EEEEEE";
      $color_e="#616161";
+     $color_f="#E53935";
+     $color_g="#4CAF50";
  ?>
 
 @import url('https://fonts.googleapis.com/css?family=Muli:400,600,800');
@@ -477,4 +479,33 @@ display: flex;
 
     transform: scale(0.5);
     color: <?php echo $color_a?>;
+}
+.contacto .form .error,.contacto .form .success
+{
+    width: 100%;
+    float: left;
+    padding: 15px;
+    margin-top: 20px;
+}
+
+.contacto .form .error
+{
+
+    border: 1px solid <?php echo $color_f?>;
+}
+.contacto .form .success
+{
+
+    border: 1px solid <?php echo $color_g?>;
+}
+
+
+.contacto .form .error p
+{
+    color: <?php echo $color_f?>;
+}
+
+.contacto .form .success p
+{
+    color: <?php echo $color_g?>;
 }

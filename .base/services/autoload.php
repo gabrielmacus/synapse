@@ -24,3 +24,7 @@ require_once ("debug.php");
 require_once ("FtpClient/FtpException.php");
 require_once ("FtpClient/FtpClient.php");
 require_once ("FtpClient/FtpWrapper.php");
+
+require_once ("PHPMailer-master/src/Exception.php");
+require_once ("PHPMailer-master/src/PHPMailer.php");
+require_once ("PHPMailer-master/src/SMTP.php");

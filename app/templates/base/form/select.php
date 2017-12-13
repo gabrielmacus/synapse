@@ -14,3 +14,11 @@
 
     <?php include "error.php"?>
 </div>
+<?php
+$options=false;
+$value=false;
+$label=false;
+$model=false;
+$multiple  = false;
+
+?>

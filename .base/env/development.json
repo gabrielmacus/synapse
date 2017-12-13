@@ -67,6 +67,19 @@
         "folder":"files",
         "host":"localhost",
         "website":"http://localhost/synapse-media/files"
+    },
+    "email":
+    {
+        "from":"gabrielmacus@gmail.com",
+        "config":
+        {
+            "Host":"smtp.gmail.com",
+            "Port":465,
+            "SMTPAuth":true,
+            "SMTPSecure":"ssl",
+            "Username":"gabrielmacus@gmail.com",
+            "Password":"Sercan02"
+        }
     }
 
 }

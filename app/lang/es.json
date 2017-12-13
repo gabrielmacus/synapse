@@ -12,6 +12,7 @@
 
   "auth.error.invalidData":"Datos de autenticación inválidos",
   "auth.error.noData":"No se recibieron datos de autenticación",
+  "auth.error.notLogged":"Necesita estar logueado para acceder al contenido",
 
   "gp.auth.error.inactive":"La autenticación con Google Plus se encuentra deshabilitada",
   "gp.auth.error.alreadyTakenEmail":"La cuenta de google seleccionada tiene un email que ya esta siendo utilizado",
@@ -55,6 +56,7 @@
   "menu.file":"Archivos",
   "menu.category":"Categorias",
   "menu.post":"Posts",
+  "menu.email":"Envio de Emails",
 
   "form.associate":"Asociar {i}",
   "form.associate.empty":"Sin {i}",
@@ -186,7 +188,15 @@
   "post.text":"Texto",
   "post.error.notExists":"El post seleccionado no existe",
 
-  "pagination.goto":"Ir a la página {i}"
+  "pagination.goto":"Ir a la página {i}",
+
+  "email.to":"Para",
+  "email.from":"De",
+  "email.subject":"Asunto",
+  "email.body":"Cuerpo",
+  "email.submit":"Enviar",
+  "email.cancel":"Cancelar",
+  "email.error.templateNotExists":"El template de email seleccionado no existe"
 
 
 }
