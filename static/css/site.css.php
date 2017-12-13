@@ -457,18 +457,16 @@ display: flex;
     position: relative;
     align-items: center;
 }
-.contacto .form.sending .loading
-{
-    opacity: 1;
-}
+
 .contacto .form .loading
 {
-    opacity: 0;
+
+
     margin: auto;
     display: flex;
     align-items: center;
     position: absolute;
-    transform: scale(0.5);
+    background-color: <?php echo $color_c?>;
     width: 100%;
     height: 100%;
     top:0;
@@ -477,6 +475,6 @@ display: flex;
 .contacto .form .loading > .loader
 {
 
-
+    transform: scale(0.5);
     color: <?php echo $color_a?>;
 }
