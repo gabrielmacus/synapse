@@ -451,3 +451,32 @@ display: flex;
 {
     opacity: 1;
 }
+
+.contacto .form
+{
+    position: relative;
+    align-items: center;
+}
+.contacto .form.sending .loading
+{
+    opacity: 1;
+}
+.contacto .form .loading
+{
+    opacity: 0;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    transform: scale(0.5);
+    width: 100%;
+    height: 100%;
+    top:0;
+    right: 0;
+}
+.contacto .form .loading > .loader
+{
+
+
+    color: <?php echo $color_a?>;
+}

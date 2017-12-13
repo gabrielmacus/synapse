@@ -62,20 +62,20 @@ include "header.php";
         </script>
 
     </div>
-    <div class=" cl form   s-12 m-12 l-4 xl-4">
+    <div class=" cl form flex   s-12 m-12 l-4 xl-4">
 
-        <form>
+        <form  data-bind="submit: contact.send">
 
             <div class="form-block">
                 <label>Nombre</label>
-                <input type="text">
+                <input  data-bind="value: contact.name"  type="text">
 
 
             </div>
 
             <div class="form-block">
                 <label>Asunto</label>
-                <input type="text">
+                <input  data-bind="value: contact.subject"  type="text">
 
 
             </div>
@@ -83,9 +83,8 @@ include "header.php";
 
             <div class="form-block">
                 <label>Mensaje</label>
-                <textarea rows="4"></textarea>
-
-
+                <textarea  data-bind="value: contact.message"  rows="4"></textarea>
+                
             </div>
 
             <div class="form-block">
@@ -97,6 +96,35 @@ include "header.php";
 
         </form>
 
+
+
+        <div class="loading">
+            <?php include SITE_TEMPLATE_PATH."/svg/circle.php";?>
+        </div>
+
+            <script type="text/javascript">
+            var Contact = function () {
+
+                this.name = ko.observable("");
+
+                this.subject= ko.observable("");
+
+                this.message= ko.observable("");
+                
+                this.send=function (form) {
+                    console.log(ko.toJSON(this));
+                }
+
+
+
+            }
+
+            var contact= new Contact();
+
+            ko.applyBindings(contact);
+
+
+        </script>
 
     </div>
 </div>

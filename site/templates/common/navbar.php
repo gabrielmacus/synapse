@@ -38,7 +38,7 @@
 
        var observer = new IntersectionObserver(function (entries) {
 
-           console.log(entries);
+
 
            for(var k in entries)
            {
@@ -56,15 +56,16 @@
                    }
 
                }
-               else if( entries[k].isIntersecting && entries[k].intersectionRatio  > 0.8)
+               else
                {
 
-
+                    /*
+                     entries[k].isIntersecting
                    var sectionMenu = document.querySelector(".scroll[data-section='"+entries[k].target.id+"']");
 
                    entries[k].target.classList.add("active");
 
-                   sectionMenu.classList.add("active");
+                   sectionMenu.classList.add("active");*/
 
                }
            }
@@ -81,3 +82,4 @@
 
 
 </script>
+
