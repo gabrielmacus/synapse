@@ -14,7 +14,8 @@
 body
 {
     font-family: 'Muli', sans-serif;
-    width: 100%;
+    min-height: 100%;
+    position: relative;
     float: left;
 }
 
@@ -52,10 +53,7 @@ body
 
     fill: 		#3b5998;
 }
-#map
-{
-    min-height: 25vh;
-}
+
 .main-navbar.pinned .sn a.instagram svg
 {
     fill:#d6249f;
@@ -336,7 +334,9 @@ display: flex;
 }
 #map
 {
-    width: 100%;height: 100%;
+    width: 100%;
+    height: calc(100% - 35px);
+    min-height: 25vh;
 }
 .contacto
 {
@@ -465,12 +465,13 @@ display: flex;
 
 
     margin: auto;
-    display: flex;
+    display: none;
     align-items: center;
     position: absolute;
     background-color: <?php echo $color_c?>;
     width: 100%;
-    height: 100%;
+    margin-top: 34px;
+    height: calc(100% - 34px);
     top:0;
     right: 0;
 }
@@ -488,24 +489,71 @@ display: flex;
     margin-top: 20px;
 }
 
-.contacto .form .error
+.contacto  .error-msg
 {
-
+    display: none;
     border: 1px solid <?php echo $color_f?>;
 }
-.contacto .form .success
+.contacto .success-msg
 {
-
+    display: none;
     border: 1px solid <?php echo $color_g?>;
 }
+.contacto  .success .success-msg
+{
+    margin-top: 34px;
+    height: calc(100% - 34px);
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
 
+}
+.contacto  .error .error-msg
+{
+    display: block;
+}
 
-.contacto .form .error p
+.contacto .success form,.contacto .sending form
+{
+    display: none;
+}
+.contacto .sending .loading
+{
+    display: flex;
+}
+.contacto .form .error-msg p
 {
     color: <?php echo $color_f?>;
 }
 
-.contacto .form .success p
+.contacto .form .success-msg p
 {
+    width: 90%;
+    margin: auto;
+    font-size: 20px;
+    line-height: 25px;
+    text-align: center;
     color: <?php echo $color_g?>;
+}
+
+body > footer
+{
+    margin-top: 20px;
+    background-color: <?php echo $color_a?>;
+
+    width: 100%;
+    float: left;
+}
+.contacto .line:after
+{
+    content: "";
+    width: 1px;
+    height: 80%;
+    top:5%;
+    position: relative;
+    background-color: <?php echo $color_d;?>;
+    margin: auto;
 }

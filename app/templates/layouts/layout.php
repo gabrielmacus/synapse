@@ -240,6 +240,9 @@ if(empty($_GET["embed"]))
 
     <?php include ($incBody);?>
 </section>
+
+
+
 <?php include (TEMPLATE_PATH."/modal/message.php"); ?>
 <?php include (TEMPLATE_PATH."/modal/yesNo.php"); ?>
 <?php include (TEMPLATE_PATH."/modal/iframe.php"); ?>
