@@ -12,5 +12,7 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
 
-
 <script src="<?php echo $_ENV["website"]["url"]; ?>/static/js/atomic.min.js"></script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">

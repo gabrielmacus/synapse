@@ -73,12 +73,12 @@
         "from":"gabrielmacus@gmail.com",
         "config":
         {
-            "Host":"smtp.gmail.com",
+            "Host":"smtp.sendgrid.net",
             "Port":465,
             "SMTPAuth":true,
             "SMTPSecure":"ssl",
-            "Username":"gabrielmacus@gmail.com",
-            "Password":"Sercan02"
+            "Username":"apikey",
+            "Password":"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"
         }
     }
 

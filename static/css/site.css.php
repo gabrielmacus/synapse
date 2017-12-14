@@ -104,9 +104,9 @@ cursor: pointer;
 }
 .main-navbar a:not(.logo):hover:after
 {
-    left: 5%;
+    left: 25%;
     opacity: 1;
-    width: 90%;
+    width: 50%;
 }
 
 .section.inicio .css-slider
@@ -335,8 +335,11 @@ display: flex;
 #map
 {
     width: 100%;
-    height: calc(100% - 35px);
-    min-height: 25vh;
+    height: calc(100% - 225px);
+    position: relative;
+    overflow: hidden;
+    min-height: 20vh;
+    margin-bottom: 25px;
 }
 .contacto
 {
@@ -349,23 +352,11 @@ display: flex;
     color: <?php echo $color_e?>;
 }
 
-.contacto .fb
-{
 
-    /*display: flex;
-    flex-wrap: wrap;
-    */
-}
-
-.contacto .fb .fb-page
-{
-    margin: auto
-
-}
 
 .contacto form
 {
-    margin-top: 34px;
+    margin-top: 46px;
 }
 
 .form-block label,.form-block input,.form-block textarea
@@ -410,7 +401,7 @@ display: flex;
     float: right;
     border: 0;
     padding: 10px;
-    font-size: 13px;
+    font-size: 15px;
     color: <?php echo $color_c?>;
     font-weight: 600;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
@@ -435,11 +426,16 @@ display: flex;
 
 .portfolio-item
 {
-    margin-top: 20px;
+
+    margin-top: 1.5vw;
     position: relative;
-    max-height: 250px;
+    height: 25vh;
+    min-height: 150px;
+    max-height: 230px;
 }
 .portfolio-item .caption{
+    white-space: nowrap;
+    text-overflow: ellipsis;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -470,8 +466,8 @@ display: flex;
     position: absolute;
     background-color: <?php echo $color_c?>;
     width: 100%;
-    margin-top: 34px;
-    height: calc(100% - 34px);
+    margin-top: 46px;
+    height: calc(100% - 46px);
     top:0;
     right: 0;
 }
@@ -501,8 +497,8 @@ display: flex;
 }
 .contacto  .success .success-msg
 {
-    margin-top: 34px;
-    height: calc(100% - 34px);
+    margin-top: 46px;
+    height: calc(100% - 46px);
     width: 100%;
     position: absolute;
     top: 0;
@@ -556,4 +552,42 @@ body > footer
     position: relative;
     background-color: <?php echo $color_d;?>;
     margin: auto;
+}
+.contacto .find-us{
+    font-weight: 600;
+    color: #D32F2F
+;
+}
+
+
+@media screen and (max-width: 768px)
+{
+
+    .ubicacion
+    {
+        margin-top: 20px;
+    }
+    #map
+    {
+        min-height: 25vh;
+        margin-bottom: 20px;
+    }
+
+    .contacto form
+    {
+        margin-top: 0px;
+    }
+
+    .contacto .success
+    {
+        padding: 0px!important;
+        margin-top: 0px!important;
+        margin-bottom: 20px;
+    }
+    .contacto .success .success-msg{
+        position: relative;
+        min-height: 20vh;
+        margin-top: 0px;
+    }
+
 }

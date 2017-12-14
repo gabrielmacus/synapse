@@ -6,14 +6,14 @@ include "header.php";
 
 <div class="contacto col-s-1 col-m-1 col-l-3 col-xl-3 flex">
 
-    <div class=" cl form flex   s-12 m-12 l-4 xl-7">
+    <div class=" cl form flex   s-12 m-12 l-7 xl-7">
 
         <?php include SITE_TEMPLATE_PATH."/utils/contact.php"; ?>
 
     </div>
 
 
-    <div class="cl form flex line  s-12 m-12 l-4 xl-1">
+    <div class="cl form flex line  s-12 m-12 l-1 xl-1">
 
     </div>
 
@@ -21,7 +21,7 @@ include "header.php";
     <div class="ubicacion  cl s-12 m-12 l-4 xl-4">
 
         <header class="direccion">
-            <h3>Calle falsa 123, Paraná, Entre Ríos</h3>
+            <h3><span class="find-us">Encontranos en</span> Calle falsa 123, Paraná, Entre Ríos <span class="find-us"><i class="material-icons">location_on</i></span></h3>
         </header>
 
         <div id="map"></div>
@@ -44,10 +44,6 @@ include "header.php";
 
 
         <div id="fb-root"></div>
-
-
-        <div style="margin: auto" class="fb-page" data-href="https://www.facebook.com/Aut&#xe9;ntica-Moda-Femenina-1032665866833207/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Aut&#xe9;ntica-Moda-Femenina-1032665866833207/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Aut&#xe9;ntica-Moda-Femenina-1032665866833207/">Auténtica Moda Femenina</a></blockquote></div>
-
         <script>
             window.fbAsyncInit = function(){
                 //FB.init({ status: false, cookie: true, xfbml: true });
@@ -68,6 +64,9 @@ include "header.php";
 
 
         </script>
+        <div class="fb-page" data-href="<?Php echo  $_ENV["siteEnv"]["fb"]["page"];?>" data-width="500" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="<?Php echo  $_ENV["siteEnv"]["fb"]["page"];?>" class="fb-xfbml-parse-ignore"><a href="<?Php echo  $_ENV["siteEnv"]["fb"]["page"];?>"></a></blockquote></div>
+
+
 
 
     </div>

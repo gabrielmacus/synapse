@@ -1,4 +1,3 @@
 
-[Undefined index: email.success,90,C:\xampp\htdocs\synapse\site\templates\utils\contact.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[Undefined index: email.success,90,C:\xampp\htdocs\synapse\site\templates\utils\contact.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
-[Undefined index: email.success,90,C:\xampp\htdocs\synapse\site\templates\utils\contact.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php
+[readfile(C:\xampp\htdocs\synapse/static/js/angular.min.js.map): failed to open stream: No such file or directory,45,C:\xampp\htdocs\synapse\route.php],37,C:\xampp\htdocs\synapse\.base\autoload.php

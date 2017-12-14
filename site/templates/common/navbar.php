@@ -10,15 +10,15 @@
 <a class="scroll" data-section="portfolio" href="#portfolio">Nuestros trabajos</a>
 
 <span class="sn">
-    <a class="facebook">
+    <a href="<?php echo $_ENV["siteEnv"]["fb"]["page"]?>" target="_blank" class="facebook">
         <?php include SITE_TEMPLATE_PATH."/svg/facebook.php"?>
     </a>
 
-    <a class="instagram">
+    <a target="_blank"  class="instagram">
        <?php include SITE_TEMPLATE_PATH."/svg/instagram.php"?>
     </a>
 
-     <a class="twitter">
+     <a target="_blank"  class="twitter">
         <?php include SITE_TEMPLATE_PATH."/svg/twitter.php"?>
      </a>
 

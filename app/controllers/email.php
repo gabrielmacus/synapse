@@ -88,7 +88,7 @@ else
 
     $email->AltBody = strip_tags($emailBody);
 
-//    $email->send();
+    $email->send();
 
     echo json_encode(true);
 }

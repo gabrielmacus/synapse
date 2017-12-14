@@ -8,25 +8,39 @@ include "header.php";
 $portfolio=
     [
         [
-            "image"=>["url"=>"http://www.longservice.nsw.gov.au/__data/assets/image/0011/4250/home_bci_worker.jpg"],
+            "image"=>["url"=>"https://scontent.faep8-2.fna.fbcdn.net/v/t31.0-8/15326164_1241554165924641_2515726626951376752_o.jpg?oh=eb4c3c991327895137bf4f075cdd2da5&oe=5ABF0013"],
             "text"=>"Lorem ipsum sit amet dolor"
         ],
 
         [
-            "image"=>["url"=>"https://img3.stockfresh.com/files/d/diego_cervo/m/48/366980_stock-photo-construction-worker.jpg"],
+            "image"=>["url"=>"https://scontent.faep8-2.fna.fbcdn.net/v/t31.0-8/16715926_1303984146348309_7001684613369801092_o.jpg?oh=af3bee2d009bb39e0ea6cb2d0e482b27&oe=5A8AC5BB"],
             "text"=>"Lorem ipsum sit amet dolor"
         ]
 
         ,
 
         [
-            "image"=>["url"=>"http://www.red-seal.ca/img-cl/trade_pic_const_craft_work.jpg"],
+            "image"=>["url"=>"https://scontent.faep8-2.fna.fbcdn.net/v/t1.0-9/14606268_1192159820864076_254931475435361288_n.jpg?oh=080965642da783202d923c50d6bfe617&oe=5AC540A9"],
             "text"=>"Lorem ipsum sit amet dolor"
         ]
         ,
 
         [
-            "image"=>["url"=>"https://d1yn1kh78jj1rr.cloudfront.net/image/thumbnail/S8DKL2zTlj15azx5h/graphicstock-construction-site-worker-building-a-home-or-house-doing-bricklaying-work-on-the-walls-of-the-shell_BxEpYzS6g_thumb.jpg"],
+            "image"=>["url"=>"https://scontent.faep8-2.fna.fbcdn.net/v/t31.0-8/15272128_1241554045924653_2695727177546510686_o.jpg?oh=02688aaac1ccbf1c4eb1c5eb99e39751&oe=5AD78DE8"],
+            "text"=>"Lorem ipsum sit amet dolor"
+        ]
+
+        ,
+
+        [
+            "image"=>["url"=>"https://scontent.faep8-2.fna.fbcdn.net/v/t31.0-8/15419578_1241554222591302_6943603391225257833_o.jpg?oh=3a0696b926490e509a2966ea46dc3613&oe=5AC06314"],
+            "text"=>"Lorem ipsum sit amet dolor"
+        ]
+
+        ,
+
+        [
+            "image"=>["url"=>"https://scontent.faep8-2.fna.fbcdn.net/v/t1.0-9/18118711_1380798242000232_1799777365254278954_n.jpg?oh=136fdc29384ecd7fc41982c951a50914&oe=5A88D985"],
             "text"=>"Lorem ipsum sit amet dolor"
         ]
     ];
