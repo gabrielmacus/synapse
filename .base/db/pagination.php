@@ -18,7 +18,6 @@ if(!empty($oSql) && empty($_GET["id"]) && empty($dontPaginate))
     $oSqlCount = "SELECT count(*) as 'total' FROM ({$oSql}) as cant";
 
 
-
     $oResultCount= R::getAll($oSqlCount,$params)[0]['total'];
 
     $oPages = ceil($oResultCount / $limit);

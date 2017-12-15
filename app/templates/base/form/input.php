@@ -1,4 +1,4 @@
-<div class="form-block">
+<div class="form-block   <?php echo (!empty($blockClass))?$blockClass:"";?>">
     <?php
     if(!empty($label))
     {
@@ -18,5 +18,6 @@ $onClick=false;
 $onChange=false;
 $value=false;
 $type = false;
+$blockClass=false;
 $model=false;
 ?>

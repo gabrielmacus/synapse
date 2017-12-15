@@ -5,6 +5,19 @@
  * Date: 04/11/2017
  * Time: 0:01
  */
+$params=[];
+if(!empty($_GET["formats"]))
+{
+    $formats = explode(",",$_GET["formats"]);
+
+    $query=" extension IN (".R::genSlots($formats).") ";
+
+    $params = array_merge($params,$formats);
+}
+
+
+
+
 
 //Leo los datos
 include (BASE_PATH."/.base/db/read.php");
@@ -27,11 +40,16 @@ if(empty($_GET["act"]))
         if(!empty($v["name"]))
         {
 
+            $f["url"] =FileService::makeUrl($v);
+
+
+
             $f["size"]="{$v["size"]}";
             $f["id"] =$v["id"];
             $f["name"]=$v["name"];
             $f["description"]=$v["description"];
-            $f["url"] =FileService::makeUrl($v);
+
+
 
             $items[]["file"]=$f;
         }

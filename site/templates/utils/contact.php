@@ -11,7 +11,7 @@
 
         <div class="form-block">
             <label>Email</label>
-            <input  data-bind="value: contact.email"  type="text">
+            <input  data-bind="value: contact.from"  type="text">
         </div>
 
         <div class="form-block">

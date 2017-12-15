@@ -14,3 +14,4 @@
 - Agregar soporte para contenido sindicado
 - Chequear si no existe una tabla intermedia con el mismo nombre pero al reves, para usarla en vez de crear otra, al asociar elementos ✔
 - Soporte para datos extra en la tabla intermedia
+- Al devolver un json ,deberia incluir los datos de paginacion

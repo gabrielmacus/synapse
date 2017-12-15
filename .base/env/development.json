@@ -70,9 +70,15 @@
     },
     "email":
     {
-        "from":"gabrielmacus@gmail.com",
+        "from":"gabrielmacus@fastmail.com",
         "config":
         {
+            "Host":"smtp.fastmail.com",
+            "Port":465,
+            "SMTPAuth":true,
+            "Username":"gabrielmacus@fastmail.com",
+            "Password":"eek8qwvbskh5ukh8",
+            "SMTPSecure":"ssl"
         }
     }
 

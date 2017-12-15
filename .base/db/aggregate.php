@@ -61,121 +61,130 @@ function _agreggate($type,$data=false,&$associatedItems=[], $asociations=false)
     }
 }
 */
-function ordPos($a, $b)
-{
 
-    if ($a["pos"] == $b["pos"]) {
-        return 0;
+if(!is_callable("ordPos"))
+{
+    function ordPos($a, $b)
+    {
+
+        if ($a["pos"] == $b["pos"]) {
+            return 0;
+        }
+        return ($a["pos"] > $b["pos"]) ? -1 : 1;
     }
-    return ($a["pos"] > $b["pos"]) ? -1 : 1;
 }
 
-function agreggate($types,$data=false,$asociations=false)
+if(!is_callable("agreggate"))
 {
-    $associatedItems=[];
-    if (!empty($data)) {
-        if (!$asociations) {
-            $oSql = 'SELECT table_name, table_schema AS dbname FROM INFORMATION_SCHEMA.TABLES where table_schema = "' . $_ENV["db"]["name"] . '"';
 
-            $asociations = R::getAll($oSql);
-        }
+    function agreggate($types,$data=false,$asociations=false)
+    {
+        $associatedItems=[];
+        if (!empty($data)) {
+            if (!$asociations) {
+                $oSql = 'SELECT table_name, table_schema AS dbname FROM INFORMATION_SCHEMA.TABLES where table_schema = "' . $_ENV["db"]["name"] . '"';
 
-
-        //Obtengo los diferentes ids
-        $dataKeys = array_column($data,"id");
-        foreach ($asociations as $k => $v) {
+                $asociations = R::getAll($oSql);
+            }
 
 
-            foreach ($types as $type)
-            {
-                if (strpos($v["table_name"], "_{$type}") || strpos($v["table_name"], "{$type}_")) {
+            //Obtengo los diferentes ids
+            $dataKeys = array_column($data,"id");
+            foreach ($asociations as $k => $v) {
+
+
+                foreach ($types as $type)
+                {
+                    if (strpos($v["table_name"], "_{$type}") || strpos($v["table_name"], "{$type}_")) {
 
 
 
-                    $asociatedType = explode("_", $v["table_name"]);
+                        $asociatedType = explode("_", $v["table_name"]);
 
-                    unset($asociatedType[array_search($type, $asociatedType)]);
+                        unset($asociatedType[array_search($type, $asociatedType)]);
 
-                    $asociatedType = reset($asociatedType);
+                        $asociatedType = reset($asociatedType);
 
-                  //  $dataKeys = array_keys($data);
-                    /*
-                    $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id    WHERE  {$v["table_name"]}.{$type}_id IN (" . implode(",", $dataKeys) . ")
-         AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";*/
-
-                    if($type != $asociatedType)
-                    {
+                        //  $dataKeys = array_keys($data);
+                        /*
                         $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id    WHERE  {$v["table_name"]}.{$type}_id IN (" . implode(",", $dataKeys) . ")
-         AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";
+             AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";*/
 
-                    }
-                    else
-                    {
-                        $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}2_id    WHERE  {$v["table_name"]}.{$type}_id IN (" . implode(",", $dataKeys) . ")
-         AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";
-
-                    }
-
-
-
-                    $links = R::getAll($oSql);
-
-                    foreach ($links as $link) {
-
-                        //$link["path"] = "{$link["{$type}_id"]}.associated.{$asociatedType}.{$link["array"]}.save";
-
-                        if($asociatedType == "file")
+                        if($type != $asociatedType)
                         {
-                            $link["url"]="{$_ENV["ftp"]["website"]}/{$link["url"]}";
+                            $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}_id    WHERE  {$v["table_name"]}.{$type}_id IN (" . implode(",", $dataKeys) . ")
+         AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";
+
                         }
-
-                        $link["path"] = "associated.{$asociatedType}.{$link["array"]}.save.{$link["id"]}";
-
-                        $link["parent_type"]=$type;
-
-                        $link["parent_id"]=$link["{$type}_id"];
-
-                        $link["type"] = $asociatedType;
-
-                        //$associatedItems["items"][$link["id"]]=$link;
-
-                        //$associatedItems["items"][]=$link;
-
-
-
-                        $associatedItems["items"]["{$link["id"]}_{$asociatedType}"]=$link;
-
-                        if(empty($associatedItems["types"]) || !in_array($asociatedType,$associatedItems["types"]))
+                        else
                         {
-                            $associatedItems["types"][]=$asociatedType;
+                            $oSql="SELECT *,{$v["table_name"]}.id as 'link_id' FROM   {$v["table_name"]} LEFT JOIN {$asociatedType} ON {$asociatedType}.id = {$v["table_name"]}.{$asociatedType}2_id    WHERE  {$v["table_name"]}.{$type}_id IN (" . implode(",", $dataKeys) . ")
+         AND {$v["table_name"]}.{$asociatedType}_id IS NOT NULL ORDER BY pos ASC";
 
                         }
 
 
 
+                        $links = R::getAll($oSql);
+
+                        foreach ($links as $link) {
+
+                            //$link["path"] = "{$link["{$type}_id"]}.associated.{$asociatedType}.{$link["array"]}.save";
+
+                            if($asociatedType == "file")
+                            {
+                                $link["url"]="{$_ENV["ftp"]["website"]}/{$link["url"]}";
+                            }
+
+                            $link["path"] = "associated.{$asociatedType}.{$link["array"]}.save.{$link["id"]}";
+
+                            $link["parent_type"]=$type;
+
+                            $link["parent_id"]=$link["{$type}_id"];
+
+                            $link["type"] = $asociatedType;
+
+                            //$associatedItems["items"][$link["id"]]=$link;
+
+                            //$associatedItems["items"][]=$link;
+
+
+
+                            $associatedItems["items"]["{$link["id"]}_{$asociatedType}"]=$link;
+
+                            if(empty($associatedItems["types"]) || !in_array($asociatedType,$associatedItems["types"]))
+                            {
+                                $associatedItems["types"][]=$asociatedType;
+
+                            }
+
+
+
+                        }
+
+                        if(!empty($associatedItems))
+                        {
+
+                            uasort($associatedItems["items"],"ordPos");
+                        }
+
+
                     }
-
-                    if(!empty($associatedItems))
-                    {
-
-                        uasort($associatedItems["items"],"ordPos");
-                    }
-
-
                 }
+
+
+
             }
 
 
 
-        }
-
-
-
 
         }
 
 
-    return $associatedItems;
+        return $associatedItems;
+
+    }
 
 }
 

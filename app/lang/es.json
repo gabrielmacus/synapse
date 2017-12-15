@@ -57,6 +57,8 @@
   "menu.category":"Categorias",
   "menu.post":"Posts",
   "menu.email":"Envio de Emails",
+  "menu.tip":"Tips",
+  "menu.work":"Trabajos realizados",
 
   "form.associate":"Asociar {i}",
   "form.associate.empty":"Sin {i}",
@@ -67,7 +69,11 @@
   "form.associate.repositorios":"Repositorios",
   "form.associate.images":"Imágenes",
   "form.associate.posts":"Posts",
+  "form.associate.icon":"Ícono",
   "form.category":"Categoria",
+  "form.publish.facebook":"Publicar en Facebook",
+  "form.publish.instagram":"Publicar en Instagram",
+  "form.publish":"Publicar",
 
   "streaming.list":"Listado de transmisiones",
   "streaming.empty":"No hay transmisiones disponibles",
@@ -196,7 +202,27 @@
   "email.body":"Cuerpo",
   "email.submit":"Enviar",
   "email.cancel":"Cancelar",
-  "email.error.templateNotExists":"El template de email seleccionado no existe"
+  "email.error.templateNotExists":"El template de email seleccionado no existe",
+  "email.error.notSend":"El email no fue enviado. Intentelo nuevamente más tarde",
+
+  "tip.text":"Tip",
+  "tip.submit":"Guardar",
+  "tip.cancel":"Cancelar",
+  "tip.list":"Lista de tips",
+  "tip.prompt.delete":"¿Desea eliminar el tip ´{i}´?",
+  "tip.empty":"No hay tips disponibles",
+  "tip.nuevo":"Agregar tip",
+  "tip.error.notExists":"El tip seleccionado no existe",
+
+  "work.text":"Comentario del trabajo realizado",
+  "work.submit":"Guardar",
+  "work.cancel":"Cancelar",
+  "work.list":"Lista de trabajos realizados",
+  "work.prompt.delete":"¿Desea trabajo el tip ´{i}´?",
+  "work.empty":"No hay trabajo disponibles",
+  "work.nuevo":"Agregar trabajo realizado",
+  "work.error.notExists":"El trabajo seleccionado no existe"
+
 
 
 }

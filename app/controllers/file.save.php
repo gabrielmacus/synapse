@@ -16,6 +16,14 @@ else
 
     if(empty($_POST["delete"]))
     {
+
+
+
+
+        $ext = explode(".",$_POST["url"]);
+        $ext = end($ext);
+        $_POST["extension"]= strtolower($ext);
+
         $isTemp=strpos($_POST["url"],$_ENV["website"]["url"]."/static/{$_ENV["upload"]["tmpFolder"]}");
 
         if($isTemp !== FALSE)
@@ -61,6 +69,9 @@ else
         {
             unset($_POST["url"]);
         }
+
+
+
 
         include (BASE_PATH."/.base/db/save.php");
 

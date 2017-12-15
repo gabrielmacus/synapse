@@ -155,14 +155,24 @@ figure
 }
 .section:not(:first-child)
 {
-    width: 80%;
+    width: 70%;
     margin: auto;
     float: left;
     overflow: hidden;
-    left: 10%;
+    left: 15%;
     position: relative;
     padding-top: 50px;
 }
+
+@media all and (max-width: 768px) {
+    .section:not(:first-child)
+    {
+        width: 90%;
+        left: 5%;
+    }
+}
+
+
 .section > .header > .title
 {
     font-weight: 600;
@@ -495,7 +505,7 @@ display: flex;
     display: none;
     border: 1px solid <?php echo $color_g?>;
 }
-.contacto  .success .success-msg
+.contacto  .success .success-msg,.contacto  .error .error-msg
 {
     margin-top: 46px;
     height: calc(100% - 46px);
@@ -507,12 +517,7 @@ display: flex;
     align-items: center;
 
 }
-.contacto  .error .error-msg
-{
-    display: block;
-}
-
-.contacto .success form,.contacto .sending form
+.contacto .success form,.contacto .sending form,.contacto .error form
 {
     display: none;
 }
@@ -520,12 +525,8 @@ display: flex;
 {
     display: flex;
 }
-.contacto .form .error-msg p
-{
-    color: <?php echo $color_f?>;
-}
 
-.contacto .form .success-msg p
+.contacto .form .success-msg p,.contacto  .error .error-msg p
 {
     width: 90%;
     margin: auto;
@@ -534,6 +535,14 @@ display: flex;
     text-align: center;
     color: <?php echo $color_g?>;
 }
+
+.contacto .form .error-msg p
+{
+    color: <?php echo $color_f?>;
+
+}
+
+
 
 body > footer
 {
@@ -578,13 +587,13 @@ body > footer
         margin-top: 0px;
     }
 
-    .contacto .success
+    .contacto .success,.contacto  .error
     {
         padding: 0px!important;
         margin-top: 0px!important;
         margin-bottom: 20px;
     }
-    .contacto .success .success-msg{
+    .contacto .success .success-msg,.contacto  .error .error-msg{
         position: relative;
         min-height: 20vh;
         margin-top: 0px;

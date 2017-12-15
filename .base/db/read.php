@@ -19,7 +19,7 @@ $params =(empty($params))?[]:$params;
 
 
 
-if(empty($DEVELOPER_MODE))
+if(empty($DEVELOPER_MODE) && empty($dontCheckPermissions))
 {
     //Soy un usuario no desarrollador
 
@@ -70,15 +70,25 @@ if(!empty($_GET["id"]))
 $oSql=(!empty($query))?"{$oSql} WHERE {$query} ":$oSql;
 
 //Ordeno
-$oSql=" {$oSql} ORDER BY updated_at DESC,created_at DESC";
 
+
+if(empty($orderBy))
+{
+    $oSql=" {$oSql} ORDER BY updated_at DESC,created_at DESC";
+
+}
+else
+{
+
+    $oSql=" {$oSql} ORDER BY ".implode(",",$orderBy);
+
+}
 
 //Pagino
 include "pagination.php";
 
-
-
 $oResult  = R::getAll($oSql,$params);
+
 
 
 $data=[];

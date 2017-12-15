@@ -88,7 +88,10 @@ else
 
     $email->AltBody = strip_tags($emailBody);
 
-    $email->send();
+    if(!$email->send())
+    {
+        throw new Exception("email.error.notSend",500);
+    }
 
     echo json_encode(true);
 }

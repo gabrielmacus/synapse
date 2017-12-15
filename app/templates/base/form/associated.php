@@ -3,6 +3,12 @@
 $controllerName="{$itemType}".ucfirst($groupName)."Controller";
 
 $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
+
+if(empty($filters))
+{
+    $filters=[];
+}
+
 ?>
 <script>
 
@@ -35,9 +41,10 @@ $arrayName = "{$itemType}.associated.{$associatedType}.{$groupName}";
         }
 
 
+
         $rootScope.init<?php echo $itemType.ucfirst($groupName);?>();
 
-        $rootScope.<?Php echo $groupName?>="<?php echo $_ENV["website"]["url"]."/".$language."/".$_ENV["website"]["panelAccess"]."/".$associatedType."?embed=true&group={$groupName}";?>&filter=";
+        $rootScope.<?Php echo $groupName?>="<?php echo $_ENV["website"]["url"]."/".$language."/".$_ENV["website"]["panelAccess"]."/".$associatedType."?embed=true&group={$groupName}";?>&<?php echo http_build_query($filters)?>";
 
         window.addEventListener("message", function (event) {
 
@@ -131,5 +138,6 @@ $arrayName=false;
 $associatedType=false;
 $controllerName=false;
 $imageAttr = false;
+$filters = false;
 $data1Attr=false;
 ?>
