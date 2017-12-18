@@ -446,6 +446,7 @@ display: flex;
 .portfolio-item .caption{
     white-space: nowrap;
     text-overflow: ellipsis;
+    overflow: hidden;
     position: absolute;
     bottom: 0px;
     left: 0px;
@@ -505,6 +506,7 @@ display: flex;
     display: none;
     border: 1px solid <?php echo $color_g?>;
 }
+
 .contacto  .success .success-msg,.contacto  .error .error-msg
 {
     margin-top: 46px;
@@ -541,6 +543,8 @@ display: flex;
     color: <?php echo $color_f?>;
 
 }
+
+
 
 
 
@@ -598,5 +602,79 @@ body > footer
         min-height: 20vh;
         margin-top: 0px;
     }
+
+}
+
+.modal{
+    z-index: 1200;
+    width: 100%;
+    position: fixed;
+    top:0;
+    left:0;
+    height: 100%;
+    display: none;
+    align-items: center;
+    background-color: rgba(0,0,0,0.5);
+}
+.modal.open
+{
+    display: flex;
+}
+.modal-content
+{
+    margin: auto;
+    background-color: <?php echo $color_c?>;
+    width: 90%;
+    display: flex;
+    max-height: 80vh;
+    overflow: hidden;
+}
+.gallery
+{
+    padding: 30px;
+    display: flex;
+    width: 100%;
+}
+
+.gallery > .images
+{
+    background-color: <?php echo $color_d;?>;
+    padding: 20px;
+    overflow-y: auto;
+    position: relative;
+    top: -30px;
+    height: calc(100% + 60px);
+    right: -30px;
+}
+.gallery .selected-image img
+{
+    object-fit: contain;
+}
+.gallery > .images  .gallery-image
+{
+    position: relative;
+    padding: 5px;
+    height: 200px;
+    margin-bottom: 1.5%;
+}
+.gallery > .images  .gallery-image.active
+{
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    /*
+    outline: 4px <?php echo $color_d;?> solid;
+    outline-offset: -15px;*/
+}
+.gallery > .images  .gallery-image.active:after
+{
+    content: '';
+    position: absolute;
+    background-color: <?php echo $color_a?>;
+    opacity: 0.35;
+
+    top: 5px;
+    right: 5px;
+    height: calc(100% - 10px);
+    width:  calc(100% - 10px);
+
 
 }

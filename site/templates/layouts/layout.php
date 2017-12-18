@@ -13,6 +13,9 @@
     ?>
 </head>
 <body class="<?php echo (!empty($bodyClass))?implode(" ",$bodyClass):"";?>" >
+
+<?php include SITE_TEMPLATE_PATH."/utils/modal.php";?>
+
 <div class="nav-container">
     <?php include SITE_TEMPLATE_PATH."/common/navbar.php";?>
 
@@ -28,6 +31,8 @@
     </div>
 
 </div>
+
+
 <footer>
 </footer>
 </body>
