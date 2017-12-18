@@ -48,6 +48,7 @@ if(empty($_GET["act"]))
             $f["id"] =$v["id"];
             $f["name"]=$v["name"];
             $f["description"]=$v["description"];
+            $f["extension"] = $v["extension"];
 
 
 

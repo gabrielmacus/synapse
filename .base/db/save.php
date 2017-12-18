@@ -10,8 +10,8 @@
 $item = (empty($item))? R::dispense($itemType):$item;
 
 
-
-
+//Para manejar la publicacion en redes sociales (social networks)
+include "snPublish.php";
 
 if(!empty($userData))
 {

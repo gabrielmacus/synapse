@@ -85,7 +85,7 @@
 
             atomic.ajax(
                 {
-                    "url":"http://localhost/synapse/<?php echo $language ;?>/email?act=true",
+                    "url":"<?php echo $_ENV["website"]["url"];?>/synapse/<?php echo $language ;?>/email?act=true",
                     "data":contactJSON,
                     "type":"POST"
                 }

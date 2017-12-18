@@ -28,3 +28,5 @@ require_once ("FtpClient/FtpWrapper.php");
 require_once ("PHPMailer-master/src/Exception.php");
 require_once ("PHPMailer-master/src/PHPMailer.php");
 require_once ("PHPMailer-master/src/SMTP.php");
+
+require_once ("classes/ImageResize.php");

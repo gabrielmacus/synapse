@@ -26,3 +26,6 @@
 <link rel="stylesheet" href="<?php echo  $_ENV["website"]["url"]?>/static/css/angular-ui-tree.min.css">
 
 <script src="<?php echo $_ENV["website"]["url"] ?>/static/js/angular-ui-tree.min.js"></script>
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">

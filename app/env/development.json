@@ -13,7 +13,7 @@
     },
     "website": {
         "root": "/synapse",
-        "url": "http://localhost/synapse",
+        "url": "http://macus.ddns.net/synapse",
         "languages": ["es"],
         "defaultLanguage": "es",
         "panelAccess":"panel"
@@ -35,9 +35,15 @@
         {
             "active":true,
             "appId":"1701971556493561",
+            "appSecret":"5b346de9e6658c1084b8351ba65b77e9",
             "version":"v2.10",
-            "scopes":"public_profile,email"
+            "scopes":"public_profile,email,publish_pages"
 
+        },
+        "instagram":
+        {
+            "user":"gamaware_web",
+            "password":"sercan02"
         }
     },
     "db": {
@@ -66,7 +72,7 @@
         "password":"admin",
         "folder":"files",
         "host":"localhost",
-        "website":"http://localhost/synapse-media/files"
+        "website":"http://macus.ddns.net/synapse-media/files"
     },
     "email":
     {
@@ -80,6 +86,10 @@
             "Password":"eek8qwvbskh5ukh8",
             "SMTPSecure":"ssl"
         }
+    }
+    ,"maps":
+    {
+        "key":"AIzaSyC6t44666tQWUT-y15j2vCfSLYqDamkp10"
     }
 
 }

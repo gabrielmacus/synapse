@@ -17,73 +17,79 @@ if(!empty($oSql) && empty($_GET["id"]) && empty($dontPaginate))
 
     $oSqlCount = "SELECT count(*) as 'total' FROM ({$oSql}) as cant";
 
+    $oPageResult = R::getAll($oSqlCount,$params);
 
-    $oResultCount= R::getAll($oSqlCount,$params)[0]['total'];
-
-    $oPages = ceil($oResultCount / $limit);
-
-    if(!empty($_GET["p"]) && $oPages > 0 && $_GET["p"] > $oPages)
+    if(!empty($oPageResult))
     {
+        $oResultCount= $oPageResult[0]['total'];
 
-        //Si estoy en una pagina vacia, voy a la ultima con contenido
-        $_GET["p"] = $oPages;
-        header("Location: ?".http_build_query($_GET));
+        $oPages = ceil($oResultCount / $limit);
 
-    }
-
-    $_PAGINATION["pages"] = $oPages;
-    $_PAGINATION["results"] = $oResultCount;
-    $_PAGINATION["actualPage"] = ($p+1);
-    $_PAGINATION["paginator"]=[];
-
-
-
-    for ($i=$_ENV["pagination"]["paginatorOffset"];$i>0;$i--)
-    {
-
-        $prevPage = $_PAGINATION["actualPage"] - $i ;
-
-        if($prevPage > 0)
+        if(!empty($_GET["p"]) && $oPages > 0 && $_GET["p"] > $oPages)
         {
 
-            $_PAGINATION["paginator"][$prevPage]["url"] ="?p={$prevPage}";
+            //Si estoy en una pagina vacia, voy a la ultima con contenido
+            $_GET["p"] = $oPages;
+            header("Location: ?".http_build_query($_GET));
 
         }
 
-    }
+        $_PAGINATION["pages"] = $oPages;
+        $_PAGINATION["results"] = $oResultCount;
+        $_PAGINATION["actualPage"] = ($p+1);
+        $_PAGINATION["paginator"]=[];
 
-    for ($i=1;$i <= $_ENV["pagination"]["paginatorOffset"];$i++)
-    {
-        $nextPage =$_PAGINATION["actualPage"] + $i;
 
-        if($nextPage <= $_PAGINATION["pages"])
+
+        for ($i=$_ENV["pagination"]["paginatorOffset"];$i>0;$i--)
         {
 
-            $_PAGINATION["paginator"][$nextPage]["url"] ="?p={$nextPage}";
+            $prevPage = $_PAGINATION["actualPage"] - $i ;
+
+            if($prevPage > 0)
+            {
+
+                $_PAGINATION["paginator"][$prevPage]["url"] ="?p={$prevPage}";
+
+            }
+
+        }
+
+        for ($i=1;$i <= $_ENV["pagination"]["paginatorOffset"];$i++)
+        {
+            $nextPage =$_PAGINATION["actualPage"] + $i;
+
+            if($nextPage <= $_PAGINATION["pages"])
+            {
+
+                $_PAGINATION["paginator"][$nextPage]["url"] ="?p={$nextPage}";
+            }
+
+
+        }
+        if($_PAGINATION["actualPage"] - 1 > 0)
+        {
+            $_PAGINATION["prevPage"] = $_PAGINATION["actualPage"] - 1;
+        }
+
+        if($_PAGINATION["actualPage"] + 1 <= $_PAGINATION["pages"])
+        {
+            $_PAGINATION["nextPage"] = $_PAGINATION["actualPage"] + 1;
         }
 
 
+
+
+        $_PAGINATION["paginator"][$_PAGINATION["actualPage"]]["active"]=true;
+
+        $_PAGINATION["paginator"][$_PAGINATION["actualPage"]]["url"] = "?p={$_PAGINATION["actualPage"]}";
+
+        ksort($_PAGINATION["paginator"]);
+
+        $oSql = "{$oSql} LIMIT {$limit} OFFSET {$offset} ";
     }
-    if($_PAGINATION["actualPage"] - 1 > 0)
-    {
-        $_PAGINATION["prevPage"] = $_PAGINATION["actualPage"] - 1;
-    }
-
-    if($_PAGINATION["actualPage"] + 1 <= $_PAGINATION["pages"])
-    {
-        $_PAGINATION["nextPage"] = $_PAGINATION["actualPage"] + 1;
-    }
 
 
-
-
-    $_PAGINATION["paginator"][$_PAGINATION["actualPage"]]["active"]=true;
-
-    $_PAGINATION["paginator"][$_PAGINATION["actualPage"]]["url"] = "?p={$_PAGINATION["actualPage"]}";
-
-    ksort($_PAGINATION["paginator"]);
-
-    $oSql = "{$oSql} LIMIT {$limit} OFFSET {$offset} ";
 
 
 }

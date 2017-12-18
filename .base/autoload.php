@@ -50,13 +50,13 @@ set_error_handler(function($errno, $errstr, $errfile, $errline){
 
 if(empty($env) || $env = "DEV")
 {
-    $env = file_get_contents(BASE_PATH."/.base/env/development.json");
+    $env = file_get_contents(BASE_PATH."/app/env/development.json");
     $siteEnv = file_get_contents(BASE_PATH."/site/env/development.json");
     
 }
 else if ($env = "PROD")
 {
-    $env = file_get_contents(BASE_PATH."/.base/env/production.json");
+    $env = file_get_contents(BASE_PATH."/app/env/production.json");
     $siteEnv = file_get_contents(BASE_PATH."/site/env/production.json");
 }
 
@@ -78,6 +78,8 @@ include ("auth/autoload.php");
 include ("services/autoload.php");
 
 include ("db/autoload.php");
+
+include ("api/autoload.php");
 //For websockets
 //include ("websockets/Chat.php");
 

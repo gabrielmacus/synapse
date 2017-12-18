@@ -221,7 +221,10 @@
   "work.prompt.delete":"¿Desea trabajo el tip ´{i}´?",
   "work.empty":"No hay trabajo disponibles",
   "work.nuevo":"Agregar trabajo realizado",
-  "work.error.notExists":"El trabajo seleccionado no existe"
+  "work.error.notExists":"El trabajo seleccionado no existe",
+
+  "instagram.error.request":"Solicitud a Instagram rechazada. Es posible que la ip/proxy este bloqueada",
+  "instagram.error.login":"Error al autenticarse a Instagram"
 
 
 
