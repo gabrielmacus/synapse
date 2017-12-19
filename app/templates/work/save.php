@@ -39,8 +39,8 @@
         {
             ?>
             <div>
-                <label><?php echo $v?></label>
-                <input data-ng-model="<?php echo $itemType?>.publish.<?php echo $k;?>" data-ng-true="true" data-ng-false="false"  type="checkbox">
+                <label for="cbox-<?php echo $k;?>"><?php echo $v?></label>
+                <input id="cbox-<?php echo $k;?>" data-ng-model="<?php echo $itemType?>.publish.<?php echo $k;?>" data-ng-true-value="true" data-ng-false-value="false"  type="checkbox">
             </div>
 
             <?Php
@@ -80,6 +80,7 @@
 
     app.controller('workController', function($scope,$rootScope,$http) {
 
+
         if(!$rootScope.<?php echo $itemType?>)
         {
             $rootScope.<?php echo $itemType?>={};
@@ -101,7 +102,7 @@
                                     FB.api("/<?php echo $_ENV["siteEnv"]["fb"]["pageId"]?>", {fields: 'access_token'}, function(response) {
 
 
-                                        $rootScope.<?php echo $itemType?>.publish = {fb:{fbToken:response.access_token}};
+                                        $rootScope.<?php echo $itemType?>.publish.fb = {fbToken:response.access_token};
 
                                         callback();
 
@@ -134,8 +135,7 @@
                 function(  callback) {
 
 
-                console.log($rootScope.work);
-//                    $rootScope.save($rootScope.<?php echo $itemType?>);
+                   $rootScope.save($rootScope.<?php echo $itemType?>);
 
                 },
                 function(callback) {

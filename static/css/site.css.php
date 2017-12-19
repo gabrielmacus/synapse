@@ -634,6 +634,7 @@ body > footer
     padding: 30px;
     display: flex;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .gallery > .images
@@ -646,9 +647,19 @@ body > footer
     height: calc(100% + 60px);
     right: -30px;
 }
+.gallery .selected-image
+{
+    position: relative;
+}
+.gallery .selected-image .close
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
 .gallery .selected-image img
 {
-    object-fit: contain;
+    object-fit: scale-down;
 }
 .gallery > .images  .gallery-image
 {

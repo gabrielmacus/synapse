@@ -41,14 +41,39 @@ $h=230;
 </div>
 
 <script type="text/html" id="gallery-template">
+    <div style="width: 100%;height: 80vh;background-color: white;display: flex">
 
+        <figure style="width: 70%;float: left">
+            <img style="object-fit: scale-down" data-bind="attr: { src: selectedGalleryImage.url }">
+
+            <a class="close" onclick="closeGallery()"><i  class="material-icons" >close</i></a>
+
+        </figure>
+        <div  data-bind="foreach: images" style="width: 30%;float: left;background-color: gainsboro" >
+
+            <figure style="width: 50%;
+    float: left;
+    height: 25%;    padding-top: 10px;
+    padding-left: 10px;
+    padding-right: 10px;" data-bind="click: selectGalleryImage.bind($data),css: {active: selectedGalleryImage.id() == $data.id}" >
+                <img data-bind="attr: {src:url}">
+            </figure>
+
+
+        </div>
+
+
+    </div>
+<?php
+/*
 <div class="gallery   col-s-1 col-m-1 col-l-2 col-xl-2">
 
     <figure class="selected-image cl s-12  m-7 l-7 xl-8">
         <img data-bind="attr: { src: selectedGalleryImage.url }">
-    </figure>
 
-    <a onclick="closeGallery()"><i  class="material-icons" >close</i></a>
+        <a class="close" onclick="closeGallery()"><i  class="material-icons" >close</i></a>
+
+    </figure>
 
     <div class="images cl s-12 m-5 l-5 xl-4   animated   col-s-2 col-m-2  col-l-2 col-xl-2" >
 
@@ -68,7 +93,8 @@ $h=230;
 
 
 </div>
-
+ */
+?>
 
 </script>
 

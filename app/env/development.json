@@ -13,7 +13,7 @@
     },
     "website": {
         "root": "/synapse",
-        "url": "http://localhost/synapse",
+        "url": "http://macus.ddns.net/synapse",
         "languages": ["es"],
         "defaultLanguage": "es",
         "panelAccess":"panel"
@@ -72,7 +72,7 @@
         "password":"admin",
         "folder":"files",
         "host":"localhost",
-        "website":"http://localhost/synapse-media/files"
+        "website":"http://macus.ddns.net/synapse-media/files"
     },
     "email":
     {
