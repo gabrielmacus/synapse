@@ -16,3 +16,5 @@
 
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lory.js/2.3.4/lory.min.js"></script>

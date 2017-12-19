@@ -41,30 +41,10 @@ $h=230;
 </div>
 
 <script type="text/html" id="gallery-template">
-    <div style="width: 100%;height: 80vh;background-color: white;display: flex">
-
-        <figure style="width: 70%;float: left">
-            <img style="object-fit: scale-down" data-bind="attr: { src: selectedGalleryImage.url }">
-
-            <a class="close" onclick="closeGallery()"><i  class="material-icons" >close</i></a>
-
-        </figure>
-        <div  data-bind="foreach: images" style="width: 30%;float: left;background-color: gainsboro" >
-
-            <figure style="width: 50%;
-    float: left;
-    height: 25%;    padding-top: 10px;
-    padding-left: 10px;
-    padding-right: 10px;" data-bind="click: selectGalleryImage.bind($data),css: {active: selectedGalleryImage.id() == $data.id}" >
-                <img data-bind="attr: {src:url}">
-            </figure>
 
 
-        </div>
 
-
-    </div>
-<?php
+    <?php
 /*
 <div class="gallery   col-s-1 col-m-1 col-l-2 col-xl-2">
 
@@ -98,7 +78,10 @@ $h=230;
 
 </script>
 
+
 <script>
+
+
     var SelectedImage = function () {
 
         this.url = ko.observable(false);
