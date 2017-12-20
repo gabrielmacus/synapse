@@ -12,7 +12,7 @@
 
     ?>
 </head>
-<body class="<?php echo (!empty($bodyClass))?implode(" ",$bodyClass):"";?>" >
+<body class="animated <?php echo (!empty($bodyClass))?implode(" ",$bodyClass):"";?>" >
 
 <?php include SITE_TEMPLATE_PATH."/utils/modal.php";?>
 
@@ -33,7 +33,38 @@
 </div>
 
 
-<footer>
+<footer >
+
+
+        <div class="col col-s-1 col-m-2 col-l-2 col-xl-2">
+             <span class=" cl  s-12  m-6 l-5 xl-3">
+
+
+
+                 <figure class="logo-footer">
+                     <img src="<?php echo $_ENV["siteEnv"]["logo"]["url"]?>">
+                 </figure>
+
+                    <div class="data-container">
+                        <span class="address data">Calle Falsa 123, Paraná, Entre Rios</span>
+                 <span class="tel data">Tel: <a>343414313</a></span>
+                    </div>
+             </span>
+
+            <span class="copyright cl  s-12  m-6 l-7 xl-9">
+
+                <span class="data">Desarrollado por &nbsp;<a class="gamaware">Gamaware &nbsp;<img src="http://www.gamaware.esy.es/img/logo.svg"></a></span>
+
+            </span>
+
+
+
+
+        </div>
+
+
+
+
 </footer>
 </body>
 </html>

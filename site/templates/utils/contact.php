@@ -92,12 +92,14 @@
             )
                 .success(function (data,xhr) {
 
+
                     contact.status("success");
                     contact.success("<?php echo $_SITE_LANG["contact.success"]?>");
 
                 })
                 .error(function (data,xhr) {
 
+                    console.log(data);
 
                     contact.status("error");
                     contact.error(data);

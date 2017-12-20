@@ -25,6 +25,7 @@ foreach ($oTips as $k=>$v)
 
 
 //Trabajos realizados
+$orderBy=false;
 $itemType="work";
 $dontCheckPermissions=true;
 $limit=18;

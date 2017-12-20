@@ -40,47 +40,62 @@ $h=230;
 
 </div>
 
+
+
+
+
+
+
+
+
 <script type="text/html" id="gallery-template">
+    <div onload="loadGalleryCarousel()" class="gallery-carousel Wallop Wallop--fade ">
+        <div class="Wallop-list"  data-bind="foreach: images">
+            <div class="Wallop-item">
 
+                <figure>
+                    <img data-bind="attr: {src:url}">
+                </figure>
 
+                <a class="close-gallery" onclick="closeGallery()"><i class="material-icons">close</i></a>
+            </div>
+        </div>
 
-    <?php
-/*
-<div class="gallery   col-s-1 col-m-1 col-l-2 col-xl-2">
+        <button class="Wallop-buttonPrevious prev"><i class="material-icons">navigate_before</i></button>
+        <button class="Wallop-buttonNext next"><i class="material-icons">navigate_next</i></button>
+    </div>
 
-    <figure class="selected-image cl s-12  m-7 l-7 xl-8">
-        <img data-bind="attr: { src: selectedGalleryImage.url }">
-
-        <a class="close" onclick="closeGallery()"><i  class="material-icons" >close</i></a>
-
-    </figure>
-
-    <div class="images cl s-12 m-5 l-5 xl-4   animated   col-s-2 col-m-2  col-l-2 col-xl-2" >
-
-
-       <div class="images-wrapper" data-bind="foreach: images">
-           <figure data-bind="click: selectGalleryImage.bind($data),css: {active: selectedGalleryImage.id() == $data.id}"  class="gallery-image cl  s-6 m-6 l-6 xl-6">
-               <img data-bind="attr: {src:url}">
-
-
-
-           </figure>
-
-       </div>
-
-
+    <div class="gallery-header">
+        <h2 data-bind="text: text"></h2>
     </div>
 
 
-</div>
- */
-?>
+
+</script>
+<script type="text/html" id="image-template" >
+
+    <div  style="margin: auto;position: relative" data-bind="foreach: images">
+        <figure>
+            <img data-bind="attr: {src:url}">
+        </figure>
+
+        <a class="close-gallery" onclick="closeGallery()"><i class="material-icons">close</i></a>
+
+    </div>
+
+    <div class="gallery-header">
+        <h2 data-bind="text: text"></h2>
+        </div>
 
 </script>
 
-
 <script>
 
+    function loadGalleryCarousel(elements) {
+        document.body.classList.add("gallery");
+        var wallopEl = elements[1];
+        var slider = new Wallop(wallopEl);
+    }
 
     var SelectedImage = function () {
 
@@ -92,7 +107,7 @@ $h=230;
     var selectedGalleryImage = new SelectedImage();
 
     function closeGallery() {
-
+        document.body.classList.remove("gallery");
         modal.opened(false);
     }
 
@@ -108,10 +123,17 @@ $h=230;
     function openGallery(gallery) {
 
         selectGalleryImage(gallery.images[0]);
+        var template ={data:gallery,name:"image-template",afterRender:function () {
+            document.body.classList.add("gallery");
+        }};
 
+        if(gallery.images.length > 1)
+        {
+            template.afterRender=loadGalleryCarousel;
+            template.name="gallery-template";
+        }
 
-
-        modal.template({data:gallery,name:"gallery-template"});
+        modal.template(template);
         modal.opened(true);
 
     }

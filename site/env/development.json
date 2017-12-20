@@ -4,5 +4,9 @@
   {
     "page":"https://www.facebook.com/JFInstalacionesOK",
     "pageId":"699622376825503"
+  },
+  "logo":
+  {
+    "url":"https://s3.amazonaws.com/satelyticsweb/uploads/clients/marathon-logo-c_160310_182908.svg"
   }
 }

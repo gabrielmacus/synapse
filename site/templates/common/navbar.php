@@ -1,6 +1,6 @@
 
 <nav id="main-navbar" class="main-navbar animated-2">
-<a class="logo"></a>
+<a class="logo"><img src="<?php echo $_ENV["siteEnv"]["logo"]["url"]?>"></a>
 
 
 <a class="scroll" data-section="inicio" href="#inicio">Inicio</a>

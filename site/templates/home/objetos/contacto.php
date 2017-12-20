@@ -7,7 +7,9 @@ include "header.php";
 <div class="contacto col-s-1 col-m-1 col-l-3 col-xl-3 flex">
 
     <div class=" cl form flex   s-12 m-12 l-7 xl-7">
-
+        <header class="direccion">
+            <h3>Dejanos tu mensaje</h3>
+        </header>
         <?php include SITE_TEMPLATE_PATH."/utils/contact.php"; ?>
 
     </div>
@@ -23,7 +25,6 @@ include "header.php";
         <header class="direccion">
             <h3><span class="find-us">Encontranos en</span> Calle falsa 123, Paraná, Entre Ríos <span class="find-us"><i class="material-icons">location_on</i></span></h3>
         </header>
-
         <div id="map"></div>
         <script>
             function initMap() {
@@ -48,7 +49,7 @@ include "header.php";
             window.fbAsyncInit = function(){
                 //FB.init({ status: false, cookie: true, xfbml: true });
                 FB.Event.subscribe("xfbml.render", function(){
-                    document.querySelector(".fb").style.display="flex";
+                  /*  document.querySelector(".fb").style.display="flex";*/
                 });
             };
             (function(d, s, id) {

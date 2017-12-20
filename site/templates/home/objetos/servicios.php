@@ -6,19 +6,21 @@ include "header.php";
 
 $elements =
     [
-        ["title"=>"Mantenimiento de heladeras y freezers","image"=>"http://mspoweruser.com/wp-content/uploads/2016/09/samsung-family-hub.jpg","text"=>"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se"],
-        ["title"=>"Colocación y reparación de aires acondicionados","image"=>"https://www.airconco.com/wp-content/uploads/2016/01/maintenance.jpg","text"=>"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se"],
-        ["title"=>"Asesoramiento profesional","image"=>"http://www.airproductsinc.com/wp-content/uploads/2016/03/Dealer-Handshake-Woman.jpg","text"=>"Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se"]
+        ["title"=>"Colocación y reparación de aires acondicionados","image"=>"https://www.airconco.com/wp-content/uploads/2016/01/maintenance.jpg"],
+        ["title"=>"Mantenimiento de heladeras y freezers","image"=>"http://mspoweruser.com/wp-content/uploads/2016/09/samsung-family-hub.jpg"],
+        ["title"=>"Asesoramiento profesional","image"=>"http://www.airproductsinc.com/wp-content/uploads/2016/03/Dealer-Handshake-Woman.jpg"],
+        ["title"=>"Reparación de lavarropas","image"=>"https://media1.popsugar-assets.com/files/thumbor/Ys8w2qYkpYAeI1jIYLcUq3QntJc/fit-in/550x550/filters:format_auto-!!-:strip_icc-!!-/2013/05/15/030/n/1922441/d02e50161ef1327b_P1150285.jpg"]
+
     ];
 
 ?>
 
-<div class="col-s-1 col-m-1 col-l-3 col-xl-3 flex">
+<div class="col-s-1 col-m-1 col-l-2 col-xl-4 flex">
 
     <?php foreach($elements as $k=>$v)
     {
         ?>
-        <div class="box  cl s-12 m-12 l-4 xl-4 " >
+        <div class="box  cl s-12 m-12 l-6 xl-3 " >
 
             <header class="front flex animated">
 
