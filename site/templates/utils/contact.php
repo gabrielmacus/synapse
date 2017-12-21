@@ -2,28 +2,56 @@
 <div data-bind="css: contact.status">
     <form  data-bind="submit: contact.send">
 
-        <div class="form-block">
-            <label>Nombre</label>
-            <input  data-bind="value: contact.name"  type="text">
-            <span class="validation-error" data-bind="if: contact.error() && contact.error.name"><p data-bind="text: contact.error().name"></p></span>
+        <div class="form-block" onclick="clearError('name')" >
+
+            <!-- ko if: contact.error() && contact.error().name -->
+            <span class="validation-error"><p data-bind="text: contact.error().name"></p></span>
+            <!-- /ko -->
+
+            <label class="animated">Nombre</label>
+
+            <input class="animated"  data-bind="value: contact.name"  type="text">
+
 
 
         </div>
 
-        <div class="form-block">
-            <label>Email</label>
-            <input  data-bind="value: contact.from"  type="text">
+        <div class="form-block" onclick="clearError('from')" >
+
+            <!-- ko if: contact.error() && contact.error().from -->
+            <span class="validation-error"><p data-bind="text: contact.error().from"></p></span>
+            <!-- /ko -->
+
+            <label class="animated">Email</label>
+
+            <input class="animated" data-bind="value: contact.from"  type="text">
+
         </div>
 
-        <div class="form-block">
-            <label>Asunto</label>
-            <input  data-bind="value: contact.subject"  type="text">
+        <div class="form-block" onclick="clearError('subject')" >
+
+            <!-- ko if: contact.error() && contact.error().subject -->
+            <span class="validation-error"><p data-bind="text: contact.error().subject"></p></span>
+            <!-- /ko -->
+
+            <label class="animated">Asunto</label>
+
+            <input class="animated"  data-bind="value: contact.subject"  type="text">
+
         </div>
 
 
-        <div class="form-block">
-            <label>Mensaje</label>
-            <textarea  data-bind="value: contact.message"  rows="4"></textarea>
+        <div class="form-block" onclick="clearError('message')" >
+
+            <!-- ko if: contact.error() && contact.error().message -->
+            <span class="validation-error"><p data-bind="text: contact.error().message"></p></span>
+            <!-- /ko -->
+
+
+            <label class="animated" >Mensaje</label>
+
+            <textarea class="animated" data-bind="value: contact.message"  rows="4"></textarea>
+
 
         </div>
 
@@ -117,6 +145,16 @@
         }
 
 
+
+    }
+
+    function clearError(attr) {
+
+       var errors= contact.error();
+
+       delete errors[attr];
+
+       contact.error(errors);
 
     }
 

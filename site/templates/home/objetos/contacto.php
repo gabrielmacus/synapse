@@ -7,10 +7,16 @@ include "header.php";
 <div class="contacto col-s-1 col-m-1 col-l-3 col-xl-3 flex">
 
     <div class=" cl form flex   s-12 m-12 l-7 xl-7">
+
+        <!-- ko if: !contact.success() -->
+
         <header class="direccion">
             <h3>Dejanos tu mensaje</h3>
         </header>
+
+        <!-- /ko -->
         <?php include SITE_TEMPLATE_PATH."/utils/contact.php"; ?>
+
 
     </div>
 
@@ -70,6 +76,14 @@ include "header.php";
 
 
 
+    </div>
+
+    <div class="rate-it col-s-1 col-m-1 col-l-3 col-xl-3 fila">
+        <?php include SITE_TEMPLATE_PATH."/svg/five-stars.php"?>
+        <p>
+            ¿Te gustó el servicio que te brindamos? ¿Tenés una opinión?
+        </p>
+        <a target="_blank" href="https://www.facebook.com/pg/<?php echo $_ENV["siteEnv"]["fb"]["pageId"];?>/reviews/">Queremos escucharte</a>
     </div>
 
 </div>

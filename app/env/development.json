@@ -13,7 +13,7 @@
     },
     "website": {
         "root": "/synapse",
-        "url": "http://macus.ddns.net/synapse",
+        "url": "http://localhost/synapse",
         "languages": ["es"],
         "defaultLanguage": "es",
         "panelAccess":"panel"
@@ -72,18 +72,18 @@
         "password":"admin",
         "folder":"files",
         "host":"localhost",
-        "website":"http://macus.ddns.net/synapse-media/files"
+        "website":"http://localhost/synapse-media/files"
     },
     "email":
     {
-        "from":"gabrielmacus@fastmail.com",
+        "from":"gabrielmacus@gmail.com",
         "config":
         {
-            "Host":"smtp.fastmail.com",
+            "Host":"smtp.sendgrid.net",
             "Port":465,
             "SMTPAuth":true,
-            "Username":"gabrielmacus@fastmail.com",
-            "Password":"eek8qwvbskh5ukh8",
+            "Username":"",
+            "Password":"",
             "SMTPSecure":"ssl"
         }
     }

@@ -7,6 +7,8 @@
      $color_e="#616161";
      $color_f="#E53935";
      $color_g="#4CAF50";
+     $color_h="#FFD600";
+     $color_i="#2196F3";
  ?>
 
 @import url('https://fonts.googleapis.com/css?family=Muli:400,600,800');
@@ -528,13 +530,23 @@ display: flex;
 }
 .validation-error
 {
-    width: 100%;
+    right: 0;
     position: absolute;
     float: top;
-    /* top: 0; */
-    top: 33px;
-    right: -10px;
+    top: 0;
+    color: <?php echo $color_f; ?>;
+    font-weight: 600;
 }
+.validation-error + label
+{
+
+    color: <?php echo $color_f; ?>;
+}
+.validation-error ~ input,.validation-error ~ textarea
+{
+    border-color:  <?php echo $color_f; ?>;
+}
+
 .contacto  .error-msg p
 {
     text-align: left!important;;
@@ -558,6 +570,10 @@ display: flex;
     display: flex;
     align-items: center;
 
+}
+.success + .direccion
+{
+    display: none;
 }
 .contacto  .error .error-msg
 {
@@ -832,7 +848,11 @@ body > footer .col > .copyright > .data .gamaware
 
 
 @media screen and (max-width: 768px) {
-
+    .gallery-header
+    {
+        padding: 5px;
+        font-size: 15px;
+    }
     body > footer .col {
         width: 90%;
         left: 5%;
@@ -840,6 +860,11 @@ body > footer .col > .copyright > .data .gamaware
 }
 @media screen and (max-width: 601px) {
 
+    .validation-error
+    {
+        top: 34px;
+        left: 5px;
+    }
 
     body > footer .col .logo-footer img
     {
@@ -851,5 +876,51 @@ body > footer .col > .copyright > .data .gamaware
     {
         margin-left: 0;
         text-align: right;
+    }
+}
+
+.rate-it
+{
+    padding: 30px;
+    text-align: center;
+
+    background: <?php echo $color_d; ?>;
+    color:<?php echo $color_i; ?> ;
+    font-size: 25px;
+    font-weight: 600;
+}
+.rate-it p
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 1.2em;
+}
+
+.rate-it a
+{
+    border-bottom: 3px solid <?php echo $color_a?>;
+    color: <?Php echo $color_a; ?>;
+
+}
+.rate-it svg
+{
+    width: 15%;
+}
+.rate-it
+{
+    margin-top: 20px;
+}
+.rate-it svg polygon
+{
+    fill:<?php echo $color_h?>
+}
+@media screen and (max-width: 768px) {
+    .rate-it svg
+    {
+        width: 30%;
+    }
+    .rate-it
+    {
+        font-size: 18px;
     }
 }
