@@ -504,18 +504,42 @@ display: flex;
     transform: scale(0.5);
     color: <?php echo $color_a?>;
 }
-.contacto .form .error,.contacto .form .success
+ .contacto .form .success
 {
     width: 100%;
     float: left;
     padding: 15px;
     margin-top: 20px;
 }
-
-.contacto  .error-msg
+.contacto .submit
 {
+    display: flex;
+    align-items: center;
+}
+.contacto .submit button
+{
+    margin-left: auto;
+}
+.contacto  .error-msg
+{    width: 70%;
+    text-align: left;
+    float: left;
     display: none;
-    border: 1px solid <?php echo $color_f?>;
+}
+.validation-error
+{
+    width: 100%;
+    position: absolute;
+    float: top;
+    /* top: 0; */
+    top: 33px;
+    right: -10px;
+}
+.contacto  .error-msg p
+{
+    text-align: left!important;;
+    padding: 0!important;;
+    margin: 0!important;
 }
 .contacto .success-msg
 {
@@ -523,7 +547,7 @@ display: flex;
     border: 1px solid <?php echo $color_g?>;
 }
 
-.contacto  .success .success-msg,.contacto  .error .error-msg
+.contacto  .success .success-msg
 {
     margin-top: 46px;
     height: calc(100% - 46px);
@@ -535,7 +559,11 @@ display: flex;
     align-items: center;
 
 }
-.contacto .success form,.contacto .sending form,.contacto .error form
+.contacto  .error .error-msg
+{
+    display: block;
+}
+.contacto .success form,.contacto .sending form
 {
     display: none;
 }
@@ -650,7 +678,9 @@ body > footer
 
 .gallery-carousel
 {
-    margin: auto;
+    /* margin: auto; */
+    margin-left: auto;
+    margin-right: auto;
 }
 .gallery-carousel .next,.gallery-carousel .prev
 {

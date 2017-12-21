@@ -5,6 +5,7 @@
         <div class="form-block">
             <label>Nombre</label>
             <input  data-bind="value: contact.name"  type="text">
+            <span class="validation-error" data-bind="if: contact.error() && contact.error.name"><p data-bind="text: contact.error().name"></p></span>
 
 
         </div>
@@ -26,8 +27,13 @@
 
         </div>
 
-        <div class="form-block">
+        <div class="form-block submit">
 
+            <div class="error-msg" data-bind="if: !contact.error().isValidationError" >
+
+                <p data-bind="text: contact.error"></p>
+
+            </div>
             <button type="submit">Enviar</button>
 
         </div>
@@ -35,11 +41,6 @@
 
     </form>
 
-    <div class="error-msg"  >
-
-        <p data-bind="text: contact.error"></p>
-
-    </div>
 
     <div class="success-msg" >
 
@@ -100,9 +101,10 @@
                 .error(function (data,xhr) {
 
                     console.log(data);
-
                     contact.status("error");
                     contact.error(data);
+
+
 
 
                 })

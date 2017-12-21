@@ -15,7 +15,7 @@ $msg  = str_replace("{b}",30,$msg);
 $prop="name";
 if(empty($_POST[$prop]) || !ValidationService::validate($_POST[$prop],$regex,$msg))
 {
-    $validationErrors["{$itemType}"]["{$prop}"]=$msg;
+    $validationErrors["{$prop}"]=$msg;
 }
 
 if(count($validationErrors))
